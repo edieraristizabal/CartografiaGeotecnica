@@ -1,0 +1,484 @@
+<!-- Copied from https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <title>CARTOGRAFÍA GEOTÉCNICA</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="CARTOGRAFÍA GEOTÉCNICA - MetodologiasHeuristicas">
+  <meta name="author" content="MetodologiasHeuristicas" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+      <script>
+        setInterval(showTime, 1000);
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            am_pm = "am";
+
+            if (hour > 12) {
+                hour -= 12;
+                am_pm = "pm";
+            }
+            if (hour == 0) {
+                hr = 12;
+                am_pm = "am";
+            }
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+
+            let currentTime = hour + ":"
+                + min + ":" + sec + am_pm;
+
+            document.getElementById("clock")
+                .innerHTML = currentTime;
+        }
+
+        showTime();
+    </script>
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <div id="marca-agua"><img style="border:none;box-shadow:none;width:60px;position:absolute;top:0%;right:0%;"src="images/un.png"/><p id="date"></p></div>
+      <div id="lecture" style="font-size:20px;position:absolute;top:100%;right:32%;">Cartografía Geotécnica (Métodos Heurísticos)</div>
+      <div id="clock" style="position:absolute;top:100%;right:0%;">8:10:45</div>
+      <section data-background-color= "#ffffff"; data-state="primera">
+        <h1>CARTOGRAFÍA GEOTÉCNICA</h1>
+        <h2>Métodos Heurísticos</h2>
+        <p>
+        <h4><a href="https://edieraristizabal.github.io/">Prof. Edier Aristizábal</a></h4>
+        </p>
+          <img src="images/unal2.png" alt="unal.jpg" width="500"/>
+          <p id="demo" style="position:absolute;top:100%;right:40%;"></p>
+          <script>
+          var d = new Date();
+          var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+          document.getElementById("demo").innerHTML = months[d.getMonth()] +", "+d.getDate()+" / "+d.getFullYear();
+          </script>
+      </section>
+
+      <section id="contenido" class="level1">
+        <h2>Contenido</h2>
+          <ul>
+            <li>Métodos</li>
+            <li>Métodos heurísticos</li>
+            <li>Ejemplos</li>
+            <li>Métodos de mapeo directo</li>
+            <li>Zonificación geológico - geotécnica</li>
+            <li>Algebra de mapas</li>
+            <li>Análisis Jerarquico de Procesos (AHP)</li>
+          </ul>
+      </section>
+
+      <section id="metodos" class="level1">
+      <h2>Métodos</h2>
+        <img src="images/metodos.png" alt="metodos.png" width="850"/>
+      </section>
+
+      <section id="heuristico" class="level1">
+      <h1>Método heurístico (knowledge-driven)</h1>
+
+          <section id="definicion1" class="level2">
+            <p>La susceptibilidad es determinada directamente o indirectamente por un experto en el fenómeno y en la región de estudio.
+               El proceso esta basado en la experiencia individual y en el uso del razonamiento por lógica. Las reglas de decisión son por lo
+               tanto difíciles de formular por que varían de lugar a lugar.</p>
+            <h3>El experto puede decidir:</h3>
+            <ul>
+              <li>Variables y clases a utilizar</li>
+              <li>El peso de las clases</li>
+              <li>El peso de las variables</li>
+            </ul>
+            <h3>Criterios utilizados:</h3>
+            <ul>
+              <li>Evidencia de actividad reciente</li>
+              <li>Ambiente geomorfológico de cada unidad identificada</li>
+              <li>Tipo de material y sus condiciones</li>
+              <li>Pendiente de las laderas</li>
+              <li>Relación con las unidades adyacentes que pueden activar o afectar la unidad de análisis.</li>
+              <li>etc., etc, ...</li>
+            </ul>
+          </section>
+
+          <section id="ventajas" class="level2">
+            <h3>Ventajas:</h3>
+            <ul>
+              <li>Papel dominante de la opinión del experto en el análisis.</li>
+              <li>Podrían ser utilizados a todas las escalas (pero no muy usado a escalas de detalle)</li>
+              <li>Pueden permitir una rápida zonificación considerando una gran cantidad de variables</li>
+              <li>Cada polígono individual puede ser evaluado separadamente de acuerdo con sus conjunto de condiciones únicas</li>
+            </ul>
+            <br /><br />
+            <h3>Desventajas:</h3>
+            <ul>
+              <li>Altamente subjetiva, ya que depende de la habilidad y experiencia del experto</li>
+              <li>No se puede generalizar</li>
+              <li>No genera evaluación de la amenaza cuantitativa</li>
+            </ul>
+          </section>
+
+          <section id="tipos" class="level2">
+            <p>En los métodos heurísticos la opinión de experto realizando la caracterización son utilizadas
+              para clasificar la susceptibilidad. Estos métodos combinan el mapeo de los deslizamientos y las
+              características  geomorfológicas como el principal elemento de entrada para la evaluación de la
+              susceptibilidad.</p>
+            <br /><br />
+            <h3>Existen varios tipos de análisis heurísticos:</h3>
+              <ul>
+                <li>Análisis geomorfológico (métodos de mapeo directo)</li>
+                <li>Análisis basado en índices (mapeo indirecto)</li>
+                <li>Análisis de decisión multicriterio (mapeo indirecto)</li>
+              </ul>
+          </section>
+      </section>
+
+      <section id="metodologiascarto" class="level1">
+      <h1>Cartografía Geomorfológica</h1>
+
+        <section id="metocarto1" class="level2">
+          <img src="images/metocarto1.png" alt="metocarto1.png" width="750"/>
+          <figcaption><small>Fuente: van Zuidam (1985)</small></figcaption>
+        </section>
+
+        <section id="metocarto" class="level2">
+          <img src="images/metocarto.png" alt="metocarto.png" width="900"/>
+          <figcaption><small>Fuente: van Zuidam (1985)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="ejemplos" class="level1">
+      <h1>Ejemplos</h1>
+
+        <section id="mapa-geomorfo" class="level2">
+          <img src="images/mapa-geomorfo.png" alt="mapa-geomorfo.png" width="810"/>
+          <figcaption><small>Fuente: GEO 22 (GCO, 2006)</small></figcaption>
+        </section>
+
+        <section id="mapa-geomorfo1" class="level2">
+          <img src="images/mapa-geomorfo1.png" alt="mapa-geomorfo1.png" width="500"/>
+          <figcaption><small>Fuente: Castellanos & van Westen (2007)</small></figcaption>
+        </section>
+
+        <section id="mapa-geomorfo2" class="level2">
+          <img src="images/mapa-geomorfo2.png" alt="mapa-geomorfo2.png" width="480"/>
+          <figcaption><small>Fuente: Castellanos & van Westen (2007)</small></figcaption>
+        </section>
+
+        <section id="mapa-geomorfo3" class="level2">
+          <img src="images/mapa-geomorfo3.png" alt="mapa-geomorfo3.png" width="850"/>
+          <figcaption><small>Mapa de zonificación geológica para ingeniería y estabilidad. Malgot et al, (1973) tomado de Varnes (1984).</small></figcaption>
+        </section>
+
+        <section id="mapa-geomorfo4" class="level2">
+          <img src="images/mapa-geomorfo4.png" alt="mapa-geomorfo4.png" width="950"/>
+          <figcaption><small>Mapa de zonificación geológica para ingeniería y estabilidad. Malgot et al, (1973) tomado de Varnes (1984).</small></figcaption>
+        </section>
+
+        <section id="mapa-geomorfo5" class="level2">
+          <img src="images/mapa-geomorfo5.png" alt="mapa-geomorfo5.png" width="400"/>
+          <figcaption><small>Mapa de la región de Moyenne Vesubie en Francia en esc. 1:25.000. Meneroud & Calvino (197) tomado de Varnes (1984).</small></figcaption>
+        </section>
+
+        <section id="mapa-geomorfo6" class="level2">
+          <img src="images/mapa-geomorfo6.png" alt="mapa-geomorfo6.png" width="900"/>
+          <figcaption><small>Leyenda del Mapa de la región de Moyenne Vesubie en Francia en esc. 1:25.000. Meneroud & Calvino (197) tomado de Varnes (1984).</small></figcaption>
+        </section>
+
+      </section>
+
+
+      <section id="Alpago" class="level1">
+      <h1>Mapa geomorfológico de amenaza</h1>
+
+        <section id="alpago" class="level2">
+          <img src="images/alpago.png" alt="alpago.png" width="1000"/>
+          <figcaption><small>Fuente: van Westen et al. (2003)</small></figcaption>
+        </section>
+
+        <section id="alpago1" class="level2">
+          <img src="images/alpago1.jpg" alt="alpago1.png" width="450"/>
+          <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+        </section>
+
+        <section id="alpago2" class="level2">
+          <img src="images/alpago2.png" alt="alpago2.png" width="900"/>
+          <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+        </section>
+
+        <section id="alpago3" class="level2">
+          <img src="images/alpago3.jpg" alt="alpago3.jpg" width="540"/>
+          <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+        </section>
+
+        <section id="alpago4" class="level2">
+          <img src="images/alpago4.jpg" alt="alpago4.jpg" width="580"/>
+          <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="zonificación" class="level1">
+      <h1>Zonificación geológico - geotécnica</h1>
+
+        <section id="zonificacion1" class="level2">
+          <p> Los estudios geológicos y geomorfológicos se deben enmarcar dentro de un estudio de zonificación
+            de la aptitud geológica del predio de interés, el cual se debe planear y elaborar en diferentes etapas que comprenden:</p>
+            <ul>
+              <li>Recopilación de información existente,</li>
+              <li>Fotointerpretación y uso de sensores remotos disponibles,</li>
+              <li>Análisis detallado de la base topográfica existente,</li>
+              <li>Realización de visitas de campo para el reconocimiento de las unidades litológicas y geomorfológicas,</li>
+              <li>Descripción detallada y sistemática de afloramientos,</li>
+              <li>Medición y análisis de estructuras geológicas,</li>
+              <li>Levantamiento cuidadoso del perfil de meteorización y los depósitos de vertiente o aluviales,</li>
+              <li>Identificación de los procesos morfodinámicos presentes en la zona de influencia del proyecto.</li>
+            </ul>
+          <p><small>Fuente: Directrices y lineamientos AMVA (2012)</small></p>
+        </section>
+
+        <section id="zonificacion2" class="level2">
+            <ul>
+              <li><strong>Subzonas tipo A – Estable independiente</strong>: su estabilidad es de alto grado pues sus condiciones naturales son favorables.
+                Posiblemente llegaría a depender del manejo mismo que se le dé al terreno.</li>
+              <br /><br />
+              <li><strong>Subzonas tipo B – Estable dependiente</strong>: su estabilidad depende de factores externos, los cuales se deben corregir.
+                También de factores internos que implican un manejo determinado del terreno y cierto tipo de obras civiles que
+                garanticen el no deterioro de esta estabilidad natural inicial.</li>
+              <br /><br />
+              <li><strong>Subzonas tipo C – Inestable recuperable</strong>: la estabilidad de estos terrenos es critica o presenta inestabilidad
+                manifiesta; sin embargo, con algunos correctivos específicos se puede mejorar la estabilidad, y en consecuencia,
+                adelantar ciertas obras civiles en si interior.</li>
+            </ul>
+          <p><small>Fuente: Chica (1998)</small></p>
+        </section>
+
+        <section id="zonificacion2" class="level2">
+            <ul>
+              <li><strong>Subzonas tipo D – Inestable no recuperable</strong>: terrenos con inestabilidad manifiesta cuya recuperación no es posible
+                 o demasiado costosa comparada con las inversiones y tipo de obras proyectadas.</li>
+              <br /><br />
+              <li><strong>Subzonas tipo E – Estable no utilizable</strong>: terrenos estables pero restringidos por condiciones urbanísticas u otras
+                 como estar ubicadas en vegas potenciales de inundación o cerca de frentes libres de taludes desprotegidos.</li>
+              <br /><br />
+              <li><strong>Subzonas tipo F – Inestables no utilizables</strong>: terrenos inestables y restringidos por condiciones como las mencionadas
+                 para la zubzona anterior.</li>
+            </ul>
+          <p><small>Fuente: Chica (1998)</small></p>
+        </section>
+
+        <section id="zonificacion3" class="level2">
+          <img src="images/zonificacion.jpg" alt="zonificacion.jpg" width="480"/>
+          <figcaption><small>Prof. Hernán Martinez -Curso Cartografía Geotécnica (1999)</small></figcaption>
+        </section>
+
+        <section id="zonificacion4" class="level2">
+          <img src="images/zonificacion1.png" alt="zonificacion1.png" width="750"/>
+          <figcaption><small>Fuente: Aristizábal & Hermelin (2011)</small></figcaption>
+        </section>
+
+        <section id="zonificacion5" class="level2">
+            <ul>
+              <li><strong>Zonas aptas</strong>: alto grado de estabilidad, sin procesos morfodinámicos activos e
+                inactivos, estabilidad condicionada al tipo de intervención y su manejo..</li>
+              <li><strong>Zonas aptas con restricciones moderadas</strong>: zonas estables con estabilidad condicionada
+                por la incidencia directa de los procesos morfodinámicos activos identificados en la UMI. Su estabilidad
+                depende del manejo a los procesos existentes y la intervención, con obras de estabilización proyectadas técnica
+                 y económicamente viables.</li>
+              <li><strong>Zonas aptas con restricciones altas</strong>: se evidencia la ocurrencia de proceso morfodinámicos
+                activos, y su estabilidad depende del manejo que se le de a estos procesos y la intervención. El estudio debe
+                evaluar la viabilidad técnica y económica de las obras de estabilización proyectadas.</li>
+                <li><strong>Zonas no aptas</strong>: con evidente inestabilidad por la ocurrencia de procesos morfodinámicos.
+                  El estudio considera que las obras de estabilización proyectas son complejas y de alto costo con respecto
+                  a las intervenciones proyectadas en la zona o predio de interés.</li>
+            </ul>
+          <p><small>Fuente: Directrices y lineamientos AMVA (2012)</small></p>
+        </section>
+
+      </section>
+
+      <section id="index-mapping" class="level1">
+      <h1>Index mapping</h1>
+
+        <section id="index-figura" class="level2">
+          <img src="images/index-mapping.png" alt="index-mapping.png" width="670"/>
+          <figcaption><small>Fuente: van Vesten (Introduction of Landslide Part 4 Use of GIS for landslide mapping)</small></figcaption>
+        </section>
+
+        <section id="index-figura1" class="level2">
+          <p>Combina mapas de factores asociados con la ocurrencia de deslizamientos. Los pesos son determinados para cada factor basado
+             en un estimativo de la influencia relativa a los deslizamientos. Las variables son generalmente divididas en clases,
+             los cuales son ponderados utilizando el criterio de expertos. Finalmente, un índice de susceptibilidad o amenaza es obtenido
+              para cada unidad del mapa.</p>
+          <img src="images/index-mapping1.png" alt="index-mapping1.png" width="750"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="index-figura2" class="level2">
+          <img src="images/index-mapping2.png" alt="index-mapping2.png" width="1000"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="index-figura3" class="level2">
+          <img src="images/index-mapping3.png" alt="index-mapping3.png" width="800"/>
+          <figcaption><small>Fuente: SGC, 2015)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="AHP" class="level1">
+      <h1>Análisis Jerárquico de Procesos</h1>
+
+        <section id="ahp1" class="level2">
+          <h3>Toma de decisiones multicriterio</h3>
+          <p>Conjunto de aproximaciones, métodos, modelos, técnicas y herramientas dirigidas a mejorar a calidad integral
+            de los procesos de decisión seguidos por los individuos y los sistemas, para mejorar la efectividad, eficacia
+             y eficiencia de los proceso de decisión y a incrementar el conocimiento de los mismos.</p>
+          <h3>Paradigma de la Racionalidad</h3>
+          <p>Aaproximación orientada al proceso, cuyo propósito es la comprensión y el consenso. Y pretende la incorporación
+             a los modelos de aspectos subjetivos, intangibles y no considerados, que condicionan la toma de decisiones de
+             los individuos y organizaciones.<p>
+          <figcaption><small>Fuente: Moreno (2000)</small></figcaption>
+        </section>
+
+        <section id="ahp2" class="level2">
+          <img src="images/figura-ahp.png" alt="figura-ahp.png" width="600"/>
+          <figcaption><small>Fuente: Hervas & Bobrowsky (2009)</small></figcaption>
+        </section>
+
+        <section id="ahp3" class="level2">
+          <p>Es una técnica multi-objetivo y multi-criteria para toma de decisiones que permite al usuario llegar a una escala
+            de preferencias a partir de un determinado numero de alternativas. Consiste en organizar una serie de factores en
+            orden de jerarquía, asignando valores numéricos a valoraciones subjetivas sobre la relativa importancia de cada factor.</p>
+            <ul>
+              <li>Los pesos son obtenidos generalmente a través de los valores y vectores propios de la matriz. El vector propio
+                que corresponde al mayor valor propio genera la prioridad relativa de los factores.</li>
+              <li>También puede ser obtenido normalizando cada columna de la matriz de comparación, y calculando el promedio
+                de las filas para resolver la matriz.</li>
+            </ul>
+        </section>
+
+        <section id="ahp4" class="level2">
+          <p>Escala para incorporar los juicios o valoraciones del decisor. La escala es estrictamente positiva y elimina las
+            ambigüedades que tiene el ser humano en comparar elementos en la proximidad del cero o del infinito.</p>
+          <p>Los individuos son mas preciso al comparar elementos de la misma magnitud, número mágico de Miller (1956) 7(+/-2).</p>
+          <img src="images/saaty.png" alt="saaty.png" width="1000"/>
+          <figcaption><small>Fuente: Saaty (2000) tomado de Ayalew et al (2005)</small></figcaption>
+        </section>
+
+        <section id="ahp5" class="level2">
+          <img src="images/saaty1.png" alt="saaty1.png" width="1000"/>
+          <figcaption><small>Fuente: Neupane & Piantanakulchai (2006)</small></figcaption>
+        </section>
+
+        <section id="ahp6" class="level2">
+          <img src="images/matriz-comparacion.png" alt="matriz-comparacion.png" width="900"/>
+          <figcaption><small>Fuente: Neaupane & Piantanakulchai (2006)</small></figcaption>
+        </section>
+
+        <section id="cr" class="level2">
+          <h3>Radio de consistencia (CR)</h3>
+          <p>Es utilizado para estimar la probabilidad que la matriz de juicio fue creada aleatoriamente.</p>
+          <img src="images/cr.png" alt="cr.png" width="800"/>
+          <img src="images/ica.png" alt="ica.png" width="1200"/>
+          <figcaption><small>Fuente: Neaupane & Piantanakulchai (2006); Moreno (2000)</small></figcaption>
+        </section>
+
+        <section id="ahp7" class="level2">
+          <img src="images/ahp.png" alt="ahp.png" width="1100"/>
+          <figcaption><small>Fuente: Neupane & Piantanakulchai (2006)</small></figcaption>
+        </section>
+
+        <section id="ahp8" class="level2">
+          <img src="images/ahp1.png" alt="ahp1.png" width="1000"/>
+          <img src="images/ahp2.png" alt="ahp2.png" width="700"/>
+          <figcaption><small>Fuente: Ayalew et al (2007) en Niigata (Japón)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="ejemplo" class="level1">
+      <h1>Mapeo directo vs AHP</h1>
+
+        <section id="mapas" class="level2">
+          <img src="images/directo-ahp.jpg" alt="directo-ahp.png" width="450"/>
+          <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+        </section>
+
+        <section id="tabla" class="level2">
+          <img src="images/directo-ahp1.png" alt="directo-ahp1.png" width="600"/>
+          <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+        </section>
+
+      </section>
+
+    </div>
+ </div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    width: 1100,
+    height:770,
+    margin:0.1,
+    center: false,
+    slideNumber: 'c/t',
+    transition: 'linear',
+
+        math: {
+            // mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+            config: 'TeX-AMS_HTML-full'
+        },
+
+  // available themes are in /css/theme
+      theme: Reveal.getQueryHash().theme || 'journal',
+
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: '../../lib/js/classList.js' },
+    { src: 'plugin/math/math.js', async: true }
+  ]
+  });
+
+</script>
+
+</body>
+
+</html>

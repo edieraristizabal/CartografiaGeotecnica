@@ -1,0 +1,246 @@
+<!-- Copied from https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <title>CARTOGRAFÍA GEOTÉCNICA</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="CARTOGRAFÍA GEOTÉCNICA - Metodologias Fisicas">
+  <meta name="author" content="MetodologiasBivariadas" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <link rel="stylesheet" href="plugin/toc-progress/toc-progress.css">
+
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+  <style>
+
+  body {
+    background: #ffffff;
+    background-color: #ffffff;
+        }
+    
+  .container{
+      display: flex;
+  }
+
+  .col{
+      flex: 1;
+  }
+</style>
+
+  </style>
+
+</head>
+
+<body>
+
+      <script>
+        setInterval(showTime, 1000);
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            am_pm = "am";
+
+            if (hour > 12) {
+                hour -= 12;
+                am_pm = "pm";
+            }
+            if (hour == 0) {
+                hr = 12;
+                am_pm = "am";
+            }
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+
+            let currentTime = hour + ":"
+                + min + ":" + sec + am_pm;
+
+            document.getElementById("clock")
+                .innerHTML = currentTime;
+        }
+
+        showTime();
+    </script>
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <div id="marca-agua"><img style="border:none;box-shadow:none;width:60px;position:absolute;top:0%;right:0%;"src="images/un.png"/><p id="date"></p></div>
+      <!--<div id="lecture" style="font-size:20px;position:absolute;top:100%;right:32%;">Cartografía Geotécnica (Propagación)</div>-->
+      <div id="clock" style="position:absolute;top:100%;right:0%;">8:10:45</div>
+      <section data-background-color= "#ffffff"; data-state="primera">
+        <h1>CARTOGRAFÍA GEOTÉCNICA</h1>
+        <h2>Propagación</h2>
+        <p>
+        <h4><a href="https://edieraristizabal.github.io/">Prof. Edier Aristizábal</a></h4>
+        </p>
+          <img src="images/unal2.png" alt="unal.jpg" width="500"/>
+          <p id="demo" style="position:absolute;top:100%;right:40%;"></p>
+          <script>
+          var d = new Date();
+          var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+          document.getElementById("demo").innerHTML = months[d.getMonth()] +", "+d.getDate()+" / "+d.getFullYear();
+          </script>
+      </section>
+
+   
+
+        <section class="level1">
+          <img src="images/runout.png" width="750">
+          <figcaption><small>Fuente: Trancoso et al. (2013)</small></figcaption>
+        </section>
+        
+      <section class="level1">
+        <h1>Métodos para propagación</h1>
+        <br></br>
+        <ul>
+          <li>Evidencias geológicas y geomorfológicas (Hoblitt et al., 1998)</li><br></br>
+          <li>Métodos geométricos (Corominas et al., 2003; Copons & Vilaplana, 2008; Iverson et al., 1998)</li><br></br>
+          <li>Métodos racionales</li>
+        </ul>       
+      </section>   
+
+      <section class="level1">
+        <h1>Métodos con evidencias geológicas</h1>
+        
+        <section class="level2">
+        <ul>
+          <li>Cartografía de los depósitos (antiguos y recientes)</li><br></br>
+          <li>Estimar la mayor distancia alcanzada</li><br></br>
+          <li>Si existe un número suficiente de MenM inventariados, estadísticas de la distancia alcanzada y su probabilidad 
+            puede ser estimada</li>
+        </ul> <br></br>
+        <h3>Restricciones:</h3>
+        <ul>
+          <li>Los depósitos antiguos pueden ser removidos por erosión o cubiertos por nuevos depósitos</li>
+          <li>La geometría y condiciones responsable por antiguos MenM pueden haber cambiado.</li>
+          <li>Los resultados no pueden ser extrapolados a otras regiones</li>
+        </ul> 
+        </section>
+
+      </section> 
+
+      <section>
+        <h1>Métodos geométricos</h1>
+
+        <section>
+          <p>La evaluación de la propagación se realiza a través el análisis de relaciones geométricas entre 
+            parámetros de los MenM y distancia recorrida.</p>
+          <h3>Ángulo de distancia de viaje</h3>
+          <p>Angulo que conecta el puto mas alto de la corona del MenM a la margen distal de la masa desplazada. La tangente de este 
+            ángulo es la relación entre el componente vertical (H) y el horizontal (L). Relaciones empíricas señalan una relación 
+            entre dicho ángulo y el volumen del MenM. Sin embargo se presentan bajos coeficientes de correlación y mucha dispersión. 
+            Cuando se diferencia por tipo de movimiento mejora.</p>
+            <p>Por lo tanto cuando se conoce la fuente y el volumen potencial se puede conocer la distancia de propagación.</p>
+        </section>
+
+        <section>
+          <h3>Modelo empírico de Rickenmann (1999)</h3>
+          <img src="images/angulo-viaje.png" width="950">
+        </section>
+
+        <section>
+          <h3>Ángulo de sombra</h3>
+          <img src="images/angulo-sombra.png" width="750">
+          <figcaption><small>Fuente: Wieczorek et al., 1995</small></figcaption>
+        </section>
+
+      </section>
+
+      <section class="level1">
+        <h1>Métodos racionales</h1>
+
+        <section class="level2">
+          <h3>Métodos discretos</h3>
+          <p>Cuando la granularidad de los movimientos es importante. El caso mas simpe es un bloque en caída de una ladera. 
+            El caso mas complejo es avalancha de rocas, el cual está compuesto por un conjunto de bloques de roca 
+            (esféricas o circulares) con unas leyes que describen las fuerzas de contacto. Generalmente se reduce el número
+            de bloques que conforman la avalancha. No se recomienda para otro tipo de eventos (deslizamientos, flujos de lodos, 
+            lahares, entre otros) debido a la reología del flujo de materiales.</p>
+            <img src="images/rockfall.png" width="500">
+        </section>
+         
+          <section>
+            <h3>Métodos continuos</h3>
+            <p>Están basados en la mecánica de medios continuos, y pueden incluir el acoplamiento del comportamiento mecánico con 
+              la hidráulica y termo mecánica</p>
+              <img src="images/ac_animation.gif" width="600">
+          </section>
+
+          <section>
+            <h3>r.avaflow</h3>
+                <img src="images/r-avaflow.png" width="1000">
+          </section>
+
+          <section>
+            <h3>Flow-R</h3>
+                <img src="images/flow-r.png" width="1000">
+          </section>
+
+        </section>
+
+  </div>
+    </div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    width: 1100,
+    height:770,
+    margin:0.1,
+    center: false,
+    slideNumber: 'c/t',
+    transition: 'linear',
+
+        math: {
+            // mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+            config: 'TeX-AMS_HTML-full'
+        },
+
+  // available themes are in /css/theme
+      theme: Reveal.getQueryHash().theme || 'journal',
+
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: '../../lib/js/classList.js' },
+    { src: 'plugin/math/math.js', async: true },
+    { src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize(); toc_progress.create(); } }
+  ]
+  });
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,414 @@
+<!-- Copied from https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <title>CARTOGRAFÍA GEOTÉCNICA</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="CARTOGRAFÍA GEOTÉCNICA - MetodologiasBivariadas">
+  <meta name="author" content="MetodologiasBivariadas" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+  <style>
+
+  body {
+    background: #ffffff;
+    background-color: #ffffff;
+        }
+
+  </style>
+
+</head>
+
+<body>
+
+      <script>
+        setInterval(showTime, 1000);
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            am_pm = "am";
+
+            if (hour > 12) {
+                hour -= 12;
+                am_pm = "pm";
+            }
+            if (hour == 0) {
+                hr = 12;
+                am_pm = "am";
+            }
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+
+            let currentTime = hour + ":"
+                + min + ":" + sec + am_pm;
+
+            document.getElementById("clock")
+                .innerHTML = currentTime;
+        }
+
+        showTime();
+    </script>
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <div id="marca-agua"><img style="border:none;box-shadow:none;width:60px;position:absolute;top:0%;right:0%;"src="images/un.png"/><p id="date"></p></div>
+      <div id="lecture" style="font-size:20px;position:absolute;top:100%;right:32%;">Cartografía Geotécnica (Métodos Bivariados)</div>
+      <div id="clock" style="position:absolute;top:100%;right:0%;">8:10:45</div>
+      <section data-background-color= "#ffffff"; data-state="primera">
+        <h1>CARTOGRAFÍA GEOTÉCNICA</h1>
+        <h2>Métodos Estadísticos Bivariados</h2>
+        <p>
+        <h4><a href="https://edieraristizabal.github.io/">Prof. Edier Aristizábal</a></h4>
+        </p>
+          <img src="images/unal2.png" alt="unal.jpg" width="500"/>
+          <p id="demo" style="position:absolute;top:100%;right:40%;"></p>
+          <script>
+          var d = new Date();
+          var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+          document.getElementById("demo").innerHTML = months[d.getMonth()] +", "+d.getDate()+" / "+d.getFullYear();
+          </script>
+      </section>
+
+      <section id="contenido" class="level1">
+        <h2>Contenido</h2>
+          <ul>
+            <li>Métodos</li>
+            <li>Modelos basados en datos</li>
+            <li>Modelos bivariados</li>
+            <li>Likelihood</li>
+            <li>Statistical Index model</li>
+            <li>Weights of Evidence</li>
+            <li>Evidential belief function</li>
+            <li>Certainty factor</li>
+          </ul>
+      </section>
+
+      <section id="datos" class="level1">
+        <img src="images/metodos.png" alt="metodos.png" width="850"/>
+      </section>
+
+      <section id="metodos" class="level1">
+      <h2>Métodos Estadístico (data-driven)</h2>
+
+          <section id="metodo-datos" class="level2">
+            <img src="images/modelo-datos.png" alt="modelo-datos.png" width="1000"/>
+          </section>
+
+          <section id="modelos" class="level2">
+            <img src="images/modelos-estadisticos.png" alt="modelos-estadísticos.png" width="550"/>
+                <figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+          </section>
+
+          <section id="definicion1" class="level2">
+            <h3>Los métodos estadísticos se ajustan mejor para movimientos en masa:.</h3>
+            <ul>
+              <li>Que no se mueven mucho de su área fuente</li>
+              <li>Que no cambian significativamente su tamaño y geometría durante el movimiento (rotacional o traslacional).</li>
+            </ul>
+              <br /><br />
+            <h3>Y menos aplicables a movimientos en masa:</h3>
+            <ul>
+              <li>Movimientos en masa que viajan largas distancias (cientos de miles de metros)</li>
+              <li>Que cambian significativamente su volumen y geometría durante su movimiento desde el área fuente a la zona depositacional.</li>
+              <li>Para debris flow se recomienda generalmente modelos con base física.</li>
+            </ul>
+            <p>La falta de algunos movimientos en masa en el inventario puede no representar un problema para el modelo de susceptibilidad,
+              en tanto que el inventario tenga una razonable representación de la abundancia y distribución de los movimientos en la zona de
+              estudio. Consistencia es mas importante que este completo.</p>
+              <figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+          </section>
+
+          <section id="modelos-estadisticos" class="level2">
+            <img src="images/metodos-estadisticos.png" alt="metodos-estadísticos.png" width="680"/>
+                <figcaption><small>Fuente: Corominas et al. (2014)</small></figcaption>
+          </section>
+
+      </section>
+
+      <section id="bivariado" class="level1">
+      <h2>Método Estadístico Bivariado</h2>
+
+          <section id="bivariado1" class="level2">
+            <p>Cada mapa de factor (pendientes, geología, uso del suelo, etc,) es combinado con el mapa de distribución de movimientos en masa,
+              y los valores de los pesos, basados generalmente en densidad de deslizamientos, son calculados para cada clase de la variable
+              (rango de pendiente, unidad litológica, tipo de uso del suelo, etc, ).</p>
+            <ul>
+              <li>Los métodos estadísticos bivariados son una buena herramienta de aprendizaje para el analista encontrar qué factores o
+                combinación de factores juegan un papel importante en la ocurrencia de movimientos en masa.</li>
+              <li>Pueden ser combinados con métodos heurísticos</li>
+              <li>Están basados en la asociación observada entre la distribución de los movimientos en masa y cada clase.</li>
+              <li>Todos los parámetros tienen una importancia igual sobre la ocurrencia de deslizamientos.</li>
+              <li>Las variables deben ser transformadas a categóricas</li>
+              <figcaption><small>Fuente: AGS (2007)</small></figcaption>
+            </ul>
+          </section>
+
+          <section id="bivariado2" class="level2">
+          <h3>Procedimiento (i)</h3>
+            <img src="images/bivariado2.png" alt="bivariado2.png" width="500"/>
+            <figcaption><small>Fuente: van Westen et al, (1997)</small></figcaption>
+          </section>
+
+          <section id="bivariado3" class="level2">
+          <h3>Procedimiento (ii)</h3>
+            <img src="images/bivariado3.png" alt="bivariado3.png" width="900"/>
+            <img src="images/lsi.png" alt="lsi.png" width="700"/>
+            <figcaption><small>Fuente: van Westen et al, (1997)</small></figcaption>
+          </section>
+
+      </section>
+
+      <section id="frm0" class="level1">
+      <h2>Likelihood - Frequency Ratio Model</h2>
+
+        <section id="frm" class="level2">
+          <img src="images/frm.png" alt="frm.png" width="200"/>
+          <p>Ci es el número de celdas con valor i, Ct es el total de número de celdas de la zona de studio, n es el total
+            de valores enteros en X.</p>
+          <img src="images/frm1.png" alt="fmr1.png" width="200"/>
+          <p>Li es la cuenca de factor X con valor i que caen dentro del area de deslizamientos, Lt es el total de area
+            con deslizamientos, n es el número de valores enteros de X el número de factores X.</p>
+            <img src="images/frm2.png" alt="fmr2.png" width="150"/>
+        </section>
+
+        <section id="fmr3" class="level2">
+          <p>La relación de frecuencia (FR) de la clase de cada factor condicionante es calculada dividiendo la relación de
+            la ocurrencia de movimientos en masa por la relación del área de la clase.</p>
+          <img src="images/frm3.png" alt="fmr3.png" width="800"/>
+          <figcaption><small>Fuente: Chen et al, (2016); Yalcin et al. (2011)</small></figcaption>
+        </section>
+
+        <section id="frm4" class="level2">
+          <img src="images/frm4.png" alt="frm4.png" width="800"/>
+          <figcaption><small>Fuente: Liu et al.  (2016)</small></figcaption>
+        </section>
+
+        <section id="frm5" class="level2">
+          <img src="images/frm5.png" alt="frm5.png" width="1000"/>
+          <figcaption><small>Fuente: Akgun et al (2008)</small></figcaption>
+        </section>
+
+        <section id="frm6" class="level2">
+          <img src="images/frm6.png" alt="frm6.png" width="1000"/>
+          <figcaption><small>Fuente: Akgun et al (2008)</small></figcaption>
+        </section>
+
+        <section id="frm7" class="level2">
+          <img src="images/frm7.png" alt="frm7.png" width="500"/>
+          <figcaption><small>Fuente: Chen et al. (2016)</small></figcaption>
+        </section>
+
+        </section>
+
+
+      <section id="SIM" class="level1">
+      <h1>Statistical Index Model</h1>
+
+        <section id="sim1" class="level2">
+          <p>El valor del peso para cada unidad categórica es definido como el logaritmo natural de la densidad de
+            deslizamientos en una clase dividido la densidad de deslizamientos en toda la cuenca, de acuerdo con
+            la siguiente ecuación:</p>
+          <img src="images/sim1.png" alt="sim1.png" width="500"/>
+          <p>Donde Wij es el pesoo dado a una cierta clase i de un parámetro j. Dij es la densidad de deslizamientos
+            de la clase i del parámetro j. D es la densidad total de deslizamientos de todo el mapa. Nij es el número
+            de pixeles en una cierta clase i del parametro j. N es el total de celdas que correpsonden a deslizamientos
+             en todo el mapa. S es el total de pixeles del mapa.</p>
+          <figcaption><small>Fuente: Chen et al, (2016); van Westen (1997)</small></figcaption>
+        </section>
+
+        <section id="sim2" class="level2">
+          <img src="images/sim2.png" alt="sim2.png" width="450"/>
+          <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="woe" class="level1">
+      <h1>Weights-of-Evidence (WoE)</h1>
+
+        <section id="odds" class="level2">
+          <img src="images/odds.png" alt="odds.png" width="1000"/>
+        </section>
+
+        <section id="bayes" class="level2">
+          <p>La probabilidad priori P(c) es usualmente estimada empíricamente con el conocimiento acerca de la ocurrencia
+             de un evento c en el pasado bajo iguales condiciones. Cuando la probabilidad de la evidencia P(x) es integrada
+              en el cálculo de la probabilidad, se conoce como probabilidad condicionada o posterior P(c/x), es decir la
+              probabilidad que un evento x ocurrirá bajo la presencia de una evidencia x. El teorema de Bayes integra ambas
+               probabilidades.</p>
+          <img src="images/bayes_rule.png" alt="bayes_rule.jpg" width="630"/>
+        </section>
+
+        <section id="woe1" class="level2">
+          <p>Este método está basado en la teoría de probabilidad Bayesiana. En el cual para determinar la relativa
+            importancia de los datos se utiliza los conceptos de probabilidad priori y posterior.</p>
+          <img src="images/woe-c.png" alt="woe-c.png" width="500"/>
+          <figcaption><small>Fuente: Lee et al., (2002); Vahidnia et al (2009)</small></figcaption>
+          <p>Un peso positivo  de W+ indica que la presencia del factor es favorable para la ocurrencia de deslizamientos, y
+            la magnitud indica una correlación negativa. Un valor positivo de W- señala que la ausencia del factor de causa
+            es favorable para la ocurrencia de deslizamientos, <strong>Contraste (C)</strong>, y refleja la asociación espacial
+            total entre una variable predictora y la ocurrencia de deslizamientos. Un valor de 0 indica que la clase considerada
+            del factor de causa no es significativa en el análisis.</p>
+        </section>
+
+        <section id="woe2" class="level2">
+          <img src="images/woe.png" alt="woe.png" width="500"/>
+          <img src="images/pd.png" alt="pd.png" width="200"/>
+          <img src="images/bayes.png" alt="bayes.png" width="600"/>
+        </section>
+
+        <section id="woe3" class="level2">
+          <img src="images/woe.png" alt="woe.png" width="450"/>
+          <img src="images/woe1.png" alt="woe1.png" width="900"/>
+        </section>
+
+        <section id="woe4" class="level2">
+          <img src="images/woe2.png" alt="woe2.png" width="700"/>
+          <img src="images/woe3.png" alt="woe3.png" width="700"/>
+          <p>La probabilidad final (P) de cada celda es la suma de los pesos de cada parámetro y la probabilidad priori (Pp(s))</p>
+          <img src="images/woe5.png" alt="woe5.png" width="700"/>
+          <figcaption><small>Fuente: Lee et al. (2002);  van Westen et al (2003)</small></figcaption>
+        </section>
+
+        <section id="woe5" class="level2">
+          <img src="images/woe4.png" alt="woe4.png" width="300"/>
+          <ul>
+            <li><strong>A1</strong> es el número de pixeles con deslizamientos en una clase</li>
+            <li><strong>A2</strong> es el número de pixeles con deslizamientos que no están presentes en dicha clase</li>
+            <li><strong>A3</strong> es el número de pixeles en la clase en los cuales no hay deslizamientos</li>
+            <li><strong>A4</strong> es el número de pixeles en la clase donde no hay deslizamientos y que tampoco el factor es presente.</li>
+          </ul>
+          <br /><br />
+          <figcaption><small>Fuente: Ozdemir & Altural (2013)</small></figcaption>
+        </section>
+
+        <section id="woe6" class="level2">
+          <img src="images/woe-ejer.png" alt="woe-ejer.png" width="1000"/>
+        </section>
+
+        <section id="woe-mapa" class="level2">
+          <img src="images/woe-mapa.png" alt="woe-mapa.png" width="500"/>
+          <figcaption><small>Fuente: Chen et al. (2016)</small></figcaption>
+        </section>
+
+        <section id="woe-mapa1" class="level2">
+          <img src="images/woe-mapa1.png" alt="woe-mapa1.png" width="800"/>
+          <figcaption><small>Fuente: Chen & Li (2014)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="ebf" class="level1">
+      <h1>Evidential Belief Funtion (EBF)</h1>
+
+        <section id="ebf1" class="level2">
+          <p>El modelo EBF (Dempster - Shafer) consiste en el grado de Belief (Bel), Disbelief (Dis), Uncertainty (Unc)
+            y Plausibility (Pls), con valores entre 0 y 1. Bels y Pls representan el límite de probabilidad bayesiana inferior
+            y superior. Mientras que, Pls es mayor o igual que Bel, y Unc es la diferencia entre ellos, indicando la
+            incertidumbre del resultado (Ghosh & Carranza, 2010; Chen et al., 2016).</p>
+          <img src="images/ebf1.png" alt="ebf1.png" width="300"/>
+          <img src="images/ebf2.png" alt="ebf2.png" width="300"/>
+          <img src="images/ebf3.png" alt="ebf3.png" width="300"/>
+          <img src="images/ebf4.png" alt="ebf4.png" width="300"/>
+          <img src="images/ebf5.png" alt="ebf5.png" width="600"/>
+          <figcaption><small>N(L) es el número total de pixeles con deslizamientos. N(S) es el número total de pixeles.
+          Donde j son las variables, e i son las clases, por lo que N(Cij) es el número de pixeles en la clase Cij.</small></figcaption>
+        </section>
+
+        <section id="ebf-ejemplo" class="level2">
+          <img src="images/ebf0.png" alt="ebf0.png" width="850"/>
+          <figcaption><small>Fuente: Nampak et al. (2014)</small></figcaption>
+        </section>
+
+        <section id="ebf-ejercicio" class="level2">
+          <img src="images/ebf6.png" alt="ebf6.png" width="650"/>
+          <figcaption><small>Fuente: Ghosh & Carranza (2010)</small></figcaption>
+        </section>
+
+    </section>
+
+    <section id="vf" class="level1">
+        <h1>Certainty Factor (CF)</h1>
+        <p>El valor de CF varía entre -1 y +1. Un valor positivo significa un incremento en la certidumbre de la ocurrencia de deslizamientos,
+          mientras que un valor negativo corresponde a una reducción en dicha certidumbre. Un valor cercano a 0 significa que la probabilidad priori
+          es muy similar a la probabilidad condicional (Pourghsemi et al. 2012).</p>
+        <img src="images/cf.png" alt="cf.png" width="400"/>
+        <p>Donde PPa es la probabilidad condicional de la ocurrencia de un deslizamiento en la clase a. PPs es la probabilidad priori del
+          número total de deslizamientos en el área (Kanungo et al. 2011).</p>
+    </section>
+
+    <section id="ejemplos" class="level1">
+      <img src="images/bivariados-mapas.png" alt="bivariados-mapas.png" width="580"/>
+      <figcaption><small>Fuente: Chen et al. (2016)</small></figcaption>
+    </section>
+
+
+
+  </div>
+ </div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    width: 1100,
+    height:770,
+    margin:0.1,
+    center: false,
+    slideNumber: 'c/t',
+    transition: 'linear',
+
+        math: {
+            // mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+            config: 'TeX-AMS_HTML-full'
+        },
+
+  // available themes are in /css/theme
+      theme: Reveal.getQueryHash().theme || 'journal',
+
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: '../../lib/js/classList.js' },
+    { src: 'plugin/math/math.js', async: true }
+  ]
+  });
+
+</script>
+
+</body>
+
+</html>

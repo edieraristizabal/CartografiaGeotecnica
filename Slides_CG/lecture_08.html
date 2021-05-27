@@ -1,0 +1,407 @@
+<!-- Copied from https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <title>CARTOGRAFÍA GEOTÉCNICA</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="CARTOGRAFÍA GEOTÉCNICA - Introducción">
+  <meta name="author" content="Introducción" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+      <script>
+        setInterval(showTime, 1000);
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            am_pm = "am";
+
+            if (hour > 12) {
+                hour -= 12;
+                am_pm = "pm";
+            }
+            if (hour == 0) {
+                hr = 12;
+                am_pm = "am";
+            }
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+
+            let currentTime = hour + ":"
+                + min + ":" + sec + am_pm;
+
+            document.getElementById("clock")
+                .innerHTML = currentTime;
+        }
+
+        showTime();
+    </script>
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <div id="marca-agua"><img style="border:none;box-shadow:none;width:60px;position:absolute;top:0%;right:0%;"src="images/un.png"/><p id="date"></p></div>
+      <div id="lecture" style="font-size:20px;position:absolute;top:100%;right:32%;">Cartografía Geotécnica (Exploración de variables)</div>
+      <div id="clock" style="position:absolute;top:100%;right:0%;">8:10:45</div>
+      <section data-background-color= "#ffffff"; data-state="primera">
+        <h1>CARTOGRAFÍA GEOTÉCNICA</h1>
+        <h2>Exploración de variables</h2>
+        <p>
+        <h4><a href="https://edieraristizabal.github.io/">Prof. Edier Aristizábal</a></h4>
+        </p>
+          <img src="images/unal2.png" alt="unal.jpg" width="500"/>
+          <p id="demo" style="position:absolute;top:100%;right:40%;"></p>
+          <script>
+          var d = new Date();
+          var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+          document.getElementById("demo").innerHTML = months[d.getMonth()] +", "+d.getDate()+" / "+d.getFullYear();
+          </script>
+      </section>
+
+      <section id="contenido" class="level1">
+        <h2>Contenido</h2>
+          <ul>
+            <li>Definición</li>
+            <li>Tipo de variables</li>
+            <li>Ejemplos de variables</li>
+            <li>Análisis exploratorio de variables</li>
+            <li>Selección de variables</li>
+            <li>Análisis de componentes principales</li>
+          </ul>
+      </section>
+
+      <section id="definicion" class="level1">
+      <h2>Variables</h2>
+      <p> Propiedad, atributo, característica, aspecto o dimensión de un objeto, hecho o fenómeno que puede variar
+        y cuya variación es medible.</p>
+        <ul>
+        <li><strong>Ser observable:</strong> Su información debe ser concreta y evidente en la realidad.
+        <li><strong>Ser cambiante:</strong> Puede adquirir diferentes categorías y valores.
+        <li><strong>Ser medible:</strong> Puede ser cuantificable.
+        <li><strong>Tener referencia conceptual:</strong> Deben emanar de un previo conocimiento teórico de la realidad.
+        <ul>
+      </section>
+
+      <section id="tipo-variable" class="level1">
+      <h1></h1>
+
+      <section id="tipo-variable1" class="level2">
+        <h2>Tipo de variables</h2>
+        <h3>Variables independientes</h3>
+        <p>Preparatorias - explicativas – cuasiestáticas - condicionantes – predictoras - intrínsecas</p>
+        <p>Característica o propiedad que se supone ser la causa del fenómeno estudiado, en este caso los movimientos en masa.</p>
+        <p>Ej. Geología, pendiente, aspecto, etc, etc.</p>
+        <h3>Variable dependiente</h3>
+        <p>Es el factor que es observado y medido para determinar el efecto de la variable independiente. En este caso sólo existe
+        una variable dependiente y es la ocurrencia o no ocurrencia de los movimientos en masa.</p>
+      </section>
+
+      <section id="tipo-variable2" class="level2">
+        <h2>Por su naturaleza...</h2>
+        <img src="images/variables.png" alt="tipo-variables" width="1000"/>
+      </section>
+
+      </section>
+
+      <section id="variable" class="level1">
+      <h1>Variables Condicionantes</h1>
+
+        <section id="variable1" class="level2">
+          <img src="images/variables-condicionantes.jpg" alt="variables-condicionantes.jpg" width="850"/>
+          <figcaption><small>Fuente: van Westen et al. (2008)</small></figcaption>
+        </section>
+
+        <section id="variable2" class="level2">
+          <img src="images/variables-reichenbach.png" alt="variables-reichenbach.png" width="750"/>
+          <figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+        </section>
+
+        <section id="variable3" class="level2">
+          <img src="images/variables-pourgh.png" alt="variables-pourgh.png" width="900"/>
+          <figcaption><small>Fuente: Pourghasemi et al. (2010)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="variable-ejemplos" class="level1">
+      <h1>Ejemplos de variables</h1>
+
+        <section id="variable-todos" class="level2">
+          <img src="images/variables-ejemplo.png" alt="variables-ejemplo.png" width="850"/>
+          <figcaption><small>Fuente: Shukla et al. (2016) – Río Mandakini (India)</small></figcaption>
+        </section>
+
+        <section id="variable-ejemplos2" class="level2">
+          <h2>Variables continuas y categóricas</h2>
+          <img src="images/inclinacion.jpg" alt="inclinacion.jpg" width="240"/>
+          <img src="images/inclinacion-continua.png" alt="inclinacion-continua.png" width="310"/>
+          <figcaption><small>Fuente: Shukla et al. (2016) – Río Mandakini (India)</small></figcaption>
+        </section>
+
+        <section id="geologia" class="level2">
+          <h2>Formaciones superficiales</h2>
+          <img src="images/geologia-superficial.jpg" alt="geologia-superficial.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="aspecto" class="level2">
+          <h2>Aspecto</h2>
+          <img src="images/aspecto.jpg" alt="aspecto.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="cinematico" class="level2">
+          <h2>Análisis Cinemático</h2>
+          <img src="images/cinematico.jpg" alt="cinematico.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="cobertura" class="level2">
+          <h2>Coberturas</h2>
+          <img src="images/cobertura.jpg" alt="cobertura.jpg" width="650"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="cambios-cobertura" class="level2">
+          <h2>Cambios de coberturas</h2>
+          <img src="images/cambios-coberturas.jpg" alt="cambios-coberturas.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="curvatura-plana" class="level2">
+          <h2>Curvatura plana</h2>
+          <img src="images/curvatura-plana.jpg" alt="curvatura-plana.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="curvatura-perfil" class="level2">
+          <h2>Curvatura perfil</h2>
+          <img src="images/curvatura-perfil.jpg" alt="curvatura-perfil.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="curvatura-total" class="level2">
+          <h2>Curvatura total</h2>
+          <img src="images/curvatura-total.jpg" alt="curvatura-total.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="pendiente" class="level2">
+          <h2>Pendiente</h2>
+          <img src="images/pendiente.jpg" alt="pendiente.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="inclinacion-ladera" class="level2">
+          <h2>Inclinación de la ladera</h2>
+          <img src="images/inclinacion-ladera.jpg" alt="inclinacion-ladera.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="relieve-relativo" class="level2">
+          <h2>Relieve relativo</h2>
+          <img src="images/relieve-relativo.jpg" alt="relieve-relativo.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="indice-humedad" class="level2">
+          <h2>Indice de humedad topográfica</h2>
+          <img src="images/indice-humedad.jpg" alt="indice-humedad.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="indice-posicion" class="level2">
+          <h2>Indice de posición topográfica</h2>
+          <img src="images/indice-posicion.jpg" alt="indice-posicion.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="indice-rugosidad" class="level2">
+          <h2>Indice de rugosidad</h2>
+          <img src="images/indice-rugosidad.jpg" alt="indice-rugosidad.jpg" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="variables-bufer" class="level2">
+          <h2>Variables tipo buffer</h2>
+          <img src="images/variables-bufer.png" alt="variables-bufer.png" width="800"/>
+          <figcaption><small>Fuente: Pourghasemi et al. (2010) en la cuenca del Haraz (Iran)</small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="analisis-exploratorio" class="level1">
+      <h1>Análisis Exploratorio de Variables</h1>
+
+        <section id="analisis-exploratorio1" class="level2">
+          <h2>Univariado</h2>
+          <img src="images/histograma.png" alt="histograma.png" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="kernel" class="level2">
+          <h2>Univariado</h2>
+          <img src="images/kernel.png" alt="kernel.png" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="boxplot" class="level2">
+          <h2>Univariado</h2>
+          <img src="images/boxplot.png" alt="boxplot.png" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="bivariado1" class="level2">
+          <h2>Bivariado</h2>
+          <img src="images/bivariado1.png" alt="bivariado1.png" width="600"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="bivariado" class="level2">
+          <h2>Bivariado</h2>
+          <img src="images/bivariado.png" alt="bivariado.png" width="550"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="analisis-exploratorio" class="level1">
+      <h1>Selección de Variables</h1>
+
+        <section id="bivariado-con" class="level2">
+          <h2>Capacidad de separación</h2>
+          <img src="images/bivariado-con.png" alt="bivariado-con.png" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="bivariado1-con" class="level2">
+          <h2>Capacidad de separación</h2>
+          <img src="images/bivariado1-con.png" alt="bivariado1-con.png" width="750"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="matriz" class="level2">
+          <h2>Matriz de correlación</h2>
+          <img src="images/matriz.png" alt="matriz.png" width="700"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+      </section>
+
+      <section id="componentes-principales" class="level1">
+      <h1>Análisis de Componentes principales</h1>
+
+        <section id="pca" class="level2">
+          <h2>PCA</h2>
+          <img src="images/pca.png" alt="pca.png" width="1000"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="pca-3d" class="level2">
+          <h2>PCA</h2>
+          <img src="images/pca-3d.png" alt="pca-3d.png" width="1000"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="varianza" class="level2">
+          <h2>Varianza de cada componente</h2>
+          <img src="images/pca2.png" alt="pca2.png" width="1000"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="aporte-variable" class="level2">
+          <h2>Aporte de cada variable</h2>
+          <img src="images/pca3.png" alt="pca3.png" width="1000"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="aporte-variable1" class="level2">
+          <h2>Aporte de cada variable</h2>
+          <img src="images/pca4.png" alt="pca4.png" width="500"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="aporte-variable2" class="level2">
+          <h2>Aporte de cada variable</h2>
+          <img src="images/pca5.png" alt="pca5.png" width="800"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+        <section id="aporte-variable3" class="level2">
+          <h2>Aporte de cada variable</h2>
+          <img src="images/pca6.png" alt="pca6.png" width="1000"/>
+          <figcaption><small></small></figcaption>
+        </section>
+
+      </section>
+
+    </div>
+ </div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    width: 1100,
+    height:770,
+    margin:0.1,
+    center: false,
+    slideNumber: 'c/t',
+    transition: 'linear',
+
+        math: {
+            // mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+            config: 'TeX-AMS_HTML-full'
+        },
+
+  // available themes are in /css/theme
+      theme: Reveal.getQueryHash().theme || 'journal',
+
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: '../../lib/js/classList.js' },
+    { src: 'plugin/math/math.js', async: true }
+  ]
+  });
+
+</script>
+
+</body>
+
+</html>
