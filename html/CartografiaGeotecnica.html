@@ -1,0 +1,3416 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Cartografía Geotécnica</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/Serif.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+		<link rel="stylesheet" href="dist/style.css">
+
+	</head>
+	<body>
+
+		<script>
+			setInterval(showTime, 1000);
+			function showTime() {
+				let time = new Date();
+				let hour = time.getHours();
+				let min = time.getMinutes();
+				let sec = time.getSeconds();
+				am_pm = "am";
+	
+				if (hour > 12) {
+					hour -= 12;
+					am_pm = "pm";
+				}
+				if (hour == 0) {
+					hr = 12;
+					am_pm = "am";
+				}
+	
+				hour = hour < 10 ? "0" + hour : hour;
+				min = min < 10 ? "0" + min : min;
+				sec = sec < 10 ? "0" + sec : sec;
+	
+				let currentTime = hour + ":"
+					+ min + ":" + sec + am_pm;
+	
+				document.getElementById("clock")
+					.innerHTML = currentTime;
+			}
+	
+			showTime();
+		</script>
+
+		<div class="reveal">
+			<div class="slides">
+			
+				<div id="marca-agua"><img style="border:none;box-shadow:none;width:60px;position:absolute;top:0%;right:0%;"src="https://i.pinimg.com/564x/8a/d1/27/8ad12724bdc797e03a9c4561134fc176.jpg"/><p id="date"></p></div>
+				<!--<div id="lecture" style="font-size:20px;position:absolute;top:100%;right:32%;">Machine Learning (Introducción)</div>-->
+				<div id="clock" style="font-size:20px;position:absolute;top:98%;right:0%;">0:00:00</div>
+				<section data-background-color= "#ffffff"; data-state="primera">
+				  <h1 style="font-size: 60px; color: black;">GEOMORFOLOGÍA</h1>
+				  <p>
+				  <h4><a href="https://edieraristizabal.github.io/">Prof. Edier Aristizábal</a></h4>
+				  </p>
+					<img src="https://i.pinimg.com/564x/f8/5b/28/f85b28f72a65d9c64d8c5e4a7bac57aa.jpg" alt="unal.jpg" width="600"/>
+					<p id="demo" style="position:absolute;top:100%;right:40%; color: gray;"></p>
+					<script>
+					var d = new Date();
+					var months = ["Jan.","Feb.","Mar.","Apr.","May.","Jun.","Jul.","Aug.","Sept.","Oct.","Nov.","Dec."];
+					document.getElementById("demo").innerHTML = months[d.getMonth()] + " " +d.getDate()+" / "+d.getFullYear();
+					</script>
+				</section>
+
+				<section>
+					<section><h1>Amenazas de origen natural & Ordenamiento territorial</h1></section>
+  
+					  <section>
+						  <img src="https://ars.els-cdn.com/content/image/3-s2.0-B9780124095489093878-f09387-01-9780124095489.jpg" width="1000">
+					  </section>
+			
+					  <section>
+						<img src="https://i.pinimg.com/564x/b3/e4/9a/b3e49a61279d9b6c9c3e71af571ee091.jpg" alt="Colombia" width="800"/>
+					  </section>
+				  
+					  <section id="salgar" class="level2">
+						<img src="https://i.pinimg.com/564x/ff/ba/df/ffbadf9de3d59940f87b1eba1a532f91.jpg" alt="Salgar" width="700"/>
+							<figcaption><small>Fuente: El Tiempo</small></figcaption>
+					  </section>
+			
+					  <section id="mocoa" class="level2">
+						<img src="https://i.pinimg.com/564x/1a/cb/d4/1acbd4c99eb19253ed2ef2c35a07c6db.jpg" alt="Mocoa" width="700"/>
+							<figcaption><small>Fuente: García-Delgado et al., 2019</small></figcaption>
+					  </section>	  
+  
+					  <section>
+						  <h3>Definición</h3>
+						  <img src="https://i.pinimg.com/564x/4d/9e/ad/4d9ead40cb94c85ebf5c7798fd65bc14.jpg" width="800">
+					  </section>
+   
+					  <section>
+						  <h3>Clasificación EM-DAT</h3>
+						  <img src="https://www.researchgate.net/profile/Halil-Akinci/publication/236152465/figure/fig1/AS:299290237915138@1448367761338/Classification-of-natural-disasters-Vos-et-al-2010.png" width="1000">
+					  </section>
+ 
+					  <section>
+						  <iframe src="https://ourworldindata.org/grapher/number-of-natural-disaster-events" loading="lazy" style="width: 80%; height: 600px; border: 0px none;"></iframe>
+					  </section>
+  
+					  <section>
+						  <iframe src="https://ourworldindata.org/grapher/natural-disasters-by-type" loading="lazy" style="width: 80%; height: 600px; border: 0px none;"></iframe>
+					  </section>
+  
+					  <section>
+						  <iframe src="https://ourworldindata.org/grapher/number-of-deaths-from-natural-disasters?time=1978..2018&country=All+natural+disasters~Landslide~Earthquake~Mass+movement+%28dry%29~Volcanic+activity" loading="lazy" style="width: 80%; height: 600px; border: 0px none;"></iframe>
+					  </section>
+  
+					  <section>
+						  <iframe src="https://ourworldindata.org/grapher/share-deaths-from-natural-disasters?tab=chart&country=~COL" loading="lazy" style="width: 80%; height: 600px; border: 0px none;"></iframe>
+					  </section>
+  
+					  <section>
+						  <iframe src="https://ourworldindata.org/grapher/number-of-deaths-from-natural-disasters?time=1901..2018&country=Earthquake~Flood~Drought~Extreme+temperature~Extreme+weather" loading="lazy" style="width: 80%; height: 600px; border: 0px none;"></iframe>
+					  </section>
+  
+					  <section>
+						  <iframe src="https://ourworldindata.org/grapher/global-disaster-losses-gdp-share" loading="lazy" style="width: 80%; height: 600px; border: 0px none;"></iframe>
+					  </section>
+  
+					  <section>
+						  <iframe src="https://ourworldindata.org/grapher/direct-disaster-loss-as-a-share-of-gdp" loading="lazy" style="width: 80%; height: 600px; border: 0px none;"></iframe>
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/f4/11/6b/f4116b195ac2703d825f74170fbf8a3e.jpg" width="800">
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/5b/bc/b7/5bbcb7a0ac082ab43fab8160555a426c.jpg" width="800">
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/c3/c3/d8/c3c3d8bb804a9f0bbe130b3ca807b8ec.jpg" alt="Colombia" width="780"/>
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/96/95/a7/9695a77b887acc3916f42462ccdf6f28.jpg" width="780">
+					  </section>
+  
+					  <section>
+						  <h3 style="font-size: 30px;color: blue;">Villatina (1987)</h3>
+						  <img src="https://i.pinimg.com/564x/c3/d8/d7/c3d8d7d2ce7ab31af4603c116ff50b08.jpg" width="780">
+					  </section>
+  
+					  <section>
+						  <h3 style="font-size: 30px;color: blue;">23 años depues...La Gabriela (2010)</h3>
+						  <img src="https://i.pinimg.com/564x/58/28/c4/5828c4803ebc30d37b6d26e19206fc42.jpg" width="780">
+					  </section>
+  
+					  <section>
+						  <h3 style="font-size: 30px;color: blue;">Barrios de escasos recursos vulnerables: El Socorro (2008)</h3>
+						  <img src="https://i.pinimg.com/564x/ac/c6/e5/acc6e5ea6942300d1a49e1251de5b707.jpg" width="780">
+					  </section>
+  
+					  <section>
+						  <h3 style="font-size: 30px;color: blue;">Barrios de abundantes recursos vulnerables: Alto Verde (2008)</h3>
+						  <img src="https://i.pinimg.com/564x/ee/dd/ae/eeddae3e5c5541789f29e088bef15b14.jpg" width="880">
+					  </section>
+  
+					  <section>
+						  <p>
+						   <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+									El riesgo de desastres se relaciona estrechamente con la forma de usar, ocupar y transformar el territorio. 
+									Incluye la interacción permanente entre las dinámicas de la naturaleza y las dinámicas de las comunidades</q>
+							<figcaption style="color: gray; font-size: 20px;">Fuente: Guía de Integración de la Gestión del Riesgo de Desastres y el Ordenamiento Territorial Municipal (2015)</figcaption>
+						  </p>
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/ec/1f/a0/ec1fa0fec109a75c17689c2150f92d39.jpg" width="800">
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/86/69/43/866943d075a6f76b46939770bb36a9f0.jpg" width="800">
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/cd/36/c4/cd36c485e49ed30ba47e59cad837fad8.jpg" width="1000">
+					  </section>
+  
+					  <section>
+						  <img src="https://i.pinimg.com/564x/ff/7d/39/ff7d39fbc23aed39f494e7c66774b586.jpg" width="800">
+					  </section>
+
+				</section>
+
+				<section>
+
+					<section><h1>Hidrología de ladera</h1></section>
+
+					<section>
+						<h3>Laderas (hillslope)</h3>
+						<p>Unidad de geoforma inclinada con un ángulo de pendiente mayor que un umbral mínimo
+							que lo delimita de llanuras y menor a un umbral máximo que lo delimita de superficies
+							verticales, y que es limitado por una unidad de geoforma en la parte superior e inferior
+							(Denh et al., 2001).</p>
+						<img src="https://earthsurface.readthedocs.io/en/latest/_images/hill1.png" width="650">
+						<figcaption><a href="https://earthsurface.readthedocs.io/en/latest/hillslope.html">https://earthsurface.readthedocs.io/en/latest/index.html</a></figcaption>
+					</section>
+
+					<section>
+						<h3>Hillslope </h3>
+						<p>Unidad de geoforma inclinada con un ángulo de pendiente mayor que
+							un umbral mínimo que lo delimita de llanuras y menor a un umbral máximo que
+							lo delimita de superficies verticales, y que es limitado por una unidad de geoforma
+							en la parte superior e inferior (Denh et al., 2001).</p>
+						<img src="https://d3i71xaburhd42.cloudfront.net/2d3cd27b91ebb9f753e2acb84c8580579a659944/3-Figure2-1.png" width="600">
+					</section>
+
+					<section>
+						<h3>Slope evolution</h3>
+						<img src="https://www.examrace.com/Study-Material/Geography/Geomorphology/posts/Slope-Evolution-YouTube-Lecture-Handouts/Image-of-Davis-Cyle-of-Erosion.png" width="650">
+					</section>
+
+					<section>
+						<h3>Slope evolution</h3>
+						<img src="https://media.springernature.com/lw785/springer-static/image/prt%3A978-3-540-31060-0%2F18/MediaObjects/978-3-540-31060-0_18_Part_Fig34_HTML.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Geomorphic process domain boundaries</h3>
+						<img src="https://earthsurface.readthedocs.io/en/latest/_images/soil2.png" width="650">
+						<figcaption><a href="https://ibis.geog.ubc.ca/courses/geob370/students/class11/lroberge/www/intro.html">from Brardinoni and Hassan, 2006</a></figcaption>
+					</section>
+					
+					<section>
+						<h3>Drainage area and local slope</h3>
+						<img src="https://onlinelibrary.wiley.com/cms/asset/803e5257-198f-4309-8e23-fc87fb58be30/esp4496-fig-0005-m.png" width="650">
+						<figcaption><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/esp.4496">from: Tseng et al., 201</a></figcaption>
+					</section>
+
+					<section>
+						<h3>Residual Soil and Transported Soil</h3>
+						<img src="https://image1.slideserve.com/1939618/residual-and-transported-soil-l.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Residual Soil and Transported Soil</h3>
+						<img src="https://civilengineeringnotes.com/wp-content/uploads/2021/02/189888307508277_189888614562496-1024x610.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Weathering profile</h3>
+						<img src="https://earthsurface.readthedocs.io/en/latest/_images/weathering.png" width="650">
+						<figcaption><a href="https://earthsurface.readthedocs.io/en/latest/hillslope.html">https://earthsurface.readthedocs.io/en/latest/index.html</a></figcaption>
+					</section>
+					
+					<section>
+						<h3>Weathering profile</h3>
+						<img src="https://i.pinimg.com/564x/ac/36/82/ac3682b52e2ded2a2e81904bae94cbcc.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Los suelos fallan por cizalla</h3>
+						<img src="https://i.pinimg.com/564x/8a/bd/26/8abd2673b81e6a40fa3c2bc5ad780af2.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Resistencia al cortante</h3>
+						<img src="https://osu.instructure.com/courses/29009/files/5421882/download?verifier=FC42bAVvOFJRRxJOWQrlGvQVdwUWYlPtHDK5D6y4&wrap=1" width="800">
+					</section>
+
+					<section>
+						<h3>Resistencia al cortante</h3>
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5hap3wznqlSWsjmGIk-7ReiqpoHrHgiy-le28zI4JvC7D9jPBAn4g3w-TwsRiMjKzQTg&usqp=CAU" width="500">
+					</section>
+
+					<section>
+						<h3>Envolvente de falla</h3>
+						<img src="https://1.bp.blogspot.com/-zWGHptrkcpI/W_gvES4ukaI/AAAAAAABVWM/NaYJrrEOdrsPem1d36qC76U70P_dPlZFACLcBGAs/s1600/ddd.JPG" width="800">
+					</section>
+
+					<section>
+						<h3>Circulos de Mohr</h3>
+						<img src="https://i.pinimg.com/564x/1a/9c/98/1a9c989afe212acb41cea7e41ed6f3b4.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Circulos de Mohr</h3>
+						<img src="https://i.pinimg.com/564x/86/19/67/8619679bb1694d04d7807d62b9ffc402.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Circulos de Mohr</h3>
+						<img src="https://i.pinimg.com/564x/5d/b0/6e/5db06edba60290ae28e863e6c87f0ebd.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Circulos de Mohr</h3>
+						<img src="https://i.pinimg.com/564x/a1/ef/8a/a1ef8ae9004dd53f731ff939215d0e69.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Circulos de Mohr</h3>
+						<img src="https://i.pinimg.com/564x/57/d2/a4/57d2a4f84863a9fcd07a1a0cb528fd98.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Circulos de Mohr</h3>
+						<img src="https://i.pinimg.com/564x/90/ff/77/90ff778dd43612260fafa415e1bdefbb.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Circulos de Mohr</h3>
+						<img src="https://i.pinimg.com/564x/65/be/af/65beafb8e96f5bbcf1737e8f29c728dd.jpg" width="650">
+						<figcaption>Notas de clase Prof. Edwin García (UdeA)</figcaption>
+					</section>
+
+					<section>
+						<h3>Estabilidad de ladera</h3>
+						<img src="https://i.pinimg.com/564x/a5/ed/2a/a5ed2ad1b8cd957d1ce18362430fd3f3.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Succión</h3>
+						<img src="https://i.pinimg.com/564x/db/6b/68/db6b6806aa4d2b28873a959269ded230.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Presión de poros</h3>
+						<img src="https://2.bp.blogspot.com/-Y_XGfxrKF64/W_gq6-oXkmI/AAAAAAABVV0/1YppvfbUr0oKHgurNJHqSRtW6x1ORtdEQCLcBGAs/w1200-h630-p-k-no-nu/ddd.JPG" width="800">
+					</section>
+
+					<section>
+						<h3>Saturación</h3>
+						<img src="https://media.springernature.com/original/springer-static/image/prt%3A978-3-319-73568-9%2F7/MediaObjects/978-3-319-73568-9_7_Part_Fig1-150_HTML.png" width="800">
+					</section>
+
+					<section>
+						<h3>Succión</h3>
+						<img src="https://www.researchgate.net/profile/Rukshan-Azoor/publication/334659960/figure/fig5/AS:793496080379906@1566195616832/Schematic-of-the-soil-water-retention-curve-SWRC-illustrating-the.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>El agua en el suelo</h3>
+						<img src="https://www.geographyandyou.com/wp-content/uploads/2017/06/diagram-1.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Succión</h3>
+						<img src="https://i.pinimg.com/564x/db/d6/58/dbd658e9049f882148da51be58eb5aa2.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Succión</h3>
+						<img src="https://i.pinimg.com/564x/cf/10/ec/cf10ec13b67be6e8f0aa3990e8ee39c6.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Estabilidad de ladera</h3>
+						<img src="https://i.pinimg.com/564x/52/59/e4/5259e408f144fc154407ab3fe1da8b52.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Estabilidad de ladera</h3>
+						<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs40703-019-0104-8/MediaObjects/40703_2019_104_Fig1_HTML.png" width="650">
+					</section>
+
+					<section>
+						<h3>Estabilidad de ladera</h3>
+						<img src="https://www.researchgate.net/profile/Faysal-Ibna-Rahman/publication/312332259/figure/fig7/AS:450670869389318@1484459716794/Load-based-Seismic-Slope-Stability-Analysis.png" width="650">
+					</section>
+
+					<section>
+						<h3>Role de la vegetación</h3>
+						<img src="https://www.researchgate.net/publication/299500577/figure/fig1/AS:350362977488901@1460544451637/Elements-of-the-water-balance-in-a-forested-hillslope-A-fraction-of-the-gross.png" width="650">
+					</section>
+
+					<section>
+						<h3>Role de la vegetación</h3>
+						<img src="https://www.mdpi.com/geosciences/geosciences-11-00212/article_deploy/html/images/geosciences-11-00212-g001.png" width="650">
+					</section>
+
+					<section>
+						<h3>Role de la vegetación</h3>
+						<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0013795220308334-gr6.jpg" width="650">
+					</section>
+				</section>
+
+				<section>
+
+					<section><h1>Slope process</h1></section>
+
+					<section>
+						<h3>Slope processes</h3>
+						<img src="https://g105lab.sitehost.iu.edu/images/gaia_chapter_12/slope_talus.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Definiciones</h3>
+						<p><strong>Cruden (1991)</strong> de la Escuela Norteamericana presenta la definici´on mas simple acogida
+							oficialmente por la WP/WLI de la UNESCO, utiliza el t´ermino landslide y lo define como:
+							¨Movimiento de una masa de roca, escombros o tierra ladera abajo”. Sin embargo en teor´ıa
+							s´olo aplicar´ıa para movimientos que se deslizan sobre una superficie.
+						 de la Escuela Europea utiliza el t´ermino mass movement de acuerdo a Penk
+							(1894), quien lo diferencia del t´ermino mass transport por ser un proceso bajo la influencia de la
+							gravedad que no implica un medio de transporte como agua, aire o nieve.</p>
+						<p><strong>Sheidegger (1998)</strong>
+							 los define como modificaciones del terreno dentro del ciclo geomorfol´ogico
+							continuo, y que corresponden a la respuesta normal del sistema debido a complejos par´ametros
+							exog´enicos (mete´oricos) y endog´enicos (tect´onicos).</p>	
+						<p><strong>Cruden (1991)</strong> de la Escuela Norteamericana presenta la definici´on mas simple acogida
+							oficialmente por la WP/WLI de la UNESCO, utiliza el t´ermino landslide y lo define como:
+							¨Movimiento de una masa de roca, escombros o tierra ladera abajo”. Sin embargo en teor´ıa
+							s´olo aplicar´ıa para movimientos que se deslizan sobre una superficie.
+						</p>
+					</section>
+
+					<section>
+						<h3>Definición recomendada</h3>
+						<p>Los procesos de movimiento en masa son el resultado de las condiciones
+							naturales del terreno, tales como geomorfología, hidrología y geología, y las
+							modificaciones de estas condiciones por procesos geodinámicos, vegetación,
+							usos del suelo y actividades humanas. Dichas modificaciones activan movimientos
+							lentos, generalmente imperceptibles debido a que las propiedades mecánicas
+							del material o condiciones de equilibrio decrecen gradualmente, y posteriormente, factores como precipitación, sismicidad o cortes de origen antrópico
+							detonan dichos movimientos lentos en rápidos movimientos en masa (Soeters
+							& van Westen, 1996).</p>
+					</section>
+										
+					<section>
+						<h3>Evolución de la estabilidad</h3>
+						<img src="https://www.researchgate.net/profile/Thorsten-Hoeser/publication/327939547/figure/fig1/AS:675827549208578@1538141252865/Conceptual-states-of-stability-of-a-landslide-differentiated-into-three-major-states-and.png" width="800">
+					</section>
+					
+					<section>
+						<h3>Evolución de la estabilidad</h3>
+						<img src="http://environment.uwe.ac.uk/geocal/SLOPES/GIFS/CAUSESFA.GIF" width="800">
+					</section>
+
+					<section>
+						<h3>Factores condicionantes & detonantes</h3>
+						<img src="https://www.researchgate.net/profile/Enrique-Castellanos/publication/209803330/figure/fig3/AS:365037131714563@1464043042913/Causative-factors-for-landslides-occurrence-in-the-study-area.png" width="800">
+					</section>
+
+					<section>
+						<h3>Factores condicionantes & detonantes</h3>
+						<p><strong>Variables condicionantes</strong> (preparatorias, cuasi-estáticas): las cuales hacen la ladera susceptible
+							a fallar sin siquiera iniciarse y sin embargo tienden a ubicar la ladera en un estado estable marginal:
+							geología, pendiente, aspecto, elevación, propiedades geotécnicas del suelo, vegetación, y patrones
+							de drenaje de largo plazo y meteorización.</p>
+						<p><strong>Variables detonantes</strong>  (dinámicas): las cuales cambian la ladera de una estabilidad marginal a
+							un estado inestable y por lo tanto iniciando una falla en un área de determinada susceptibilidad,
+							tales como lluvias intensas, sismos, deshielo, intervención antrópica.</p>
+					</section>
+
+					<section>
+						<h3>Intensidad vs Magnitud</h3>
+						<img src="https://i.pinimg.com/564x/76/f1/6d/76f16dbed6a6ffd1e2e7b198f751f725.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Clasificación de movimientos en masa</h3>
+						<img src="https://o.quizlet.com/9glQXTOZLQmaADYpP.TteA.png" width="800">
+					</section>
+
+					<section>
+						<h3>Clasificación de movimientos en masa</h3>
+						<img src="https://earthsurface.readthedocs.io/en/latest/_images/summerfield.png" width="700">
+					</section>
+
+					<section>
+						<h3>Clasificación de movimientos en masa</h3>
+						<img src="https://slideplayer.com/slide/15136001/91/images/2/Types+of+mass-movements.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Clasificación de movimientos en masa</h3>
+						<img src="https://d3i71xaburhd42.cloudfront.net/bcff377879ee48bb5e437908307bc9620f98b9e0/2-Figure1-1.png" width="800">
+					</section>
+
+					<section>
+						<h3>Cruden & Varnes (1996)</h3>
+						<img src="https://i.pinimg.com/564x/4d/6a/7c/4d6a7c6b352ff21007d9d128ca8cd9b6.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Cruden & Varnes (1996)</h3>
+						<img src="https://www.researchgate.net/profile/Maria-Brunetti/publication/272149103/figure/fig1/AS:613879247818754@1523371626083/Landslide-classification-by-Varnes-1978-and-Cruden-and-Varnes-1996-based-on-the-type.png" width="500">
+					</section>
+
+					<section>
+						<h3>Cruden & Varnes (1996)</h3>
+						<img src="http://www.charim.net/sites/default/files/handbook/methodology/4/41/42%20Landslide%20classification.jpg" width="700">
+						<figcaption><a href="http://www.charim.net/methodology/41">CHARIM</a></figcaption>
+					</section>
+
+					<section>
+						<h3>State</h3>
+						<img src="http://www.charim.net/sites/default/files/handbook/methodology/4/41/42%20Landslide%20activity%20classes.jpg" width="610">
+						<figcaption><a href="http://www.charim.net/methodology/41">CHARIM</a></figcaption>
+					</section>
+
+					<section>
+						<h3>Activity</h3>
+						<img src="https://image.slidesharecdn.com/landslideaw-180425123357/95/landslide-aw-9-638.jpg?cb=1524661106" width="1000">
+					</section>
+
+					<section>
+						<h3>Velocity</h3>
+						<img src="https://www.researchgate.net/profile/Pierluigi-Confuorto/publication/303377557/figure/fig7/AS:669001558540305@1536513809956/Velocity-of-a-landside-according-to-Cruden-and-Varnes-classification-modified-from.ppm" width="900">
+					</section>
+
+					<section>
+						<h3>Deslizamientos</h3>
+						<img src="https://sites.google.com/site/southaustraliaandlandslides/_/rsrc/1468736087418/types-of-landslide/Screen%20Shot%202013-06-01%20at%207.01.47%20PM.png" width="1000">
+					</section>
+
+					<section>
+						<h3>Deslizamientos planares</h3>
+						<img src="https://i.pinimg.com/736x/6b/5c/aa/6b5caad5d41f64cd550d746064346c98.jpg" width="600">
+					</section>
+
+					<section>
+						<h3>Partes de un deslizamiento</h3>
+						<img src="https://i0.wp.com/imgcdn.geocaching.com/cache/844dc666-86e3-4b8a-a69a-743e9c616ed6.png" width="800">
+					</section>
+
+					<section>
+						<h3>MenM compuestos</h3>
+						<img src="https://www.researchgate.net/profile/J-P-Malet/publication/46658754/figure/fig3/AS:549450775252993@1508010681846/Approach-used-for-defining-the-various-stages-of-the-landslide-event-and-conceptual-model_W640.jpg" width="900">
+						<figcaption>Source: Malet et al., 2005</figcaption>
+					</section>
+
+					<section>
+						<h3>MenM compuestos</h3>
+						<img src="https://www.researchgate.net/profile/L-Zhang-11/publication/309819097/figure/fig6/AS:430000202620928@1479531445303/Hazard-response-chain-of-mass-movement-processes-following-a-strong-earthquake-the.png" width="600">
+						<figcaption>Source: Malet et al., 2005</figcaption>
+					</section>
+
+					<section>
+						<h3>Partes de un flujo</h3>
+						<img src="https://www.wsgs.wyo.gov/images/hazards/debris-flow.png" width="600">
+						<figcaption>Zhang et al., 2016</figcaption>
+					</section>
+
+					<section>
+						<h3>Toppling</h3>
+						<img src="https://images.slideplayer.com/25/7795914/slides/slide_9.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Toppling</h3>
+						<img src="https://www.researchgate.net/profile/Leandro-Alejano/publication/248508667/figure/fig2/AS:855333882843136@1580938897681/Common-toppling-failures-as-described-by-Willie-and-Mah-2004-a-Block-toppling-of.png" width="800">
+					</section>
+
+					<section>
+						<h3>Fall</h3>
+						<img src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-319-55342-9_15/MediaObjects/432715_1_En_15_Fig2_HTML.gif" width="600">
+					</section>
+
+					<section>
+						<h3>Fall</h3>
+						<img src="https://www.tulane.edu/~sanelson/images/rockfall.gif" width="500">
+					</section>
+
+					<section>
+						<h3>Creeping</h3>
+						<img src="https://www.researchgate.net/profile/Lukasz-Pawlik/publication/322317097/figure/fig2/AS:594685731024898@1518795535485/A-division-of-creep-processes-Compilation-based-on-different-authors-Hutchinson-1968.png" width="800">
+					</section>
+
+					<section>
+						<h3>Creeping</h3>
+						<img src="https://earthsurface.readthedocs.io/en/latest/_images/creep.png" width="800">
+					</section>
+
+					<section>
+						<h3>Creeping</h3>
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSScEQ-V28XtbdlAoFYvDHUc8z0dKK2BSWM3A&usqp=CAU" width="800">
+					</section>
+
+					<section>
+						<h3>Creeping</h3>
+						<img src="https://www.researchgate.net/profile/Lukasz-Pawlik/publication/322317097/figure/fig22/AS:631618003796099@1527600875912/figure-fig22_W640.jpg" width="600">
+					</section>
+
+					<section>
+						<h3>Depósitos</h3>
+						<img src="https://geolodiaavila.files.wordpress.com/2019/04/figura-3.jpg" width="800">
+					</section>
+				</section>
+
+				<section>
+
+					<section><h1>Factores detonantes</h1></section>
+
+					<section>
+						<h1>Antropogénico</h1>
+						<img src="https://i.pinimg.com/564x/b7/97/3e/b7973e83a1944a24f95e7ab093bb3866.jpg" width="800">
+					</section>
+
+					<section>
+						<h1>Volcanes</h1>
+						<img src="https://www.blinklearning.com/useruploads/ctx/a/19028819/r/s/2764769/axiJTBkpg3SkkD_7u4Nv8bDL0D5m6A6S-F6ca1X7VsE.jpg?idcurso=453599" width="800">
+						<figcaption><a href="https://www.blinklearning.com/coursePlayer/clases2.php?idclase=19028819&idcurso=453599">Blink learning</a></figcaption>
+					</section>
+
+					<section>
+						<h1>Volcanes</h1>
+						<h3>Mt. Saint Helen (1980)</h3>
+						<img src="https://volcanoes.usgs.gov/vsc/images/image_mngr/3100-3199/img3151_400w_269h.png" width="800">
+						<figcaption><a href="https://volcanoes.usgs.gov/volcanic_ash/mount_st_helens_1980.html">USGS</a></figcaption>
+					</section>
+
+					<section>
+						<h1>Volcanes</h1>
+						<h3>Mt. Saint Helen (1980)</h3>
+						<img src="https://kpbs.media.clients.ellingtoncms.com/img/croppedphotos/2010/04/29/nova-mt-st-helens_t800.jpg?90232451fbcadccc64a17de7521d859a8f88077d" width="700">
+						<figcaption><a href="https://www.kpbs.org/news/2010/apr/29/nova-mt-st-helens-back-dead/">CREDIT: GARY ROSENQUIST ©JOEL E. HARVEY</a></figcaption>
+					</section>
+
+					<section>
+					<h1>Volcanes</h1>
+					<h3>Mt. Saint Helen (1980)</h3>
+					<img src="http://static2.mbtfiles.co.uk/media/docs/newdocs/gcse/geography/physical_geography/812717/html/images/image13.jpg" width="800">
+					<figcaption><a href="http://static2.mbtfiles.co.uk/media/docs/newdocs/gcse/geography/physical_geography/812717/html/images/image13.jpg">USGS</a></figcaption>
+					</section>
+
+					<section>
+						<h1>Lluvia</h1>
+						<img src="https://www.elcolombiano.com/binrepository/843x562/0c0/0d0/none/11101/TKAF/a1-8210513-1-37485327_37485327_20210405202845.jpg" width="800">
+						<figcaption>El Colombiano</figcaption>
+					</section>
+
+					<section>
+						<h1>Lluvia</h1>
+						<img src="https://telemedellin.tv/wp-content/uploads/2017/02/WhatsApp-Image-2017-02-21-at-5.53.30-PM-1.jpeg" width="800">
+						<figcaption>Telemedellín</figcaption>
+					</section>
+
+					<section>
+						<h1>Cómo se mide la precipitación?</h1>
+						<img src="http://www.piraguacorantioquia.com.co/wp-content/uploads/2016/09/pluviometro.jpg" width="800">
+						<figcaption>Corantioquia</figcaption>
+					</section>
+
+					<section>
+						<h1>Cómo se estima la precipitación?</h1>
+						<img src="https://www.meteorologiaenred.com/wp-content/uploads/2018/03/Radar-de-precipitaciones-de-AEMET-en-Madrid.jpg" width="800">
+						<figcaption>Meterología en red</figcaption>
+					</section>
+
+					<section>
+						<h1>Cómo se estima la precipitación?</h1>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Radar-hauteur-es.svg/340px-Radar-hauteur-es.svg.png" width="800">
+						<figcaption>Wikipedia</figcaption>
+					</section>
+
+					<section>
+						<h1>Cómo se estima la precipitación?</h1>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Radar-accumulations_eng.png/300px-Radar-accumulations_eng.png" width="650">
+					</section>
+
+					<section>
+						<h1>Cómo se estima la precipitación?</h1>
+						<img src="http://www.crahi.upc.edu/curs/graficos/radar_vert2.gif" width="1000">
+						<figcaption><a href="http://www.crahi.upc.edu/curs/html_pages/trasp5.html">Universidad Politécnica de Catalunya</a></figcaption>
+					</section>
+
+					<section>
+						<h1>Cómo se estima la precipitación?</h1>
+						<img src="https://directory.eoportal.org/documents/163813/3833509/CloudSat_AutoE.jpeg" width="800">
+						<figcaption>Earth Observation Portal</figcaption>
+					</section>
+
+					<section>
+						<h1>Cómo se estima la precipitación?</h1>
+						<img src="https://www.meteorologiaenred.com/wp-content/uploads/2018/03/Imagen-de-un-radar-de-precipitacinoes.jpg" width="1000">
+						<figcaption>Meteorología en red</figcaption>
+					</section>
+
+					<section>
+						<h1>Lluvia</h1>
+						<img src="https://i.pinimg.com/564x/5f/eb/47/5feb47941fe2f79324808ac8f81bfc0e.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Mecanismo</h3>
+						<p><strong>Avance frente humedo</strong> --> Nivel freático colgado --> Incremento de presiones de poros positivas que por licuefacción o rápida reducción de la resistencia al cortante en condiciones no drenadas genera movimientos tipo <strong>flujos</strong></p>
+						<img src="https://i.pinimg.com/564x/ac/78/be/ac78beef7b2c7c26e8800918b13d2226.jpg" width="450">
+					</section>
+
+					<section>
+						<h3>Mecanismo</h3>
+						<p><strong>Incremento nivel freático</strong> --> Reducción de las presiones de poros negativas en condiciones no saturadas donde la falla ocurre por reducción de la succión y la masa en desplazamiento se comporta como un cuerpo semi-rigido: <strong>deslizamientos</strong></p>
+						<img src="https://wildcountryfinearts.com/wp-content/uploads/2021/04/fb393baa4f9a959472bb13d02ccb5afa.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Conductividad hidráulica</h3>
+						<ul>
+							<li>Pequeñas variaciones en la conductividad hidráulica controlan la localización de la ocurrencia de movimientos en masa.							</li>
+							<li>Aunque el suelo sea texturalmente homogéneo, existen variaciones en la conductividad hidráulica debido al contenido de agua y la succión.							</li>
+							<li>Suelos con bajas permeabilidades son mas estables ante eventos cortos de alta intensidad</li>
+							<li>Suelos con altas permeabilidades fallan por acumulación del incremento de las presiones de poros</li>
+							<li>Suelos con altas permeabilidades generan movimientos de masa con mayor capacidad destructiva, movimientos mas rápidos y que viajan mayores distancias</li>
+						</ul>
+						<figcaption>Fuente: Rahardjo et al., 2007; Rahimi et al., 2010; Wang & Sassa, 2003; Li et al., 2005; Setyo & Liao, 2008; Mukhlisin et al., 2006</figcaption>
+					</section>
+
+					<section>
+						<h3>Forma de la ladera</h3>
+						<ul>
+							<li>El perfil longitudinal (cóncavo – recto – convexo) controla la velocidad y cambio del flujo de agua en el suelo.</li>
+							<li>El perfil perpendicular (convergente – paralelo – divergente) controla la convergencia topográfica y juega un papel mas importante</li>
+							<li>Convexas - Divergentes. Mas estables</li>
+							<li>Cóncavas – Convergentes. Menos estables</li>
+						</ul>
+						<figcaption>Fuente: Talebi et al., 2008, Borga et al., 2002; Iida, 1999</figcaption>
+					</section>
+
+					<section>
+						<h3>Lluvia antecedente</h3>
+						<ul>
+							<li>Existe consenso en cuanto a que para suelos con baja permeabilidad, la lluvia antecedente juega un papel importante .</li>
+							<li>Los eventos detonados por condiciones de lluvia antecedente tiene superficies de fallas profundas (> 6m)</li>
+						</ul>
+						<img src="https://d3i71xaburhd42.cloudfront.net/2ab5d342ccac6e55f525a21b674b7c7f0d9ff69a/5-Figure4-1.png" alt="#">
+					</section>
+
+					<section>
+						<h3>Lluvia antecedente</h3>
+						<img src="https://www.researchgate.net/profile/Shibiao-Bai/publication/257423271/figure/fig6/AS:297592039723032@1447962879845/Relationship-between-daily-and-antecedent-rainfall-on-landslide-and-debris-flow-triggering.png" alt="#">
+					</section>
+
+					<section>
+						<h3>Lluvia antecedente</h3>
+						<img src="https://www.researchgate.net/publication/337061713/figure/fig7/AS:941790463025165@1601551752697/Antecedent-accumulated-rainfall-for-all-landslides-at-the-station-Posgrados.png" alt="#">
+					</section>
+
+					<section>
+						<h3>Lluvia antecedente</h3>
+						<img src="https://i.pinimg.com/564x/de/1a/4f/de1a4f6aa94f02139edb595c795c6bb0.jpg" alt="#">
+					</section>
+
+					<section>
+						<h3>Intensidad-Duración-Frecuencia</h3>
+						<ul>
+							<li>Eventos muy intensos generan movimientos en masa superficiales</li>
+							<li>Eventos de larga duración e intensidad baja que generan movimientos mucho mas profundos generalmente sobre superficies de fallas pre-existentes.</li>
+						</ul>
+						<img src="https://www.researchgate.net/profile/Susana-Almeida-3/publication/315367350/figure/fig3/AS:479767678984193@1491396936517/Rainfall-intensity-duration-frequency-curves-for-Saint-Lucia-developed-by-Klohn-Crippen.png">
+					</section>
+
+					<section>
+						<img src="https://d3i71xaburhd42.cloudfront.net/8af217ddabd689340e699f98f4a90294572871b5/5-Figure1-1.png" width="800">
+					</section>
+
+					<section>
+						<h3>Modelo hidrológico</h3>
+						<img src="https://i.pinimg.com/564x/4d/41/73/4d4173b86125ed01c0629292b0f08435.jpg" width="800">
+					</section>
+
+					<section>
+						<h1>Sismos</h1>
+						<img src="https://static.onecms.io/wp-content/uploads/sites/28/2018/09/Atsuma-town-Hokkaido-JPNQUAKE0918.jpg" width="800">
+					</section>
+
+					<section>
+						<h1>Sismos</h1>
+						<img src="https://i.pinimg.com/564x/18/2d/2a/182d2aeb7ce7e71531b24a46ea4a0251.jpg" width="800">
+					</section>
+
+					<section>
+						<h1>Sismos</h1>
+						<img src="https://i.pinimg.com/564x/3c/36/cc/3c36cc3e87f7ef360cd6d92e1210248a.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Pocisión en la ladera</h3>
+						<img src="https://i.pinimg.com/564x/96/6e/7d/966e7d5874b87cc711704e18dd3437d3.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Pocisión en la ladera</h3>
+						<img src="https://i.pinimg.com/564x/04/97/9a/04979a3ce679b5be7b95c4e1d6b715d7.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Respuesta a la onda</h3>
+						<img src="https://i.pinimg.com/564x/42/68/7b/42687b9697f99dd8157e3112a66d661e.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Respuesta a la onda</h3>
+						<img src="https://i.pinimg.com/originals/9f/8c/01/9f8c01638d8f5bcfde61662ff63c648c.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Efecto bloque superior</h3>
+						<img src="https://i.pinimg.com/564x/50/b8/ab/50b8abbc77a246f52c8c0db6910ea2d3.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Efecto bloque superior</h3>
+						<img src="https://i.pinimg.com/564x/ff/e0/07/ffe007f7d9f049f8989d43065739b6ff.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Distancia al epicentro</h3>
+						<img src="https://i.pinimg.com/564x/cb/c9/fe/cbc9fea29fcc104c6e43902f1ecbc68d.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Distancia al epicentro</h3>
+						<img src="https://i.pinimg.com/564x/15/64/a4/1564a464dd6ce6189efd9eacaff699bd.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Método de Newmark</h3>
+						<img src="https://i.pinimg.com/564x/e0/0e/77/e00e7764e4796dd893d5e5c3a70895ba.jpg" width="800">
+					</section>
+
+				</section>
+
+				<section>
+
+					<section><h1>Modelación</h1></section>
+
+					<section>
+						<img src="https://i.pinimg.com/originals/1f/eb/5f/1feb5fd9557226afd133070a88ece311.jpg" width="700">
+						<figcaption>Guzzetti (2007)</figcaption>
+					</section>
+
+					<section>
+						<img src="https://i.pinimg.com/564x/45/3a/22/453a227d341ca77352963fbbfef751ab.jpg" width="800">
+					</section>
+
+					<section>
+						<img src="https://www.researchgate.net/profile/Warren-Smith-10/publication/249844288/figure/fig1/AS:669538748219394@1536641885112/Modelling-the-Real-World.png" width="800">
+					</section>
+
+					<section>
+						<p><strong>Zonificación</strong>: división del terreno en áreas homogéneas o dominios y su rango de acuerdo al
+							grado actual o potencial de susceptibilidad, amenaza o riesgo por deslizamiento.</p>
+						<img src="https://nhess.copernicus.org/articles/19/1973/2019/nhess-19-1973-2019-avatar-web.png" width="400">
+					</section>
+
+					<section>
+						<h3>Susceptibilidad vs Amenaza vs Riesgo</h3>
+						<ul>
+							<li><strong>Mapas de incidencia espacial</strong>. Susceptibilidad: posibilidad de que un fenómeno ocurra en un área de
+								acuerdo con las condiciones locales del terreno, y especifican que factores detonantes
+								tales como precipitación o sismicidad no son considerados (Soeters y van Westen, 1996).
+								Dónde: Probabilidad espacial.</li>
+							<li><strong>Mapas de incidencia espacio-temporal y pronóstico</strong>. Amenaza: probabilidad de ocurrencia de un potencial fenómeno destructivo dentro de un
+								específico período de tiempo y en una determinada área (Varnes, 1984). Dónde
+								(intensidad)? Cuándo (frecuencia), Magnitud (Volumen). Probabilidad espacial y
+								temporal.</li>
+							<li><strong>Mapas de evaluación de las consecuencias</strong>. 
+								Riesgo: Evaluación de las potenciales consecuencias en términos de pérdidas humanas y
+								párdidas económicas. Dónde? (intensidad) Cuándo? (frecuencia) Magnitud (Volumen)
+								Cuanto? (consecuencia)
+								</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Zonificación de la amenaza</h3>
+						<p>La subdivisión del terreno en zonas que son caracterizadas por la
+							probabilidad temporal de la ocurrencia de deslizamientos de un particular tamaño y forma,
+							dentro de un periodo de tiempo dado. Los mapas de amenaza por deslizamientos deben indicar
+							tanto la zona donde el deslizamiento puede ocurrir como la zona de propagación. Una completa
+							evaluación de la amenaza por deslizamientos cuantitativa incluye:</p>
+							<ul>
+								<li>Probabilidad espacial: la probabilidad que un área dada sea golpeada por un
+									deslizamiento.</li>
+								<li>Probabilidad temporal: la probabilidad que un evento detonante dado causar´a un
+									deslizamiento.</li>
+								<li>Probabilidad de tamaño/volumen: probabilidad que un deslizamiento tenga un
+									determinado tamaño y volumen.</li>
+								<li>Probabilidad de propagación: probabilidad que un deslizamiento alcanzará una cierta
+									distancia ladera abajo.</li>
+							</ul>
+					</section>
+
+					<section>
+						<h3>Scale</h3>
+						<img src="https://d3i71xaburhd42.cloudfront.net/130b91b43adab0f389370bbe22d76192bbcc7be1/12-Table3-1.png" width="1000">
+					</section>
+
+					<section>
+						<h3>Metodología</h3>
+						<ul>
+							<li>Formulación del problema y definición de alcances</li>
+							<li>Levantamiento de datos</li>
+							<li>La identificación y mapeo de eventos en el área de estudio (variable dependiente)</li>
+							<li>La identificación y mapeo de los factores físicos que están directa o indirectamente
+								correlacionados con los factores de inestabilidad (variables predictoras e independientes)</li>
+							<li>An´alisis exploratorio de datos y selección de variables</li>
+							<li>Construcción del modelo</li>
+							<li>La clasificación del terreno en dominios de diferentes niveles de susceptibilidad</li>
+							<li>La evaluación del desempeño y capacidad de predicción del modelo</li>
+							<li>Validación y ajuste heurístico en campo</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Etapa de planeación</h3>
+						<img src="https://i.pinimg.com/564x/06/30/73/0630737877a447d37ac7a930859fcd59.jpg" width="1000">
+					</section>
+
+					<section>
+						<h3>Escala de nivel administrativo</h3>
+						<p>Ej. POT´s</p>
+						<img src="https://i.pinimg.com/564x/c0/30/1e/c0301ec3498e007e6c197c79ae1f2074.jpg" width="700">
+					</section>
+
+					<section>
+						<h3>Escala de cuenca</h3>
+						<p>Ej. POMCA´s</p>
+						<img src="https://i.pinimg.com/564x/02/56/90/02569098c1b453b4a154921985d7401c.jpg" width="600">
+					</section>
+
+					<section>
+						<h3>Escala de sitio</h3>
+						<p>EJ. estudio geotécnico</p>
+						<img src="https://i.pinimg.com/564x/6d/d1/b0/6dd1b013583e70085796a810bdaad0e2.jpg" width="1000">
+					</section>
+
+					<section>
+						<h3>Definición área de influencia</h3>
+						<p><strong>Unidades Morfodinámicas Independientes (UMI)</strong>: son definidas como la unidad del territorio
+							que enmarca la ladera de interés y que presenta un comportamiento independiente de las
+							unidades adyacentes (Chica, 1989). Se considera que cualquier proceso morfodinámico que se
+							presente en el exterior no afecta su interior e igualmente, cualquier proceso morfodinámico que
+							se presente en el interior no afecta las unidades adyacentes (AMVA et al., 2012). Dicha unidad
+							es delimitada por divisorias de agua, drenajes o expresiones geomorfológicas, combinadas con un
+							análisis heurístico de la morfodinámica del paisaje.</p>
+					</section>
+
+					<section>
+						<h3>Definición área de influencia</h3>
+						<img src="https://i.pinimg.com/564x/7b/31/a2/7b31a2102258b4ba01d9b5ac5ecb2755.jpg" width="800">
+					</section>
+
+					<section>
+						<h3>Unidad de análisis</h3>
+						<p>La unidad de mapeo "terrain unit mapping" representa el dominio que maximiza la homogeneidad interna y la
+							heterogeneidad entre unidades. Se refiere a la porci´on del territorio que contiene un grupo de
+							condiciones del terreno que difiere de la unidad adyacente a lo largo de limites definidos
+							(Hansen, 1984).</p>
+						<img src="https://www.researchgate.net/profile/Tetsuro-Esaki/publication/209805792/figure/fig7/AS:306007793258502@1449969351617/Difference-between-the-grid-based-mapping-unit-and-the-slope-unit-based-mapping-unit-a.png" width="800">
+					</section>
+
+					<section>
+						<h3>Slope unit</h3>
+						<img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10064-019-01572-5/MediaObjects/10064_2019_1572_Fig5_HTML.png" width="1000">
+					</section>
+
+					<section>
+						<h3>Slope unit</h3>
+						<img src="https://www.researchgate.net/publication/336050630/figure/fig8/AS:807187496595465@1569459904674/Slope-unit-delineation-the-left-and-right-slope-units-of-a-watershed-3-4.png" width="1000">
+					</section>
+
+					<section>
+						<h3>Terrain unit mapping</h3>
+						<img src="https://www.redalyc.org/journal/1695/169555640002/0120-3630-bcdt-43-00014-gf7.jpg" width="450">
+					</section>
+
+					<section>
+						<h3>Raster</h3>
+						<img src="http://appliedsciences.nasa.gov//sites/default/files/landslide-susceptibility-columbia-2017-fixed.jpg" width="1000">
+					</section>
+
+					<section>
+						<h3>Raster vs UMI</h3>
+						<img src="https://www.researchgate.net/profile/Edier-Aristizabal/publication/321230343/figure/fig5/AS:565813411549184@1511911837077/Figura-5-Mapa-de-susceptibilidad-por-movimientos-en-masa-utilizando-el-metodo-de_W640.jpg" width="400">
+						<img src="https://www.researchgate.net/profile/Edier-Aristizabal/publication/321230343/figure/fig8/AS:565813424132099@1511911840159/Figura-8-Mapa-final-de-criticidad-que-combina-las-metodologias-mostrando-las-UMI-y-la_W640.jpg" width="400">
+					</section>
+
+					<section>
+						<h3>Unique condition unit</h3>
+						<img src="http://www.oas.org/dsd/publications/unit/oea66e/p317.GIF" width="1000">
+						<figcaption><a href="http://www.oas.org/dsd/publications/unit/oea66e/ch10.htm"></a>OEA</figcaption>
+					</section>
+
+					<section>
+						<h3>Unique condition unit</h3>
+						<img src="http://www.oas.org/dsd/publications/unit/oea66e/p315.GIF" width="1000">
+						<figcaption><a href="http://www.oas.org/dsd/publications/unit/oea66e/ch10.htm"></a>OEA</figcaption>
+					</section>
+
+					<section>
+						<h3>Terrain unit mapping</h3>
+						<img src="https://i.pinimg.com/564x/fb/fb/e1/fbfbe148890acd20830f13bc0a4e6f85.jpg" width="1000">
+						<figcaption>Guzzetti (2005)</figcaption>
+					</section>
+					
+					<section>
+						<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0013795208001786-fx1.jpg" width="1000">
+					</section>
+
+					<section>
+						<h3>Métodos</h3>
+						<img src="https://ars.els-cdn.com/content/image/1-s2.0-S2212420919313494-gr4.jpg" width="650">
+					</section>
+
+					<section>
+						<h3>Métodos de aprendizaje automático</h3>
+						<img src="https://miro.medium.com/max/477/1*KFQI59Yv7m1f3fwG68KSEA.jpeg" width="520">
+					</section>
+
+					<section>
+						<h3>Métodos relativos & absolutos</h3>
+						<img src="https://i.pinimg.com/originals/e9/dd/07/e9dd072c9fd192d748a66b75b5687d0c.jpg" width="1000">
+					</section>
+
+					<section>
+						<h3>Métodos utilizados</h3>
+						<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0012825217305652-gr7.jpg" width="1000">
+						<figcaption>Reichenbach et al. (2008)</figcaption>
+					</section>
+
+				</section>
+
+				<section>
+
+				<section><h1>Ambiente de trabajo</h1></section>
+						
+				<section>
+				<h2>Python</h2>
+				<img src="https://miro.medium.com/max/2760/0*GV5Xm8Ve-tb_qAAs" alt="Python" width="1000"/>
+				</section>
+
+				<section>
+				<h2>Python</h2>
+				<p><span style="color:red;">Python code is fast to develop</span>: As the code is not required to be compiled and built, Python code
+					can be much readily changed and executed. This makes for a fast development cycle.</p>
+				<p><span style="color: red";>Python code is not as fast in execution</span>: Since the code is not directly compiled and executed
+				and an additional layer of the Python virtual machine is responsible for execution, Python code runs a little slow as
+				compared to conventional languages like C, C++, etc.</p>
+				<p><span style="color: red";>It is interpreted</span>: Python is an interpreted language, which means it does not need compilation to binary code before
+				it can be run. You simply run the program directly from the source code.</p>
+				<p><span style="color: red";>It is object oriented</span>: Python is an object-oriented programming language. An object--oriented
+				program involves a collection of interacting objects, as opposed to the conventional list of tasks. Many modern programming
+				languages support object-oriented programming. ArcGIS and QGIS is designed to work with object-oriented languages, and
+				Python qualifies in this respect.</span>
+				</section>
+
+				<section>
+				<h2>Python</h2>
+				<img src="https://techyeverything.com/wp-content/uploads/2020/11/main-10.jpg" alt="Paquetes" width="850"/>
+				<figcaption><small></small></figcaption>
+				</section>
+
+				<section>
+				<h2>Anaconda</h2>
+				<img src="https://electronicssoftware.net/wp-content/uploads/2-3-1024x768.png" alt="anaconda" width="720"/>
+				<figcaption><small><a href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a></small></figcaption>
+				</section>
+
+				<section>
+				<h2>Anaconda</h2>
+				<img src="https://miro.medium.com/max/3624/1*O5Jgl-KFuvUyujAZhXHYlQ.png" alt="anaconda" width="850"/>
+					<figcaption><small></small></figcaption>
+				</section>
+
+				<section>
+				<h2>Anaconda</h2>
+				<img src="https://docs.anaconda.com/_images/nav-defaults.png" alt="anaconda" width="1000"/>
+				<figcaption><small></small></figcaption>
+				</section>
+
+				<section>
+				<img src="https://ijstokes-public.s3.amazonaws.com/dspyr/img/screenshot_navigator_install.png" alt="anaconda" width="800"/>
+				<figcaption><small></small></figcaption>
+				</section>
+
+				<section>
+				<h2>Anaconda</h2>
+				<img src="https://cluebots.com/storage/wink/images/dNKgplYxdJ7wGIaieaNwTmsiQtZEQjGiKKoY6HyO.png" alt="cmd" width="1000"/>
+				<figcaption><small></small></figcaption>
+				</section>
+
+				<section>
+					<h2>Python Packaging Index</h2>
+				<img src="https://cdn.activestate.com/wp-content/uploads/2019/12/how-to-install-pip-on-windows.png" alt="pip" width="1000"/>
+				<figcaption><small><a href="https://pypi.org/project/pip/">https://pypi.org/project/pip/</a></small></figcaption>
+				</section>
+
+				<section>
+					<h2>Python Packaging Index</h2>
+				<img src="https://i.pinimg.com/564x/e3/71/71/e37171b593223001f3430b00a8cb738b.jpg" alt="pip" width="750"/>
+				<figcaption><small></small></figcaption>
+				</section>
+	
+				<section>
+				<h2>Spyder</h2>
+				<img src="https://docs.spyder-ide.org/current/_images/mainwindow_default_1610.png" alt="spyder" width="1000"/>
+				<figcaption><small></small></figcaption>
+				</section>
+				
+				<section>
+					<h2>Jupyter Lab</h2>
+				<img src="https://www.tutorialspoint.com/jupyter/images/start_python_notebook.jpg" alt="Jupyter Lab" width="800"/>
+				<figcaption><small></small></figcaption>
+				</section>
+
+				<section>
+					<img src="https://miro.medium.com/max/629/1*_HoMKjrWahRiI-JmwYW6zg.png" alt="scikit" width="1000"/>
+				</section>
+
+				<section>
+					<h2>Scikit learn</h2>
+					<img src="https://miro.medium.com/max/923/1*nRmF_XhObEdI8zTB2wGgQw.png" alt="scikit" width="400"/>
+					<p>Scikit-learn es la librería más usada de Machine Learning tradicional</p>
+				<p>La librería incluye funcionalidades de:</p>
+				<ul>
+					<li>Preprocesamiento de datos en sklearn.preprocessing.</li>
+					<li>Algoritmos de Machine Learning en sklearn.linear_model, sklearn.svm, sklearn.ensemble, y muchos más.</li>
+					<li>Evaluación de modelos en sklearn.model_selection y sklearn.metrics.</li>
+				</ul>
+				</section>
+
+		</section>
+
+		<section>
+			<section><h1>Inventario de MenM</h1></section>
+
+			<section>
+				<h3>Inventario de MenM</h3>
+				<p>colección de las características de los deslizamientos en una cierta área y tiempo, preferiblemente en formato digital con información espacial 
+					relacionada con la localización (puntos o polígonos) combinada con información de atributos. Estos atributos deben idealmente contener información 
+					sobre:
+				</p>
+				<ul>
+					<li>El tipo de deslizamiento</li>
+					<li>actividad actual</li>
+					<li>tamaño y/o volumen</li>
+					<li>fecha de ocurrencia o edad relativa</li>
+					<li>causas</li>
+				</ul>
+				<figcaption>AGS (2007)</figcaption>
+			</section>
+
+			<section>
+				<h3>Landslide inventory</h3>
+				<img src="http://www.irpi.cnr.it/wp-content/uploads/2015/02/Prodotto_LIM-595x290.png" width="1000">
+				<figcaption><a href="http://www.irpi.cnr.it/en/product-service/lim/">CNR</a></figcaption>
+			</section>
+
+			<section>
+				<h3>Landslide inventory</h3>
+				<img src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-319-53498-5_5/MediaObjects/440462_1_En_5_Fig1_HTML.gif" width="300">
+				<figcaption><a href="https://link.springer.com/chapter/10.1007/978-3-319-53498-5_5">Landslide Inventory Map of Albania</a></figcaption>
+			</section>
+
+			<section>
+				<h3>Landslide inventory</h3>
+				<img src="https://blogs.agu.org/landslideblog/files/2018/08/18_08-global-landslides-1-e1535434787788.jpg" width="1000">
+				<figcaption><a href="https://blogs.agu.org/landslideblog/2018/08/28/mapping-global-landslides/">The Landslide Blog</a></figcaption>
+			</section>
+
+			<section>
+				<h3>Por qué son importantes</h3>
+				<ul>
+					<li>Los inventarios de deslizamientos son la base para evaluar la susceptibilidad, amenaza y
+						riesgo por deslizamientos</li>
+					<li>Son esenciales para los modelos de susceptibilidad que predicen los deslizamientos
+						basados en las condiciones pasadas: Necesitamos saber dónde ocurren y cuántos</li>
+					<li>Esas condiciones son utilizadas para predecir los deslizamientos futuros: Necesitamos
+						saber los factores causantes.</li>
+					<li>Estas condiciones difieren para diferentes tipos de movimientos: Necesitamos saber qué
+						pasó</li>
+					<li>La información temporal es esencial para estimar la frecuencia de los deslizamientos:
+						Necesitamos saber cuándo pasaron</li>
+					<li>Los inventarios de deslizamientos son usados para validar los resultados de la zonificación</li>
+				</ul>
+				<figcaption>van Westen en ACP-EU Natural Disaster Risk Program</figcaption>
+			</section>
+
+			<section>
+				<h3>Técnicas de levantamiento</h3>
+				<ul>
+					<li>Análisis de archivos información histórica (Reichenbach et al., 1988; Salvati et al., 2003)</li>
+					<li>Fotointerpretación de fotografías aéreas (Guzzetti & Cardinali, 1989, 1990; Galli et al.,
+						2008; Santagelo et al., 2010, 2013)</li>
+					<li>Fotointerpretación de fotografías aéreas (Guzzetti & Cardinali, 1989, 1990; Galli et al.,
+						2008; Santagelo et al., 2010, 2013)</li>
+					<li>Análisis visual de imágenes LIDAR (Ardizzone et a., 2007; van den Eeckhaut et al., 2007;
+						Haneberg et al., 2009; Guzzetti et al., 2012; Razak et al., 2011, 2013)</li>
+					<li>Procesamiento de imágenes LIDAR (Martha et al., 2010; Lu et al., 2011, van der
+						Eeckhaut et al., 2012).</li>
+					<li>Procesamiento de imágenes de satélite (Mondini & Chang, 2014; Yang & Chen, 2010;
+						Rosin & Hervas, 2005)</li>
+					<li>Levantamiento de campo</li>
+				</ul>
+				<figcaption> van Westen en Landslide types and causes; Santagelo et al. (2015)</figcaption>
+			</section>
+
+			<section>
+				<h3>Técnicas de levantamiento</h3>
+				<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0012825217305652-gr4.jpg" width="500">
+				<figcaption>PI, visual interpretation of aerial photographs; SI, visual interpretation of satellite images; FM, 
+					field mapping; DI, visual interpretation of DEM derivatives; AM, automatic or semi-automatic mapping using 
+					remote sensing imagery; AR, analysis of archive and historical sources.</figcaption>
+				<figcaption><a href="https://www.sciencedirect.com/science/article/pii/S0012825217305652#f0020">Reichenbach et al. 2018</a></figcaption>
+			</section>
+
+			<section>
+				<h3>Tipos de inventarios</h3>
+				<p><strong>Inventario de deslizamientos multi-temporal</strong>: son comúnmente utilizados en modelos de susceptibilidad y amenaza. Entre mas largo el periodo 
+					que cubre, mayor significancia temporal del inventario</p>
+				<p><strong>Inventario de un solo periodo</strong>: corresponden a inventarios de deslizamientos de un cierto periodo
+					de tiempo a partir de fotos aéreas o imágenes de satélite. No son validos para calibrar un modelo
+					de susceptibilidad.</p>
+				<p><strong>Inventario de deslizamientos de un evento</strong>: inventarios de deslizamientos que ocurren como
+					resultado de un evento detonante particular (lluvia, sismo). Son adecuados para análisis de
+					susceptibilidad basados. Su elaboración puede ser mas sencilla, especialmente con imágenes de
+					alta resolución espacial y temporal fácilmente obtenibles en la actualidad</p>
+			</section>
+
+			<section>
+				<h3>Inventarios multitemporales</h3>
+				<img src="https://www.researchgate.net/publication/334306948/figure/fig1/AS:778478592987136@1562615168813/Multi-temporal-landslide-inventory-dating-from-1939-to-2014-left-map-adapted-from.png" width="800">
+				<figcaption><a href="https://www.researchgate.net/publication/334306948_Dynamic_path_dependent_landslide_susceptibility_modelling"></a>Samia et al. 2019</figcaption>
+			</section>
+
+			<section>
+				<h3>Inventario de un periodo</h3>
+				<img src="https://www.researchgate.net/profile/Bharat-Bhandari-3/publication/350987066/figure/fig1/AS:1019007016636416@1619961613278/Updated-temporal-landslide-inventory-map-of-the-study-area.png" width="800">
+			</section>
+
+			<section>
+				<h3>Inventario de un evento</h3>
+				<img src="https://zenodo.org/api/iiif/v2/7eabc094-4268-4811-9e4d-2b5998f7884d:7c83e517-455e-4d16-a92f-48c47a67b303:Prelim_Landslide_Map_A2.jpg/full/750,/0/default.jpg" width="500">
+				<figcaption>Prasad & Dhakal (2021)</figcaption>
+			</section>
+
+			<section>
+				<h3>Inventario de un evento</h3>
+				<p>La Arenosa, Sept. 21 de 1990</p>
+				<img src="https://i.pinimg.com/564x/03/94/43/0394436918c95bfa81a13cdfab4ec32a.jpg" width="1000">
+			</section>
+
+			<section>
+				<h3>Escala de análisis</h3>
+				<img src="https://i.pinimg.com/564x/8b/45/c5/8b45c58d6a1d857ba2581147b485e147.jpg" width="1000">
+				<figcaption>Región de Umbria (Italia) - Guzzetti (2005)</figcaption>
+			</section>
+
+			<section>
+				<h3>Cartografía</h3>
+				<p>Diferentes métodos han sido utilizados para cartografiar los movimientos en masa para un un inventario:</p>
+				<ul>
+					<li>Un pixel que representa el centro del deslizamiento o de la corona</li>
+					<li>Todos los pixeles dentro del deslizamiento (cuerpo y corona)</li>
+					<li>La corona del deslizamiento</li>
+					<li>La célula semilla (see-cell approach) seleccionando pixeles dentro de un buffer a lo largo de la corona, y en algunas los flancos de la 
+						zona de acumulación</li>
+				</ul>
+				<img src="https://i.pinimg.com/564x/08/3e/23/083e23fa25cc6e95f3539d73fa09017f.jpg" width="600">
+				<figcaption>Fuente: Hussin et al., (2016); Clereci et al. (2006)</figcaption>
+			</section>
+
+			<section>
+				<h3>Escala de análisis</h3>
+				<img src="https://i.pinimg.com/564x/77/fb/09/77fb09b38b4b903d4d29684586752d58.jpg" width="800">
+			</section>
+
+			<section>
+				<h3>Errores comunes</h3>
+				<img src="https://i.pinimg.com/564x/92/cf/38/92cf38dd1d4a47f36d47fde88f43b9b4.jpg" width="1000">
+				<figcaption>Santagelo et al. (2015)</figcaption>
+			</section>
+
+			<section>
+				<h3>Subregistro</h3>
+				<p>Los inventarios de deslizamientos tienden a ser sesgados por la relación entre magnitud-frecuencia en los deslizamientos asociada a:</p>
+				<ul>
+					<li>Se desconoce la longitud del periodo de observación</li>
+					<li>Se desconoce el papel de eventos detonantes de alta intensidad tales como sismos</li>
+					<li>La geometría de los pequeños deslizamientos tiende a ser eliminada por procesos erosivos y la vegetación</li>
+				</ul>
+				<img src="https://i.pinimg.com/564x/6f/2e/cc/6f2ecc0b23d8a9703ef66ee77386d5be.jpg" width="800">
+			</section>
+
+			<section>
+				<h3>Levantamiento</h3>
+				<img src="https://i.pinimg.com/originals/02/e9/12/02e912a685afd0b4633f299eace55960.jpg" width="700">
+				<figcaption>Santagelo et al. (2015)</figcaption>
+			</section>
+
+			<section>
+				<h3>Lectura DEM´s</h3>
+				<img src="https://i.pinimg.com/564x/6f/d5/f2/6fd5f2a411761a11ad07d3d5b619d956.jpg" width="800">
+			</section>
+
+			<section>
+				<h3>Lectura DEM´s</h3>
+				<img src="https://i.pinimg.com/564x/1d/f6/ca/1df6cae355639498f49c5062a673a6e7.jpg" width="800">
+			</section>
+
+			<section>
+				<h3>NDVI</h3>
+				<img src="https://i.pinimg.com/originals/27/4e/a8/274ea83c30b05b56257248e95df5c38b.jpg" width="500">
+			</section>
+
+			<section>
+				<h3>Características</h3>
+				<img src="https://i.pinimg.com/564x/8d/b7/06/8db706614555886fee7c6e1d849154cd.jpg" width="450">
+				<figcaption>Fuente: van Westen & Soeters  (1993)</figcaption>
+			</section>
+
+			<section>
+				<h3>Características</h3>
+				<img src="https://i.pinimg.com/564x/d1/78/99/d178996cbaa608084f807b398e2357d3.jpg" width="700">
+				<figcaption>Fuente: van Westen & Soeters  (1993)</figcaption>
+			</section>
+
+			<section>
+				<h3>Características</h3>
+				<img src="https://i.pinimg.com/564x/6a/8b/c8/6a8bc874cf9e84166f8780c36502d234.jpg" width="800">
+				<figcaption>Fuente: van Westen & Soeters  (1993)</figcaption>
+			</section>
+
+		</section>
+
+		<section>
+
+			<section><h1>Selección de variables</h1></section>
+		
+			  <section id="definicion" class="level1">
+			  <h2>Variables</h2>
+			  <p> Propiedad, atributo, característica, aspecto o dimensión de un objeto, hecho o fenómeno que puede variar
+				y cuya variación es medible.</p>
+				<ul>
+				<li><strong>Ser observable:</strong> Su información debe ser concreta y evidente en la realidad.
+				<li><strong>Ser cambiante:</strong> Puede adquirir diferentes categorías y valores.
+				<li><strong>Ser medible:</strong> Puede ser cuantificable.
+				<li><strong>Tener referencia conceptual:</strong> Deben emanar de un previo conocimiento teórico de la realidad.
+				<ul>
+			  </section>
+
+			  <section id="tipo-variable1" class="level2">
+				<h2>Tipo de variables</h2>
+				<h3>Variables independientes</h3>
+				<p>Preparatorias - explicativas – cuasiestáticas - condicionantes – predictoras - intrínsecas</p>
+				<p>Característica o propiedad que se supone ser la causa del fenómeno estudiado, en este caso los movimientos en masa.</p>
+				<p>Ej. Geología, pendiente, aspecto, etc, etc.</p>
+				<h3>Variable dependiente</h3>
+				<p>Es el factor que es observado y medido para determinar el efecto de la variable independiente. En este caso sólo existe
+				una variable dependiente y es la ocurrencia o no ocurrencia de los movimientos en masa.</p>
+			  </section>
+		
+			  <section id="tipo-variable2" class="level2">
+				<h2>Por su naturaleza...</h2>
+				<img src="images/variables.png" alt="tipo-variables" width="1000"/>
+			  </section>
+		
+				<section id="variable1" class="level2">
+					<h1>Variables Condicionantes</h1>
+				  <img src="images/variables-condicionantes.jpg" alt="variables-condicionantes.jpg" width="850"/>
+				  <figcaption><small>Fuente: van Westen et al. (2008)</small></figcaption>
+				</section>
+		
+				<section id="variable2" class="level2">
+				  <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0012825217305652-gr6.jpg" alt="variables-reichenbach.png" width="750"/>
+				  <figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+				</section>
+		
+				<section id="variable3" class="level2">
+				  <img src="images/variables-pourgh.png" alt="variables-pourgh.png" width="900"/>
+				  <figcaption><small>Fuente: Pourghasemi et al. (2010)</small></figcaption>
+				</section>
+		
+				<section id="variable-todos" class="level2">
+				  <img src="images/variables-ejemplo.png" alt="variables-ejemplo.png" width="850"/>
+				  <figcaption><small>Fuente: Shukla et al. (2016) – Río Mandakini (India)</small></figcaption>
+				</section>
+		
+				<section id="variable-ejemplos2" class="level2">
+				  <h2>Variables continuas y categóricas</h2>
+				  <img src="images/inclinacion.jpg" alt="inclinacion.jpg" width="240"/>
+				  <img src="images/inclinacion-continua.png" alt="inclinacion-continua.png" width="310"/>
+				  <figcaption><small>Fuente: Shukla et al. (2016) – Río Mandakini (India)</small></figcaption>
+				</section>
+		
+				<section id="geologia" class="level2">
+				  <h2>Formaciones superficiales</h2>
+				  <img src="images/geologia-superficial.jpg" alt="geologia-superficial.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="aspecto" class="level2">
+				  <h2>Aspecto</h2>
+				  <img src="images/aspecto.jpg" alt="aspecto.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="cinematico" class="level2">
+				  <h2>Análisis Cinemático</h2>
+				  <img src="images/cinematico.jpg" alt="cinematico.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="cobertura" class="level2">
+				  <h2>Coberturas</h2>
+				  <img src="images/cobertura.jpg" alt="cobertura.jpg" width="650"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="cambios-cobertura" class="level2">
+				  <h2>Cambios de coberturas</h2>
+				  <img src="images/cambios-coberturas.jpg" alt="cambios-coberturas.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="curvatura-plana" class="level2">
+				  <h2>Curvatura plana</h2>
+				  <img src="images/curvatura-plana.jpg" alt="curvatura-plana.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="curvatura-perfil" class="level2">
+				  <h2>Curvatura perfil</h2>
+				  <img src="images/curvatura-perfil.jpg" alt="curvatura-perfil.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="curvatura-total" class="level2">
+				  <h2>Curvatura total</h2>
+				  <img src="images/curvatura-total.jpg" alt="curvatura-total.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="pendiente" class="level2">
+				  <h2>Pendiente</h2>
+				  <img src="images/pendiente.jpg" alt="pendiente.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="inclinacion-ladera" class="level2">
+				  <h2>Inclinación de la ladera</h2>
+				  <img src="images/inclinacion-ladera.jpg" alt="inclinacion-ladera.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="relieve-relativo" class="level2">
+				  <h2>Relieve relativo</h2>
+				  <img src="images/relieve-relativo.jpg" alt="relieve-relativo.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="indice-humedad" class="level2">
+				  <h2>Indice de humedad topográfica</h2>
+				  <img src="images/indice-humedad.jpg" alt="indice-humedad.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="indice-posicion" class="level2">
+				  <h2>Indice de posición topográfica</h2>
+				  <img src="images/indice-posicion.jpg" alt="indice-posicion.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="indice-rugosidad" class="level2">
+				  <h2>Indice de rugosidad</h2>
+				  <img src="images/indice-rugosidad.jpg" alt="indice-rugosidad.jpg" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="variables-bufer" class="level2">
+				  <h2>Variables tipo buffer</h2>
+				  <img src="images/variables-bufer.png" alt="variables-bufer.png" width="800"/>
+				  <figcaption><small>Fuente: Pourghasemi et al. (2010) en la cuenca del Haraz (Iran)</small></figcaption>
+				</section>
+		
+				<section id="analisis-exploratorio1" class="level2">
+				  <h2>Univariado</h2>
+				  <img src="images/histograma.png" alt="histograma.png" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="kernel" class="level2">
+				  <h2>Univariado</h2>
+				  <img src="images/kernel.png" alt="kernel.png" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="boxplot" class="level2">
+				  <h2>Univariado</h2>
+				  <img src="images/boxplot.png" alt="boxplot.png" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="bivariado1" class="level2">
+				  <h2>Bivariado</h2>
+				  <img src="images/bivariado1.png" alt="bivariado1.png" width="600"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="bivariado" class="level2">
+				  <h2>Bivariado</h2>
+				  <img src="images/bivariado.png" alt="bivariado.png" width="550"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="bivariado-con" class="level2">
+				  <h2>Capacidad de separación</h2>
+				  <img src="images/bivariado-con.png" alt="bivariado-con.png" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="bivariado1-con" class="level2">
+				  <h2>Capacidad de separación</h2>
+				  <img src="images/bivariado1-con.png" alt="bivariado1-con.png" width="750"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="matriz" class="level2">
+				  <h2>Matriz de correlación</h2>
+				  <img src="images/matriz.png" alt="matriz.png" width="700"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="pca" class="level2">
+				  <h2>PCA</h2>
+				  <img src="images/pca.png" alt="pca.png" width="1000"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="pca-3d" class="level2">
+				  <h2>PCA</h2>
+				  <img src="images/pca-3d.png" alt="pca-3d.png" width="1000"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="varianza" class="level2">
+				  <h2>Varianza de cada componente</h2>
+				  <img src="images/pca2.png" alt="pca2.png" width="1000"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="aporte-variable" class="level2">
+				  <h2>Aporte de cada variable</h2>
+				  <img src="images/pca3.png" alt="pca3.png" width="1000"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="aporte-variable1" class="level2">
+				  <h2>Aporte de cada variable</h2>
+				  <img src="images/pca4.png" alt="pca4.png" width="500"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="aporte-variable2" class="level2">
+				  <h2>Aporte de cada variable</h2>
+				  <img src="images/pca5.png" alt="pca5.png" width="800"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+				<section id="aporte-variable3" class="level2">
+				  <h2>Aporte de cada variable</h2>
+				  <img src="images/pca6.png" alt="pca6.png" width="1000"/>
+				  <figcaption><small></small></figcaption>
+				</section>
+		
+			  </section>
+
+			  <section>
+
+			  <section><h1>Métodos heurísticos</h1></section>
+
+			  <section id="metodos" class="level1">
+				<h2>Métodos</h2>
+				  <img src="images/metodos.png" alt="metodos.png" width="850"/>
+			  </section>
+		    
+					<section id="definicion1" class="level2">
+						<h1>Método heurístico (knowledge-driven)</h1>
+					  <p>La susceptibilidad es determinada directamente o indirectamente por un experto en el fenómeno y en la región de estudio.
+						 El proceso esta basado en la experiencia individual y en el uso del razonamiento por lógica. Las reglas de decisión son por lo
+						 tanto difíciles de formular por que varían de lugar a lugar.</p>
+					  <h3>El experto puede decidir:</h3>
+					  <ul>
+						<li>Variables y clases a utilizar</li>
+						<li>El peso de las clases</li>
+						<li>El peso de las variables</li>
+					  </ul>
+					  <h3>Criterios utilizados:</h3>
+					  <ul>
+						<li>Evidencia de actividad reciente</li>
+						<li>Ambiente geomorfológico de cada unidad identificada</li>
+						<li>Tipo de material y sus condiciones</li>
+						<li>Pendiente de las laderas</li>
+						<li>Relación con las unidades adyacentes que pueden activar o afectar la unidad de análisis.</li>
+						<li>etc., etc, ...</li>
+					  </ul>
+					</section>
+		  
+					<section id="ventajas" class="level2">
+					  <h3>Ventajas:</h3>
+					  <ul>
+						<li>Papel dominante de la opinión del experto en el análisis.</li>
+						<li>Podrían ser utilizados a todas las escalas (pero no muy usado a escalas de detalle)</li>
+						<li>Pueden permitir una rápida zonificación considerando una gran cantidad de variables</li>
+						<li>Cada polígono individual puede ser evaluado separadamente de acuerdo con sus conjunto de condiciones únicas</li>
+					  </ul>
+					  <br /><br />
+					  <h3>Desventajas:</h3>
+					  <ul>
+						<li>Altamente subjetiva, ya que depende de la habilidad y experiencia del experto</li>
+						<li>No se puede generalizar</li>
+						<li>No genera evaluación de la amenaza cuantitativa</li>
+					  </ul>
+					</section>
+		  
+					<section id="tipos" class="level2">
+					  <p>En los métodos heurísticos la opinión de experto realizando la caracterización son utilizadas
+						para clasificar la susceptibilidad. Estos métodos combinan el mapeo de los deslizamientos y las
+						características  geomorfológicas como el principal elemento de entrada para la evaluación de la
+						susceptibilidad.</p>
+					  <br /><br />
+					  <h3>Existen varios tipos de análisis heurísticos:</h3>
+						<ul>
+						  <li>Análisis geomorfológico (métodos de mapeo directo)</li>
+						  <li>Análisis basado en índices (mapeo indirecto)</li>
+						  <li>Análisis de decisión multicriterio (mapeo indirecto)</li>
+						</ul>
+					</section>
+		  	  
+				  <section id="metocarto1" class="level2">
+					<h3>Cartografía Geomorfológica</h3>
+					<img src="images/metocarto1.png" alt="metocarto1.png" width="750"/>
+					<figcaption><small>Fuente: van Zuidam (1985)</small></figcaption>
+				  </section>
+		  
+				  <section id="metocarto" class="level2">
+					<img src="images/metocarto.png" alt="metocarto.png" width="900"/>
+					<figcaption><small>Fuente: van Zuidam (1985)</small></figcaption>
+				  </section>
+		  
+				  <section id="mapa-geomorfo" class="level2">
+					<img src="images/mapa-geomorfo.png" alt="mapa-geomorfo.png" width="810"/>
+					<figcaption><small>Fuente: GEO 22 (GCO, 2006)</small></figcaption>
+				  </section>
+		  
+				  <section id="mapa-geomorfo1" class="level2">
+					<img src="images/mapa-geomorfo1.png" alt="mapa-geomorfo1.png" width="500"/>
+					<figcaption><small>Fuente: Castellanos & van Westen (2007)</small></figcaption>
+				  </section>
+		  
+				  <section id="mapa-geomorfo2" class="level2">
+					<img src="images/mapa-geomorfo2.png" alt="mapa-geomorfo2.png" width="480"/>
+					<figcaption><small>Fuente: Castellanos & van Westen (2007)</small></figcaption>
+				  </section>
+		  
+				  <section id="mapa-geomorfo3" class="level2">
+					<img src="images/mapa-geomorfo3.png" alt="mapa-geomorfo3.png" width="850"/>
+					<figcaption><small>Mapa de zonificación geológica para ingeniería y estabilidad. Malgot et al, (1973) tomado de Varnes (1984).</small></figcaption>
+				  </section>
+		  
+				  <section id="mapa-geomorfo4" class="level2">
+					<img src="images/mapa-geomorfo4.png" alt="mapa-geomorfo4.png" width="950"/>
+					<figcaption><small>Mapa de zonificación geológica para ingeniería y estabilidad. Malgot et al, (1973) tomado de Varnes (1984).</small></figcaption>
+				  </section>
+		  
+				  <section id="mapa-geomorfo5" class="level2">
+					<img src="images/mapa-geomorfo5.png" alt="mapa-geomorfo5.png" width="400"/>
+					<figcaption><small>Mapa de la región de Moyenne Vesubie en Francia en esc. 1:25.000. Meneroud & Calvino (197) tomado de Varnes (1984).</small></figcaption>
+				  </section>
+		  
+				  <section id="mapa-geomorfo6" class="level2">
+					<img src="images/mapa-geomorfo6.png" alt="mapa-geomorfo6.png" width="900"/>
+					<figcaption><small>Leyenda del Mapa de la región de Moyenne Vesubie en Francia en esc. 1:25.000. Meneroud & Calvino (197) tomado de Varnes (1984).</small></figcaption>
+				  </section>
+		  
+				  <section id="alpago" class="level2">
+					<img src="images/alpago.png" alt="alpago.png" width="1000"/>
+					<figcaption><small>Fuente: van Westen et al. (2003)</small></figcaption>
+				  </section>
+		  
+				  <section id="alpago1" class="level2">
+					<img src="images/alpago1.jpg" alt="alpago1.png" width="450"/>
+					<figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+				  </section>
+		  
+				  <section id="alpago2" class="level2">
+					<img src="images/alpago2.png" alt="alpago2.png" width="900"/>
+					<figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+				  </section>
+		  
+				  <section id="alpago3" class="level2">
+					<img src="images/alpago3.jpg" alt="alpago3.jpg" width="540"/>
+					<figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+				  </section>
+		  
+				  <section id="alpago4" class="level2">
+					<img src="images/alpago4.jpg" alt="alpago4.jpg" width="580"/>
+					<figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+				  </section>
+		  
+				  <section id="zonificacion1" class="level2">
+					<p> Los estudios geológicos y geomorfológicos se deben enmarcar dentro de un estudio de zonificación
+					  de la aptitud geológica del predio de interés, el cual se debe planear y elaborar en diferentes etapas que comprenden:</p>
+					  <ul>
+						<li>Recopilación de información existente,</li>
+						<li>Fotointerpretación y uso de sensores remotos disponibles,</li>
+						<li>Análisis detallado de la base topográfica existente,</li>
+						<li>Realización de visitas de campo para el reconocimiento de las unidades litológicas y geomorfológicas,</li>
+						<li>Descripción detallada y sistemática de afloramientos,</li>
+						<li>Medición y análisis de estructuras geológicas,</li>
+						<li>Levantamiento cuidadoso del perfil de meteorización y los depósitos de vertiente o aluviales,</li>
+						<li>Identificación de los procesos morfodinámicos presentes en la zona de influencia del proyecto.</li>
+					  </ul>
+					<p><small>Fuente: Directrices y lineamientos AMVA (2012)</small></p>
+				  </section>
+		  
+				  <section id="zonificacion2" class="level2">
+					  <ul>
+						<li><strong>Subzonas tipo A – Estable independiente</strong>: su estabilidad es de alto grado pues sus condiciones naturales son favorables.
+						  Posiblemente llegaría a depender del manejo mismo que se le dé al terreno.</li>
+						<br /><br />
+						<li><strong>Subzonas tipo B – Estable dependiente</strong>: su estabilidad depende de factores externos, los cuales se deben corregir.
+						  También de factores internos que implican un manejo determinado del terreno y cierto tipo de obras civiles que
+						  garanticen el no deterioro de esta estabilidad natural inicial.</li>
+						<br /><br />
+						<li><strong>Subzonas tipo C – Inestable recuperable</strong>: la estabilidad de estos terrenos es critica o presenta inestabilidad
+						  manifiesta; sin embargo, con algunos correctivos específicos se puede mejorar la estabilidad, y en consecuencia,
+						  adelantar ciertas obras civiles en si interior.</li>
+					  </ul>
+					<p><small>Fuente: Chica (1998)</small></p>
+				  </section>
+		  
+				  <section id="zonificacion2" class="level2">
+					  <ul>
+						<li><strong>Subzonas tipo D – Inestable no recuperable</strong>: terrenos con inestabilidad manifiesta cuya recuperación no es posible
+						   o demasiado costosa comparada con las inversiones y tipo de obras proyectadas.</li>
+						<br /><br />
+						<li><strong>Subzonas tipo E – Estable no utilizable</strong>: terrenos estables pero restringidos por condiciones urbanísticas u otras
+						   como estar ubicadas en vegas potenciales de inundación o cerca de frentes libres de taludes desprotegidos.</li>
+						<br /><br />
+						<li><strong>Subzonas tipo F – Inestables no utilizables</strong>: terrenos inestables y restringidos por condiciones como las mencionadas
+						   para la zubzona anterior.</li>
+					  </ul>
+					<p><small>Fuente: Chica (1998)</small></p>
+				  </section>
+		  
+				  <section id="zonificacion3" class="level2">
+					<img src="images/zonificacion.jpg" alt="zonificacion.jpg" width="480"/>
+					<figcaption><small>Prof. Hernán Martinez -Curso Cartografía Geotécnica (1999)</small></figcaption>
+				  </section>
+		  
+				  <section id="zonificacion4" class="level2">
+					<img src="images/zonificacion1.png" alt="zonificacion1.png" width="750"/>
+					<figcaption><small>Fuente: Aristizábal & Hermelin (2011)</small></figcaption>
+				  </section>
+		  
+				  <section id="zonificacion5" class="level2">
+					  <ul>
+						<li><strong>Zonas aptas</strong>: alto grado de estabilidad, sin procesos morfodinámicos activos e
+						  inactivos, estabilidad condicionada al tipo de intervención y su manejo..</li>
+						<li><strong>Zonas aptas con restricciones moderadas</strong>: zonas estables con estabilidad condicionada
+						  por la incidencia directa de los procesos morfodinámicos activos identificados en la UMI. Su estabilidad
+						  depende del manejo a los procesos existentes y la intervención, con obras de estabilización proyectadas técnica
+						   y económicamente viables.</li>
+						<li><strong>Zonas aptas con restricciones altas</strong>: se evidencia la ocurrencia de proceso morfodinámicos
+						  activos, y su estabilidad depende del manejo que se le de a estos procesos y la intervención. El estudio debe
+						  evaluar la viabilidad técnica y económica de las obras de estabilización proyectadas.</li>
+						  <li><strong>Zonas no aptas</strong>: con evidente inestabilidad por la ocurrencia de procesos morfodinámicos.
+							El estudio considera que las obras de estabilización proyectas son complejas y de alto costo con respecto
+							a las intervenciones proyectadas en la zona o predio de interés.</li>
+					  </ul>
+					<p><small>Fuente: Directrices y lineamientos AMVA (2012)</small></p>
+				  </section>
+		  
+				  <section id="index-figura" class="level2">
+					<img src="images/index-mapping.png" alt="index-mapping.png" width="670"/>
+					<figcaption><small>Fuente: van Vesten (Introduction of Landslide Part 4 Use of GIS for landslide mapping)</small></figcaption>
+				  </section>
+		  
+				  <section id="index-figura1" class="level2">
+					<p>Combina mapas de factores asociados con la ocurrencia de deslizamientos. Los pesos son determinados para cada factor basado
+					   en un estimativo de la influencia relativa a los deslizamientos. Las variables son generalmente divididas en clases,
+					   los cuales son ponderados utilizando el criterio de expertos. Finalmente, un índice de susceptibilidad o amenaza es obtenido
+						para cada unidad del mapa.</p>
+					<img src="images/index-mapping1.png" alt="index-mapping1.png" width="750"/>
+					<figcaption><small></small></figcaption>
+				  </section>
+		  
+				  <section id="index-figura2" class="level2">
+					<img src="images/index-mapping2.png" alt="index-mapping2.png" width="1000"/>
+					<figcaption><small></small></figcaption>
+				  </section>
+		  
+				  <section id="index-figura3" class="level2">
+					<img src="images/index-mapping3.png" alt="index-mapping3.png" width="800"/>
+					<figcaption><small>Fuente: SGC, 2015)</small></figcaption>
+				  </section>
+		  	  
+				  <section id="ahp1" class="level2">
+					<h1>Análisis Jerárquico de Procesos</h1>
+					<h3>Toma de decisiones multicriterio</h3>
+					<p>Conjunto de aproximaciones, métodos, modelos, técnicas y herramientas dirigidas a mejorar a calidad integral
+					  de los procesos de decisión seguidos por los individuos y los sistemas, para mejorar la efectividad, eficacia
+					   y eficiencia de los proceso de decisión y a incrementar el conocimiento de los mismos.</p>
+					<h3>Paradigma de la Racionalidad</h3>
+					<p>Aaproximación orientada al proceso, cuyo propósito es la comprensión y el consenso. Y pretende la incorporación
+					   a los modelos de aspectos subjetivos, intangibles y no considerados, que condicionan la toma de decisiones de
+					   los individuos y organizaciones.<p>
+					<figcaption><small>Fuente: Moreno (2000)</small></figcaption>
+				  </section>
+		  
+				  <section id="ahp2" class="level2">
+					<img src="images/figura-ahp.png" alt="figura-ahp.png" width="600"/>
+					<figcaption><small>Fuente: Hervas & Bobrowsky (2009)</small></figcaption>
+				  </section>
+		  
+				  <section id="ahp3" class="level2">
+					<p>Es una técnica multi-objetivo y multi-criteria para toma de decisiones que permite al usuario llegar a una escala
+					  de preferencias a partir de un determinado numero de alternativas. Consiste en organizar una serie de factores en
+					  orden de jerarquía, asignando valores numéricos a valoraciones subjetivas sobre la relativa importancia de cada factor.</p>
+					  <ul>
+						<li>Los pesos son obtenidos generalmente a través de los valores y vectores propios de la matriz. El vector propio
+						  que corresponde al mayor valor propio genera la prioridad relativa de los factores.</li>
+						<li>También puede ser obtenido normalizando cada columna de la matriz de comparación, y calculando el promedio
+						  de las filas para resolver la matriz.</li>
+					  </ul>
+				  </section>
+		  
+				  <section id="ahp4" class="level2">
+					<p>Escala para incorporar los juicios o valoraciones del decisor. La escala es estrictamente positiva y elimina las
+					  ambigüedades que tiene el ser humano en comparar elementos en la proximidad del cero o del infinito.</p>
+					<p>Los individuos son mas preciso al comparar elementos de la misma magnitud, número mágico de Miller (1956) 7(+/-2).</p>
+					<img src="images/saaty.png" alt="saaty.png" width="1000"/>
+					<figcaption><small>Fuente: Saaty (2000) tomado de Ayalew et al (2005)</small></figcaption>
+				  </section>
+		  
+				  <section id="ahp5" class="level2">
+					<img src="images/saaty1.png" alt="saaty1.png" width="1000"/>
+					<figcaption><small>Fuente: Neupane & Piantanakulchai (2006)</small></figcaption>
+				  </section>
+		  
+				  <section id="ahp6" class="level2">
+					<img src="images/matriz-comparacion.png" alt="matriz-comparacion.png" width="900"/>
+					<figcaption><small>Fuente: Neaupane & Piantanakulchai (2006)</small></figcaption>
+				  </section>
+		  
+				  <section id="cr" class="level2">
+					<h3>Radio de consistencia (CR)</h3>
+					<p>Es utilizado para estimar la probabilidad que la matriz de juicio fue creada aleatoriamente.</p>
+					<img src="images/cr.png" alt="cr.png" width="800"/>
+					<img src="images/ica.png" alt="ica.png" width="1200"/>
+					<figcaption><small>Fuente: Neaupane & Piantanakulchai (2006); Moreno (2000)</small></figcaption>
+				  </section>
+		  
+				  <section id="ahp7" class="level2">
+					<img src="images/ahp.png" alt="ahp.png" width="1100"/>
+					<figcaption><small>Fuente: Neupane & Piantanakulchai (2006)</small></figcaption>
+				  </section>
+		  
+				  <section id="ahp8" class="level2">
+					<img src="images/ahp1.png" alt="ahp1.png" width="1000"/>
+					<img src="images/ahp2.png" alt="ahp2.png" width="700"/>
+					<figcaption><small>Fuente: Ayalew et al (2007) en Niigata (Japón)</small></figcaption>
+				  </section>
+		  	  
+				  <section id="mapas" class="level2">
+					<img src="images/directo-ahp.jpg" alt="directo-ahp.png" width="450"/>
+					<figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+				  </section>
+		  
+				  <section id="tabla" class="level2">
+					<img src="images/directo-ahp1.png" alt="directo-ahp1.png" width="600"/>
+					<figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+				  </section>
+		  
+				</section>
+
+				<section>
+
+					<section><h1>Métodos estadísticos bivariados</h1></section>
+
+					<section id="datos" class="level1">
+						<img src="images/metodos.png" alt="metodos.png" width="850"/>
+					  </section>
+							
+						  <section id="metodo-datos" class="level2">
+							<h2>Métodos Estadístico (data-driven)</h2>
+							<img src="images/modelo-datos.png" alt="modelo-datos.png" width="1000"/>
+						  </section>
+				
+						  <section id="modelos" class="level2">
+							<img src="images/modelos-estadisticos.png" alt="modelos-estadísticos.png" width="550"/>
+								<figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+						  </section>
+				
+						  <section id="definicion1" class="level2">
+							<h3>Los métodos estadísticos se ajustan mejor para movimientos en masa:.</h3>
+							<ul>
+							  <li>Que no se mueven mucho de su área fuente</li>
+							  <li>Que no cambian significativamente su tamaño y geometría durante el movimiento (rotacional o traslacional).</li>
+							</ul>
+							  <br /><br />
+							<h3>Y menos aplicables a movimientos en masa:</h3>
+							<ul>
+							  <li>Movimientos en masa que viajan largas distancias (cientos de miles de metros)</li>
+							  <li>Que cambian significativamente su volumen y geometría durante su movimiento desde el área fuente a la zona depositacional.</li>
+							  <li>Para debris flow se recomienda generalmente modelos con base física.</li>
+							</ul>
+							<p>La falta de algunos movimientos en masa en el inventario puede no representar un problema para el modelo de susceptibilidad,
+							  en tanto que el inventario tenga una razonable representación de la abundancia y distribución de los movimientos en la zona de
+							  estudio. Consistencia es mas importante que este completo.</p>
+							  <figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+						  </section>
+				
+						  <section id="modelos-estadisticos" class="level2">
+							<img src="images/metodos-estadisticos.png" alt="metodos-estadísticos.png" width="680"/>
+								<figcaption><small>Fuente: Corominas et al. (2014)</small></figcaption>
+						  </section>
+				
+						  <section id="bivariado1" class="level2">
+							<h2>Método Estadístico Bivariado</h2>
+							<p>Cada mapa de factor (pendientes, geología, uso del suelo, etc,) es combinado con el mapa de distribución de movimientos en masa,
+							  y los valores de los pesos, basados generalmente en densidad de deslizamientos, son calculados para cada clase de la variable
+							  (rango de pendiente, unidad litológica, tipo de uso del suelo, etc, ).</p>
+							<ul>
+							  <li>Los métodos estadísticos bivariados son una buena herramienta de aprendizaje para el analista encontrar qué factores o
+								combinación de factores juegan un papel importante en la ocurrencia de movimientos en masa.</li>
+							  <li>Pueden ser combinados con métodos heurísticos</li>
+							  <li>Están basados en la asociación observada entre la distribución de los movimientos en masa y cada clase.</li>
+							  <li>Todos los parámetros tienen una importancia igual sobre la ocurrencia de deslizamientos.</li>
+							  <li>Las variables deben ser transformadas a categóricas</li>
+							  <figcaption><small>Fuente: AGS (2007)</small></figcaption>
+							</ul>
+						  </section>
+				
+						  <section id="bivariado2" class="level2">
+						  <h3>Procedimiento (i)</h3>
+							<img src="images/bivariado2.png" alt="bivariado2.png" width="500"/>
+							<figcaption><small>Fuente: van Westen et al, (1997)</small></figcaption>
+						  </section>
+				
+						  <section id="bivariado3" class="level2">
+						  <h3>Procedimiento (ii)</h3>
+							<img src="images/bivariado3.png" alt="bivariado3.png" width="900"/>
+							<img src="images/lsi.png" alt="lsi.png" width="700"/>
+							<figcaption><small>Fuente: van Westen et al, (1997)</small></figcaption>
+						  </section>			  
+				
+						<section id="frm" class="level2">
+							<h2>Likelihood - Frequency Ratio Model</h2>
+						  <img src="images/frm.png" alt="frm.png" width="200"/>
+						  <p>Ci es el número de celdas con valor i, Ct es el total de número de celdas de la zona de studio, n es el total
+							de valores enteros en X.</p>
+						  <img src="images/frm1.png" alt="fmr1.png" width="200"/>
+						  <p>Li es la cuenca de factor X con valor i que caen dentro del area de deslizamientos, Lt es el total de area
+							con deslizamientos, n es el número de valores enteros de X el número de factores X.</p>
+							<img src="images/frm2.png" alt="fmr2.png" width="150"/>
+						</section>
+				
+						<section id="fmr3" class="level2">
+						  <p>La relación de frecuencia (FR) de la clase de cada factor condicionante es calculada dividiendo la relación de
+							la ocurrencia de movimientos en masa por la relación del área de la clase.</p>
+						  <img src="images/frm3.png" alt="fmr3.png" width="800"/>
+						  <figcaption><small>Fuente: Chen et al, (2016); Yalcin et al. (2011)</small></figcaption>
+						</section>
+				
+						<section id="frm4" class="level2">
+						  <img src="images/frm4.png" alt="frm4.png" width="800"/>
+						  <figcaption><small>Fuente: Liu et al.  (2016)</small></figcaption>
+						</section>
+				
+						<section id="frm5" class="level2">
+						  <img src="images/frm5.png" alt="frm5.png" width="1000"/>
+						  <figcaption><small>Fuente: Akgun et al (2008)</small></figcaption>
+						</section>
+				
+						<section id="frm6" class="level2">
+						  <img src="images/frm6.png" alt="frm6.png" width="1000"/>
+						  <figcaption><small>Fuente: Akgun et al (2008)</small></figcaption>
+						</section>
+				
+						<section id="frm7" class="level2">
+						  <img src="images/frm7.png" alt="frm7.png" width="500"/>
+						  <figcaption><small>Fuente: Chen et al. (2016)</small></figcaption>
+						</section>		
+							
+						<section id="sim1" class="level2">
+							<h1>Statistical Index Model</h1>
+						  <p>El valor del peso para cada unidad categórica es definido como el logaritmo natural de la densidad de
+							deslizamientos en una clase dividido la densidad de deslizamientos en toda la cuenca, de acuerdo con
+							la siguiente ecuación:</p>
+						  <img src="images/sim1.png" alt="sim1.png" width="500"/>
+						  <p>Donde Wij es el pesoo dado a una cierta clase i de un parámetro j. Dij es la densidad de deslizamientos
+							de la clase i del parámetro j. D es la densidad total de deslizamientos de todo el mapa. Nij es el número
+							de pixeles en una cierta clase i del parametro j. N es el total de celdas que correpsonden a deslizamientos
+							 en todo el mapa. S es el total de pixeles del mapa.</p>
+						  <figcaption><small>Fuente: Chen et al, (2016); van Westen (1997)</small></figcaption>
+						</section>
+				
+						<section id="sim2" class="level2">
+						  <img src="images/sim2.png" alt="sim2.png" width="450"/>
+						  <figcaption><small>Fuente: Barredo et al. (2000)</small></figcaption>
+						</section>
+							
+						<section id="odds" class="level2">
+							<h1>Weights-of-Evidence (WoE)</h1>
+						  <img src="images/odds.png" alt="odds.png" width="1000"/>
+						</section>
+				
+						<section id="bayes" class="level2">
+						  <p>La probabilidad priori P(c) es usualmente estimada empíricamente con el conocimiento acerca de la ocurrencia
+							 de un evento c en el pasado bajo iguales condiciones. Cuando la probabilidad de la evidencia P(x) es integrada
+							  en el cálculo de la probabilidad, se conoce como probabilidad condicionada o posterior P(c/x), es decir la
+							  probabilidad que un evento x ocurrirá bajo la presencia de una evidencia x. El teorema de Bayes integra ambas
+							   probabilidades.</p>
+						  <img src="images/bayes_rule.png" alt="bayes_rule.jpg" width="630"/>
+						</section>
+				
+						<section id="woe1" class="level2">
+						  <p>Este método está basado en la teoría de probabilidad Bayesiana. En el cual para determinar la relativa
+							importancia de los datos se utiliza los conceptos de probabilidad priori y posterior.</p>
+						  <img src="images/woe-c.png" alt="woe-c.png" width="500"/>
+						  <figcaption><small>Fuente: Lee et al., (2002); Vahidnia et al (2009)</small></figcaption>
+						  <p>Un peso positivo  de W+ indica que la presencia del factor es favorable para la ocurrencia de deslizamientos, y
+							la magnitud indica una correlación negativa. Un valor positivo de W- señala que la ausencia del factor de causa
+							es favorable para la ocurrencia de deslizamientos, <strong>Contraste (C)</strong>, y refleja la asociación espacial
+							total entre una variable predictora y la ocurrencia de deslizamientos. Un valor de 0 indica que la clase considerada
+							del factor de causa no es significativa en el análisis.</p>
+						</section>
+				
+						<section id="woe2" class="level2">
+						  <img src="images/woe.png" alt="woe.png" width="500"/>
+						  <img src="images/pd.png" alt="pd.png" width="200"/>
+						  <img src="images/bayes.png" alt="bayes.png" width="600"/>
+						</section>
+				
+						<section id="woe3" class="level2">
+						  <img src="images/woe.png" alt="woe.png" width="450"/>
+						  <img src="images/woe1.png" alt="woe1.png" width="900"/>
+						</section>
+				
+						<section id="woe4" class="level2">
+						  <img src="images/woe2.png" alt="woe2.png" width="700"/>
+						  <img src="images/woe3.png" alt="woe3.png" width="700"/>
+						  <p>La probabilidad final (P) de cada celda es la suma de los pesos de cada parámetro y la probabilidad priori (Pp(s))</p>
+						  <img src="images/woe5.png" alt="woe5.png" width="700"/>
+						  <figcaption><small>Fuente: Lee et al. (2002);  van Westen et al (2003)</small></figcaption>
+						</section>
+				
+						<section id="woe5" class="level2">
+						  <img src="images/woe4.png" alt="woe4.png" width="300"/>
+						  <ul>
+							<li><strong>A1</strong> es el número de pixeles con deslizamientos en una clase</li>
+							<li><strong>A2</strong> es el número de pixeles con deslizamientos que no están presentes en dicha clase</li>
+							<li><strong>A3</strong> es el número de pixeles en la clase en los cuales no hay deslizamientos</li>
+							<li><strong>A4</strong> es el número de pixeles en la clase donde no hay deslizamientos y que tampoco el factor es presente.</li>
+						  </ul>
+						  <br /><br />
+						  <figcaption><small>Fuente: Ozdemir & Altural (2013)</small></figcaption>
+						</section>
+				
+						<section id="woe6" class="level2">
+						  <img src="images/woe-ejer.png" alt="woe-ejer.png" width="1000"/>
+						</section>
+				
+						<section id="woe-mapa" class="level2">
+						  <img src="images/woe-mapa.png" alt="woe-mapa.png" width="500"/>
+						  <figcaption><small>Fuente: Chen et al. (2016)</small></figcaption>
+						</section>
+				
+						<section id="woe-mapa1" class="level2">
+						  <img src="images/woe-mapa1.png" alt="woe-mapa1.png" width="800"/>
+						  <figcaption><small>Fuente: Chen & Li (2014)</small></figcaption>
+						</section>
+				
+						<section id="ebf1" class="level2">
+							<h1>Evidential Belief Funtion (EBF)</h1>
+						  <p>El modelo EBF (Dempster - Shafer) consiste en el grado de Belief (Bel), Disbelief (Dis), Uncertainty (Unc)
+							y Plausibility (Pls), con valores entre 0 y 1. Bels y Pls representan el límite de probabilidad bayesiana inferior
+							y superior. Mientras que, Pls es mayor o igual que Bel, y Unc es la diferencia entre ellos, indicando la
+							incertidumbre del resultado (Ghosh & Carranza, 2010; Chen et al., 2016).</p>
+						  <img src="images/ebf1.png" alt="ebf1.png" width="300"/>
+						  <img src="images/ebf2.png" alt="ebf2.png" width="300"/>
+						  <img src="images/ebf3.png" alt="ebf3.png" width="300"/>
+						  <img src="images/ebf4.png" alt="ebf4.png" width="300"/>
+						  <img src="images/ebf5.png" alt="ebf5.png" width="600"/>
+						  <figcaption><small>N(L) es el número total de pixeles con deslizamientos. N(S) es el número total de pixeles.
+						  Donde j son las variables, e i son las clases, por lo que N(Cij) es el número de pixeles en la clase Cij.</small></figcaption>
+						</section>
+				
+						<section id="ebf-ejemplo" class="level2">
+						  <img src="images/ebf0.png" alt="ebf0.png" width="850"/>
+						  <figcaption><small>Fuente: Nampak et al. (2014)</small></figcaption>
+						</section>
+				
+						<section id="ebf-ejercicio" class="level2">
+						  <img src="images/ebf6.png" alt="ebf6.png" width="650"/>
+						  <figcaption><small>Fuente: Ghosh & Carranza (2010)</small></figcaption>
+						</section>
+								
+					<section id="vf" class="level1">
+						<h1>Certainty Factor (CF)</h1>
+						<p>El valor de CF varía entre -1 y +1. Un valor positivo significa un incremento en la certidumbre de la ocurrencia de deslizamientos,
+						  mientras que un valor negativo corresponde a una reducción en dicha certidumbre. Un valor cercano a 0 significa que la probabilidad priori
+						  es muy similar a la probabilidad condicional (Pourghsemi et al. 2012).</p>
+						<img src="images/cf.png" alt="cf.png" width="400"/>
+						<p>Donde PPa es la probabilidad condicional de la ocurrencia de un deslizamiento en la clase a. PPs es la probabilidad priori del
+						  número total de deslizamientos en el área (Kanungo et al. 2011).</p>
+					</section>
+				
+					<section id="ejemplos" class="level1">
+					  <img src="images/bivariados-mapas.png" alt="bivariados-mapas.png" width="580"/>
+					  <figcaption><small>Fuente: Chen et al. (2016)</small></figcaption>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section><h1>Métodos estadísticos multivariados</h1></section>
+
+					<section id="datos" class="level1">
+						<img src="images/metodos.png" alt="metodos.png" width="850"/>
+					  </section>
+							
+						  <section id="metodo-datos" class="level2">
+							<h2>Métodos Estadístico (data-driven)</h2>
+							<img src="images/modelo-datos.png" alt="modelo-datos.png" width="1000"/>
+						  </section>
+				
+						  <section id="modelos" class="level2">
+							<img src="images/modelos-estadisticos.png" alt="modelos-estadísticos.png" width="550"/>
+								<figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+						  </section>
+				
+						  <section id="definicion1" class="level2">
+							<h3>Los métodos estadísticos se ajustan mejor para movimientos en masa:.</h3>
+							<ul>
+							  <li>Que no se mueven mucho de su área fuente</li>
+							  <li>Que no cambian significativamente su tamaño y geometría durante el movimiento (rotacional o traslacional).</li>
+							</ul>
+							  <br /><br />
+							<h3>Y menos aplicables a movimientos en masa:</h3>
+							<ul>
+							  <li>Movimientos en masa que viajan largas distancias (cientos de miles de metros)</li>
+							  <li>Que cambian significativamente su volumen y geometría durante su movimiento desde el área fuente a la zona depositacional.</li>
+							  <li>Para debris flow se recomienda generalmente modelos con base física.</li>
+							</ul>
+							<p>La falta de algunos movimientos en masa en el inventario puede no representar un problema para el modelo de susceptibilidad,
+							  en tanto que el inventario tenga una razonable representación de la abundancia y distribución de los movimientos en la zona de
+							  estudio. Consistencia es mas importante que este completo.</p>
+							  <figcaption><small>Fuente: Reichenbach et al. (2018)</small></figcaption>
+						  </section>
+				
+						  <section id="modelos-estadisticos" class="level2">
+							<img src="images/metodos-estadisticos.png" alt="metodos-estadísticos.png" width="680"/>
+								<figcaption><small>Fuente: Corominas et al. (2014)</small></figcaption>
+						  </section>
+				
+						  <section id="multivariado" class="level2">
+							<h2>Método Estadístico Multivariado</h2>
+							<p>Evalúan la relación combinada entre una variable dependiente (ocurrencia de deslizamientos) y una serie de variables
+							  independientes (factores que controlan la ocurrencia de deslizamientos). Convirtiéndose en el método estándar para
+							  escalas regionales de evaluación de la susceptibilidad.</p>
+							<h3>Limitaciones</h3>
+							<ul>
+							  <li>La hipótesis general que los deslizamientos ocurren por la misma combinación de factores a lo largo del área de estudio.</li>
+							  <li>Ignorar el hecho que la ocurrencia de ciertos tipos de deslizamientos están controlados por ciertos factores de causa
+								que deben ser analizados o investigados individualmente.</li>
+							  <li>Extender el control de algunos factores espaciales que pueden variar ampliamente en áreas con condiciones geológicas
+								complejas y ambientes culturales.</li>
+							  <li>La falta de un criterio de experto adecuado en diferentes tipos de deslizamientos, procesos y factores de causas.</li>
+							  <figcaption><small>Fuente: AGS (2007) Guidelines for landslide susceptibility, hazard and risk assessment</small></figcaption>
+							</ul>
+						  </section>
+				
+						  <section id="multivariado1" class="level2">
+						  <h3>Procedimiento (i)</h3>
+							<img src="images/multivariado.png" alt="multivariado" width="750"/>
+							<figcaption><small>Fuente: van Westen et al, (1997)</small></figcaption>
+						  </section>
+				
+						  <section id="multivariado2" class="level2">
+						  <h3>Procedimiento (ii)</h3>
+							<img src="images/multivariado1.png" alt="multivariado" width="850"/>
+							<figcaption><small>Fuente: van Westen et al, (1997)</small></figcaption>
+						  </section>
+				
+						  <section id="multivariado3" class="level2">
+						  <h3>Procedimiento (ii)</h3>
+							<img src="images/multivariado2.png" alt="multivariado" width="900"/>
+							<figcaption><small>Fuente: van Westen et al, (1997)</small></figcaption>
+						  </section>
+				
+						<section id="matrix1" class="level2">
+							<h2>Matrix Assessment</h2>
+						  <p>También denominado <strong>Método de Análisis Condicional</strong> (Clerici et al., 2002; 2006). No requiere asunciones de aleatoriedad del
+							fenómeno bajo análisis.</p>
+						  <h3>Metodología</h3>
+						  <ol>
+							<li>Mapa de inventario de deslizamientos</li>
+							<li>Mapa de factores explicativos</li>
+							<li>Definir UCU</li>
+							<li>Cruzar UCU vs inventario de deslizamientos</li>
+							<li>Definir para cada UCU % de área con deslizamientos [0-1]</li>
+							<li>Determine categorías relativas de susceptibilidad a deslizamientos (k-means cluster analysis).</li>
+						  </ol>
+						  <p>La densidad de deslizamientos es equivalente a la probabilidad futura de la ocurrencia de deslizamientos.
+							L: probabilidad de ocurrencia de deslizamiento. UCU: Unidad de condiciones Únicas.</p>
+						  <p style="text-align: center;"> $ P(L/UCU) = (landslide area & UCU area) / UCU area$</p>
+						  <figcaption><small>Fuente: Constanzo et al., (2012), Clerici et al. (2006) ; De Graff et al. 1991; 2012)</small></figcaption>
+						</section>
+				
+						<section id="matrix2" class="level2">
+						  <img src="images/condicional.png" alt="matrix" width="700"/>
+						  <figcaption><small>Fuente: De Graff et al. 1991; 2012)</small></figcaption>
+						</section>
+				
+						<section id="matrix3" class="level2">
+						  <img src="images/condicional2.png" alt="matrix" width="500"/>
+						  <figcaption><small>Fuente: De Graff et al. 1991; 2012)</small></figcaption>
+						</section>
+				
+						<section id="matrix4" class="level2">
+						  <img src="images/condicional-ej.png" alt="ejemplo" width="1000"/>
+						  <figcaption><small>Fuente: Clerici et al. (2002)</small></figcaption>
+						</section>
+				
+						<section id="matrix5" class="level2">
+						  <img src="images/condicional-ej1.png" alt="ejemplo" width="430"/>
+						  <figcaption><small>Fuente: De Graff et al. 1991; 2012)</small></figcaption>
+						</section>
+				
+						<section id="rl1" class="level2">
+							<h1>Función <i>LOGIT</i></h1>
+						  <img src="images/rl1.png" alt="RL" width="1000"/>
+						</section>
+				
+						<section id="rl2" class="level2">
+						  <img src="images/rl2.png" alt="RL" width="1000"/>
+						</section>
+				
+						<section id="rl3" class="level2">
+						  <img src="images/rl3.png" alt="RL" width="900"/>
+						</section>
+				
+						<section id="regresion" class="level2">
+							<h1>Regresión Logística</i></h1>
+						  <p>La Regresión Logística es una combinación lineal de variables independientes (factores explicativos) para explicar
+							la varianza en una variable dependiente (inventario de deslizamientos) tipo dummy [0 – 1].</p>
+						  <h3>Ventajas</h3>
+						  <ol>
+							<li>Las variables predictoras pueden ser continuas, discretas, dicótomas, o cualquier combinación de ellas.</li>
+							<li>La variable dependiente es dicotoma (binaria)</li>
+							<li>A pesar de que el modelo transformado es lineal en las variables, las probabilidades no son lineales</li>
+						  </ol>
+						  <h3>Desventajas</h3>
+						  <ol>
+							<li>Los pesos de las variables terminan siendo un promedio para toda el área de estudio, los cuales en realidad pueden diferir en diferentes partes del área de estudio.</li>
+							<li>La función objetivo es una combinacion lineal de las variables independientes</li>
+						  </ol>
+						</section>
+				
+						<section>
+							<p>Sea p(x) la probabilidad de éxito cuando el valor de la variable predictora es x, entonces:</p>
+							  $p(x) = \frac{e^{a+\sum bx}}{1+e^{a+\sum bx}} = \frac{1}{1+e^{-(a+\sum bx)}}$
+							<p></p>
+							  $\frac{p(x)}{1-p(x)} = e^{a+\sum bx}$
+							<p></p>
+							  $Ln(\frac{p(x)}{1-p(x)}) = a+\sum bx$
+							<p>Donde $a$ es el intercepto del modelo, $b$ son los coeficientes del modelo de regresión logística, y $x$
+							  son las variables independientes (predictoras).</p>
+							$P(y=1) = \frac{1}{1+e^{-(a+\sum bx)}}$
+							<p>Donde, P es la probabilidad de Bernoulli que una unidad de terreno pertenece al grupo  de no deslizamientos
+							   o al grupo de si deslizamiento. P varía de 0 a 1 en forma de curva “S” (logística).</p>
+						</section>
+				
+							<section>
+							   <img src="images/logit.png" alt="RL" width="900"/>
+							</section>
+				
+							<section>
+							   <img src="images/logit-ej.png" alt="RL" width="900"/>
+							</section>
+				
+							<section>
+							   <img src="images/logit-ej1.png" alt="RL" width="900"/>
+							</section>
+				
+							<section>
+							   <img src="images/logit-ej2.png" alt="RL" width="900"/>
+							   <figcaption><small>Fuente: Chen et al (2016), río Yangtze (China)</small></figcaption>
+							</section>
+				
+							<section>
+							   <img src="images/logit-ej3.png" alt="RL" width="900"/>
+							   <figcaption><small>Fuente: Chen et al (2016), río Yangtze (China)</small></figcaption>
+							</section>
+
+				</section>
+
+				<section>
+
+					<section><h1>Métodos de machine learning</h1></section>
+				  
+						<section id="machine learning5" class="level2">
+						  <h2></h2>
+						  <img src="images/ml5.png" alt="machine learning" width="1000"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section id="modelo supervisado2" class="level2">
+						  <h2></h2>
+						  <img src="images/ml7.png" alt="modelo supervisado" width="1000"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section id="procedimiento3" class="level2">
+							  <h2></h2>
+							<p><span style="color:red;">Step 1:</span> Modelo conceptual. </p>
+							<p><span style="color:red";>Step 2:</span> Toma y procesamiento de datos. </p>
+							<p><span style="color:red";>Step 3:</span> Análisis exploratorio de datos. </p>
+							<p><span style="color:red";>Step 4:</span> Selección de variables (<i>Feature engineering</i>). </p>
+							<p><span style="color:red";>Step 5:</span> Selección del algoritmo (<i>Training & Evaluation</i>). </p>
+							<p><span style="color:red";>Step 6:</span> Optimización del modelo (<i>Hyperparameters selection</i>). </p>
+							<p><span style="color:red";>Step 7:</span> Predecir </p>
+						</section>
+				  			  
+						<section class="level2">
+							<h1><i>Bias-Variance trade off</i></h1>
+							<img src="images/ml2.png" alt="trade off" width="800"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section class="level2">
+						  <h2></h2>
+						  <img src="images/ml3.png" alt="trade off" width="800"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section class="level2">
+						  <h2></h2>
+						  <img src="images/ml4.png" alt="trade off" width="1000"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section class="level2">
+						  <h2></h2>
+						  <img src="images/ml6.png" alt="trade off" width="1000"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section class="level2">
+						  <h2></h2>
+						  <img src="images/ml8.png" alt="trade off" width="900"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section class="level2">
+						  <h2></h2>
+						  <img src="images/ml11.png" alt="trade off" width="1000"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section class="level2">
+						  <h2></h2>
+						  <img src="images/ml9.png" alt="trade off" width="900"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  
+						<section class="level2">
+						  <h2></h2>
+						  <img src="images/ml10.png" alt="trade off" width="700"/>
+						  <figcaption><small></small></figcaption>
+						</section>
+				  				  
+					  <section class="level1">
+						<h1>Entrenamiento & Validación</h1>
+						<img src="images/validation.png" alt="validation" width="1000"/>
+						<figcaption><small></small></figcaption>
+					  </section>
+				  
+					  <section class="level1">
+						<h1>Datos Desbalanceados</h1>
+						<img src="images/desbalanceado.png" alt="desbalanceado" width="950"/>
+						<figcaption><small></small></figcaption>
+					  </section>
+				  
+					  <section class="level1">
+						<h1>Optimización del modelo</h1>
+						<img src="images/hiperparametros.png" alt="hiperparametros" width="950"/>
+						<figcaption><small></small></figcaption>
+					  </section>
+				  
+					  <section class="level1">
+						<h1>Análisis Discriminante Lineal</h1>
+						<img src="images/lda.png" alt="LDA" width="1000"/>
+						<figcaption><small></small></figcaption>
+					  </section>
+				  
+					  <section class="level1">
+						<h1>Support Vector Machine</h1>
+						<img src="images/svm.png" alt="SVM" width="900"/>
+						<figcaption><small></small></figcaption>
+					  </section>
+				  			  
+						  <section class="level2">
+							<h1>Random forest</h1>
+							<img src="images/rf.png" alt="rf" width="1000"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rf1.png" alt="rf" width="800"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rf2.png" alt="rf" width="700"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rf3.png" alt="rf" width="900"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h1>Redes Neuronales Artificiales</h1>
+							<img src="images/rna0.png" alt="rna" width="1000"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rna.png" alt="rna" width="1000"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rna1.png" alt="rna" width="1000"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rna2.png" alt="rna" width="1000"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rna3.png" alt="rna" width="1000"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+				  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/rna4.png" alt="rna" width="1000"/>
+							<figcaption><small></small></figcaption>
+						  </section>		  
+
+				</section>
+
+				<section>
+
+					<section><h1>Métodos con base física</h1></section>
+
+					<section id="datos" class="level1">
+						<img src="images/metodos.png" alt="metodos.png" width="850"/>
+					  </section>
+							
+					  <section id="machine fisicos1" class="level2">
+						<h1>Metodos Físicos</h1>
+						<ul>
+						  <li>Son basados en modelar los procesos que dan lugar a los deslizamientos utilizando modelos de estabilidad 
+							de laderas (base física).</li>
+						  <li>La mayoría de modelos con base física utilizan el modelo de talud infinito, por lo que son aplicables 
+							para modelar deslizamientos planares superficiales.</li>
+						  <li>Pueden ser subdivididos en modelos estáticos, que no incluyen el componente del tiempo, y modelos dinámicos,
+							 los cuales utilizan la entrada de un intervalo de tiempo como la entrada del próximo intervalo. Estos modelos
+							  consideran la respuesta transitoria del agua en el suelo de la ladera a la lluvia.</li>
+						  <li>Los modelos hidrológicos son incorporados asumiendo un flujo paralelo a la ladera en un estado estático 
+							como función de la pendiente y el área de drenaje, o de forma dinámica evaluando el proceso completo desde 
+							la lluvia a la respuesta transitoria del agua en el suelo.</li>
+						  <li>Los modelos dinámicos de susceptibilidad a deslizamientos señalan la variación espacial y temporal de los 
+							deslizamientos, por lo que son aplicables a la evaluación de la amenaza.</li>
+						</ul>
+						<br></br>
+						<figcaption><small>Fuente: AGS (2007) Guidelines for landslide susceptibility, hazard and risk assessment</small></figcaption>
+						</section>
+				
+						<section id="metodos fiscos2" class="level2">
+						  <h3>Ventajas</h3>
+						  <ul>
+							<li>En general se pueden obtener mapas de amenaza de forma cuantitativa a través del factor de seguridad y 
+							  probabilidades de falla.</li>
+							<li>Existen diferentes aproximaciones a la física del problema.</li>
+						  </ul>
+						  <br></br>
+						  <h3>Desventajas</h3>
+						  <ul>
+							<li>Requieren una gran cantidad de información de entrada de detalle, a partir de ensayos de laboratorio o 
+							  mediciones en campo.</li>
+							<li>Solamente recomendables para pequeñas áreas a escalas detalladas.</li>
+							<li>Consumen mas tiempo y recursos para obtener la información necesaria.</li>
+							<li>La parametrización de los modelos puede ser complicada, en especial la distribución espacial de la 
+							  profundidad del suelo, la cual juega un papel fundamental.</li>
+							  <li>El grado de simplificación del problema</li>
+						  </ul>
+						  <br></br>
+						  <figcaption><small>Fuente: AGS (2007) Guidelines for landslide susceptibility, hazard and risk assessment</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/fisicos.jpg" width="900"/>
+							<figcaption><small>Fuente: van Westen et al. (1997)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/fisicos2.jpg" width="800"/>
+							<figcaption><small>Fuente: van Westen et al. (1997)</small></figcaption>
+						  </section>      
+							  			
+					  <section id="metodos fisicos" class="level1">
+						<h1>Los hechos ocurren por destino (causa – efecto) o por suerte (aleatoriamente)?</h1>
+					</section>
+				
+						  <section class="level2">
+							<p><cite>Laplace (1814)</cite> <q>Given for one instant an intelligence which could comprenhend all the forces by which nature is animated
+							  and the respective situation of the beings who compose it -an intelligence sifficiently vast to submit 
+							  these data to analysis - it would embrace in the same formula the movement of the greatest bodies of the 
+							  universe and those of the ligthest atom; for it, nothing would be uncertain and the future, as the past,
+							   would be present to its ayes</q></p>
+							<p><cite>Henri Poincaré</cite> <q>...even if it were the case that the natural laws had no longer any secret for us, we could still 
+							  only know the initial situation approximately. If that enabled us to predict the succeeding situation 
+							  with the same approximation, that is all we require, and we should say that the phenomenon had been 
+							  predicted, that it is governed by laws. But it is not always so - it may happen that small differences 
+							  in the initial conditions produce very great ones in the final phenomena. A small error in the former
+							  will produce an enormous error in the latter...</q></p>
+						  </section>
+				
+						  <section class="level2">
+							<p><cite>Baecher & Christian (2003)</cite> <q>Las probabilidades es una reconciliación de dichos puntos de vista extremos. Y se soporta en que el 
+							  mundo es de hecho impredecible, pero principalmente por nuestro desconocimiento inadecuado de su funcionamiento. 
+							  El mundo puede o no  comportarse por necesidad (causa – efecto), pero en cualquier evento nosotros somos 
+							  ignorantes del estado inicial y de los detalles de las leyes naturales, por lo tanto el mundo solo puede
+							   describirse como si fuera aleatorio.</q></p>
+						  </section>
+					  
+						  <section class="level2">
+							<h2></h2>
+							<img src="images/fisicos3.png" width="800"/>
+							<figcaption><small></small></figcaption>
+						  </section>
+										
+						  <section>
+							<h1>Métodos de estabilidad</h1>
+							<img src="images/metodos-estabilidad.png" width="850"/>
+						  </section>
+				
+						  <section class="level2">
+							<h1>Análisis Cinemático</h1>
+							<img src="images/cinematico1.png" width="1000">
+							<figcaption><small>Fuente: Santangelo et al. (2014); Meentemeyer & Moody (2000); : Grelle et al (2011)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/cinematico2.png" width="800">
+							<figcaption><small>Fuente: Chica (1989); Herrera (2000) – Análisis de estabilidad de taludes</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/planar.png" width="1000">
+							<figcaption><small>Fuente: Gokceoglu et al. (2000)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/cuna.png" width="1000">
+							<figcaption><small>Fuente: Gokceoglu et al. (2000)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/volcamiento.png" width="1000">
+							<figacaption><small>Fuente: Gokceoglu et al. (2000)</small></figacaption>
+						  </section>
+				
+						  <section class="level2">
+							<h1>Deslizamientos planares</h1>
+							<img src="images/presion-poros.png" width="1000"/>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/infinito.png" width='1000'/>
+						  </section>
+				
+						  <section class="level2">
+							<h3>Sin infiltración (en términos de esfuerzos efectivos)</h3>
+							<img src="images/sin-infiltracion.png" width="1000">
+						  </section>
+				
+						  <section class="level2">
+							<h3>Con infiltración (en términos de fuerzas)</h3>
+							<img src="images/con-infiltracion.png" width="1000">
+						  </section>
+				
+						<section class="level2">
+							<h1>Deslizamientos circulares</h1>
+							<img src="images/arco-circular.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/dovelas.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/dovelas1.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/dovelas2.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/dovelas3.png" width="1000">
+						</section>
+						
+						<section class="level2">
+						  <img src="images/dovelas4.png" width="1000">
+						</section>
+						
+						<section class="level2">
+						  <img src="images/dovelas5.png" width="1000">
+						</section>
+						  
+						<section class="level2">
+						  <img src="images/ej1-dovelas.jpg" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ej1-dovelas1.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ej1-dovelas2.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ej1-dovelas3.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/tabla-metodos.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/tabla-metodos1.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/lambda.jpg" width="600">
+						</section>
+				
+						<section class="level2">
+							<h1>Análisis probabilístico</h1>
+						  <img src="images/probabilistico.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/probabilistico1.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/probabilidad-falla.png" width="700">
+						</section>
+				
+						<section>
+							<h1>Método FOSM (first order second moment)</h1>
+							<ul>
+							  <li>Basado en el truncamiento de la serie de Taylor para la variable dependiente haciendo uso únicamente de la primera derivada (Primer Orden).</li>
+							  <li>Las salidas y las entradas se expresan como medias y desviaciones estándar para las variables involucradas (Segundo Momento).</li>         
+							</ul>
+							<br></br>
+							<h3>Ventajas</h3>
+							<ul>
+							  <li>Formulación matemática simple</li>
+							  <li>No requiere gran esfuerzo computacional</li>
+							  <li>Para cuantificar la influencia de cada variable independiente en la varianza de la variable dependiente.</li>
+							</ul>
+							<br></br>
+							<h3>Desventajas</h3>
+							<ul>
+							  <li>No siga una distribución completa de la variable dependiente (correr riesgos en esta distribución).</li>
+							</ul>
+						</section>
+						
+						<section class="level2">
+						  <img src="images/ej2-fosm.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ej2-fosm1.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ej2-fosm2.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ej2-fosm3.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ej2-fosm4.png" width="900">
+						</section>
+				
+						<section class="level2">
+							<h1>Métodos Acoplados</h1>
+						  <img src="images/acoplados.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/acoplados1.png" width="900">
+						 <figcaption><small>Fuente: Dietrich & Montgomery (1998); Crosta (1998)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/hidrologico.png" width="900">
+						  <figcaption><small>Tomado de: Dietrich & Montgomery (1998); Crosta (1998); Iverson (2000)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/geotecnico.png" width="900">
+						</section>
+				
+						<section class="level2">
+							<h1>SHALSTAB</h1>
+						  <img src="images/shalstab.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/shalstab1.png" width="900">
+						</section>
+				
+						  <section class="level2">
+							<h1>TRIGRS</h1>
+							<img src="images/trigrs.png" width="900">
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/trigrs1.png" width="700">
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/trigrs2.png" width="900">
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/trigrs3.jpg" width="900">
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/confiabilidad.png" width="900">
+						  </section>
+				
+						  <section class="level2">
+							<h1>SHIA-Landslide</h1>
+							<img src="images/shia.png" width="400">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/shia1.png" width="700">
+							<figcaption><small>Tomado de Zapata (2016)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/shia2.png" width="800">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/shia3.png" width="650">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/shia4.png" width="500">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/shia5.png" width="800">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/caudal.png" width="1000">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/susceptibilidad.jpg" width="600">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/amenaza.png" width="600">
+							<figcaption><small>Aristizábal et al (2015)</small></figcaption>
+						  </section>
+
+				</section>
+
+				<section>
+
+					<section><h1>Evaluación de los modelos</h1></section>
+
+					<section>
+						<img src="images/rumsfeld.jpg" width="1000">
+					  </section>
+				
+					  <section class="level2">
+						<h1>Fuentes de incertidumbre</h1>
+						<img src="images/incertidumbre.png" width="1000">
+						<figcaption><small>Fuente: Li & Lan (2015)</small></figcaption>
+					  </section>
+				  
+					  <section class="level2">
+						<h3>Definición</h3>
+						<ul>
+						  <li><strong>Exactitud (accuracy): </strong>se refiere al grado de qué tan cerca está la medida o valor mapeado o clase 
+							de un mapa a su valor verdadero o clase en el campo.</li>
+						  <li><strong>Error (error):</strong>la diferencia entre el valor mapeado o la clase y el valor o clase verdadero.</li>
+						  <li><strong>Precisión (Precision): </strong>referente a una medida como el grado al cual medidas repetidas bajo 
+							condiciones invariantes muestran el mismo resultado.</li>
+							<li><strong>Incertidumbre (uncertainty): </strong>grado con el cual las características actuales del terreno 
+							  pueden ser presentadas espacialmente en un mapa.</li>
+						</ul>
+						<br></br>
+						<a>Los términos objetividad y subjetividad son usados para señalar si los diferentes pasos tomados en la determinación de 
+						un grado de amenaza  son verificables y reproducibles por otro investigador, o si ellos dependen del juicio personal
+						 del investigador.</a>
+						<br></br>
+						<figcaption><small>Fuente: AGS (2007) Guidelines for landslide susceptibility, hazard and risk assessment</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/accuracy.png" width="650">
+						</section>
+											
+						<section class="level2">
+							<h1>Fuentes de incertidumbre</h1>
+						  <div class="container">
+							<div class="col">
+							  <h3>Dificultades relacionadas con:</h3>
+							  <ul>
+								<li>Evaluación con la probabilidad espacial.</li>
+								<li>Análisis temporal de la probabilidad.</li>
+								<li>Modelamiento de la masa desplazada</li>
+								<li>Evaluación de la vulnerabilidad espacial y temporal.</li>
+							  </ul>
+							</div>
+							<div class="col">
+							  <img src="images/incertidumbre1.png">
+							  <figcaption><small>Fuente: van Westen et al. (2006)</small></figcaption>
+							</div>
+						  </div>
+						</section>
+				
+						<section class="level2">
+						  <h3>La precisión del modelo depende de:</h3>
+						  <ul>
+							<li><strong>Precisión posicional: </strong>proyección de los mapas, problemas de digitalización, etc.</li>
+							<li><strong>Precisión posicional: </strong>los mapas representan la información correcta?</li>
+							<li><strong>Precisión posicional: </strong> los mapas representan la situación actual?</li>
+							<li><strong>Escala apropiada:</strong> se debe evitar mapas con diferentes escalas.</li>
+						  </ul>
+						  <br></br>
+						  <figcaption><small>Fuente: Presentación Prof. van Wessten en SGC  (2017)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/fuentes.png" width="540">
+						  <figcaption><small>Fuente: AGS (2007) Guidelines for landslide susceptibility, hazard and risk assessment</small></figcaption>
+						</section>
+				
+						<section class="level2">
+							<h1>Desempeño y predicción</h1>
+						  <h3>La aceptación de un modelos debe responder al menos tres criterios:</h3>
+						  <ul>
+							<li style="color:blue">Su adecuación (conceptual y matemáticamente) en describir el comportamiento del sistema</li>
+							<li style="color:blue">Su robustez a pequeños cambios de los parámetros de entrada (e.j. sensibilidad a los datos)</li>
+							<li style="color:red">Su exactitud en predecir los datos observados</li>
+						  </ul>
+						  <br></br>
+						  <figcaption><small>Fuente: AGS (2007) Guidelines for landslide susceptibility, hazard and risk assessment</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <h3>La evaluación de la predicción de la ocurrencia espacial de deslizamientos debe ser chequeada:</h3>
+						  <ul>
+							<li style="color:blue">Contra la información usada para preparar el pronóstico (<i>Success rate</i>). Se refiere a 
+							  la “bondad del ajuste” del modelo. <strong>Qué tan bien el modelo se desempeña?</strong></li>
+							<li style="color:red">Contra el futuro, cuando el evento finalmente ocurra (<i>Prediction rate</i>). Se refiere a 
+							  la habilidad del modelo para predecir adecuadamente los futuros deslizamientos. <strong>Qué tan bien el modelo predice?</strong></li>
+						  </ul>
+						  <br></br>
+						  <figcaption><small>Fuente: Davis & Goodrich (1990)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <h3>Métodos</h3>
+						  <ul>
+							<li>Matriz de confusión</li>
+							<li>Curva ROC</li>
+							<li>Curva de éxito</li>
+							<li>Área bajo la curva (AUC)</li>
+							<li>Distancia a la clasificación perfecta</li>
+							<li>Grado de ajuste</li>
+						  </ul>
+						  <br></br>
+						  <figcaption><small>Fuente: AGS (2007) Guidelines for landslide susceptibility, hazard and risk assessment</small></figcaption>
+						</section>
+							
+					  <section>
+						<section><h1>Procedimiento</h1></section>
+						<section>
+						<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs12665-021-09770-9/MediaObjects/12665_2021_9770_Fig4_HTML.png?as=webp", width="500q">
+					  </section>
+					  </section>
+							
+						<section class="level2">
+							<h1><i>Cross validation</i></h1>
+						  <img src="images/particion.png">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/particion1.jpg">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/particion0.png" width="800">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/particion2.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/particion3.png">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/particion4.png">
+						</section>
+				
+						<section class="level2">
+							<h1>Matriz de confusión</h1>
+							<img src="images/matriz1.png" width="700">
+						</section>
+						
+						<section class="level2">
+							  <img src="images/matrix.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/matriz4.png" width="700">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/matriz2.png" width="500">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/matriz3.jpg" width="950">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/matrix1.jpg" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/accuracyfig.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/recall.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/precision.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/f1.png" width="1000">
+						</section>
+				
+						<section class="level2">
+							<h1>Espacio ROC</h1>
+						  <img src="images/ROC.jpg" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ROC1.png" width="900">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ROC2.png" width="800">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/ROC3.png" width="750">
+						</section>
+				
+						<section class="level2">
+						  <h3>Para recordar</h3>
+						  <ul>
+							<li>Evalúa la calidad total del modelo</li>
+							<li>Se construye a partir de Sensitivity (TP) vs 1-Specificity (FP) a partir de la matriz de confusión creada 
+							  aplicando diferentes cutoff.</li>
+							<li>Mejor desempeño del modelo sobre toda el rango de posibles cutoff. Por lo que es independiente del valor de 
+							  corte (cutoff).</li>
+							  <li>Puntos cercanos a la esquina superior derecha corresponden a valores mas bajos de cutoff.</li>
+							  <li>Una curva ROC es mejor cuando es mas cercana a la esquina superior izquierda.</li>
+							  <li>sensible a la proporción inicial de positivos y negativos. Para áreas con un grado de amenaza bajo 
+								(áreas planas) siempre dará mejores resultados que aplicaciones en áreas con amenaza alta (zonas de montaña), 
+								incluso si la calidad de la clasificación es exactamente la misma.</li>
+						  </ul>
+						</section>
+				
+						<section class="level2">
+							<h1><i>Success-rate curve</i></h1>
+						  <img src="images/succes-rate.png" width="650">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/succes-rate1.jpg" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/clasificacion.png" width="750">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/r.jpg" width="1000">
+						</section>
+							
+					  <section class="level2">
+						<img src="images/frecuencia.png" width="700">
+					  </section>
+				
+					  <section class="level2">
+						<img src="images/usados.png" width="1000">
+					  </section>
+
+					  <section>
+						  <h3>Métodos utilizados</h3>
+						  <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0012825217305652-gr8.jpg" width="1000">
+						  <figcaption>Reichenbach et al. (2018)</figcaption>
+					  </section>
+				
+				</section>
+
+				<section>
+
+					<section><h1>Evaluación de la amenaza</h1></section>
+
+					<section class="level2">
+						<h3>Amenaza:</h3>
+						<p>Probabilidad de ocurrencia de un potencial fenómeno destructivo dentro de un periodo específico de tiempo y en una determinada
+						   área. <strong>Dónde?</strong> (Localización), <strong>Cuándo?</strong> (Frecuencia), <strong>Qué tan grande?</strong> (Volumen)</p>
+						<img src="images/hazard.jpg" width="550">
+						  </section>
+				
+						<section class="level2">
+						  <h3>Zonificación de la amenaza:</h3>
+						  <p>La subdivisión del terreno en zonas que son caracterizadas por la probabilidad temporal de la ocurrencia de deslizamientos 
+							de un particular tamaño y forma, dentro de un periodo de tiempo dado. Los mapas de amenaza por deslizamientos deben indicar 
+							tanto la zona donde el deslizamiento puede ocurrir como la zona de propagación. Una completa evaluación de la amenaza por 
+							deslizamientos cuantitativa incluye:</p>
+						  <ul>
+							<li><strong>Probabilidad espacial (Ps): </strong>la probabilidad que un área dada sea golpeada por un deslizamiento.</li>
+							<li><strong>Probabilidad temporal (Pt): </strong>la probabilidad que un evento detonante dado causará un deslizamiento.</li>
+							<li><strong>Probabilidad tamaño/volumen (Pm): </strong>probabilidad que un deslizamiento tenga un determinado tamaño y volumen.</li>
+							<li><strong>Probabilidad propagación (Pp): </strong>probabilidad que un deslizamiento alcanzará una cierta distancia ladera abajo.</li>
+						  </ul>
+						</section>
+				
+						<section>
+						  <p>La amenaza puede ser estimada como la probabilidad conjunta de un tamaño de deslizamiento dado, de la ocurrencia de un 
+							deslizamiento en un tiempo establecido y de la ocurrencia espacial del deslizamiento. Se asume que las tres probabilidades 
+							son mutuamente independientes.</p>
+							<img src="images/hazard1.png" width="1000">
+							<figcaption><small>Fuente: Guzzetti et al. (2005);  Jaiswal et al. (2010); Wu & Chen (2013)</small></figcaption>
+						</section>
+				
+						  <section>
+							<h1>Descriptores de la amenaza</h1>
+						  <p>El IUGS (1997) sugiere que la frecuencia de los deslizamientos pueden expresarse en términos de:</p>
+						  <ul>
+							<li>El <strong>número de deslizamientos</strong> de ciertas características que pueden ocurrir en el área de estudio en un intervalo de tiempo dado 🡪 métodos basados en el conocimiento</li>
+							<li>La <strong>probabilidad</strong> de un ladera particular de sufrir deslizamientos en un periodo dado 🡪 métodos basados en datos</li>
+							<li><strong>Índice de confiabilidad</strong> que las fuerzas motoras excedan las fuerzas resistentes, con una frecuencia de ocurrencia que es determinada considerando la probabilidad anual de la 
+							  presión de poros crítica siendo excedida en el análisis 🡪 métodos con base física</li>
+						  </ul>
+						</section>
+				
+						  <section class="level2">
+							<img src="images/descriptores.png" width="650">
+							<figcaption><small>Fuente: Corominas et al. (2014)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/descriptores1.png" width="900">
+							<figcaption><small>Fuente: Corominas et al. (2014)</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/valores.png" width="900">
+							<figcaption><small>Fuente: Fell et al (2008) del JTC-1 Technical Committee on Landslides and Engineered Slopes</small></figcaption>
+						  </section>
+				
+						  <section class="level2">
+							<img src="images/valores1.png" width="700">
+						  </section>
+				
+						<section class="level2">
+							<h1>Probabilidad espacial</h1>
+						  <img src="images/hazard5.png" width="1000">
+						  <figcaption><small>Fuente: Lee et al. (2008) – Kuohsing (Taiwan) por el Typhoon Toraji</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/hazard4.png" width="1000">
+						</section>
+						
+						<section class="level2">
+							<h1>Modelos físicos</h1>
+						  <img src="images/idf.png" width="700">
+						</section>
+				
+						<section>
+							<h1>Modelos estadísticos</h1>
+						<ul>
+						  <li><strong>Análisis de frecuencia de deslizamientos pasados:</strong> Utilizando un inventario de deslizamiento multitemporal. 
+							Modelo de probabilidad de Poisson – Modelo Binomial para calcular el intervalo de recurrencia de eventos de 
+							deslizamientos históricos y la probabilidad temporal de los deslizamientos.</li><br></br>
+							<li><strong>Análisis de las lluvias que detonaron deslizamientos:</strong> Estableciendo relación empírica entre intensidades del factor 
+							  detonante y la frecuencia de los eventos de deslizamientos pasados correspondientes para analizar la recurrencia de 
+							  tales eventos detonantes.</li>
+						</ul>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/hazard2.png" width="500">
+						</section>				
+				
+						<section class="level2">
+							<h1>Frecuencia de deslizamientos</h1>
+						  <img src="images/poisson.png" width="1000">
+						</section>
+					   
+						<section class="level2">
+						  <img src="images/binomial.png" width="1000">
+						</section>
+				
+						<section class="level2">
+						  <img src="images/hazard6.png" width="950">
+						</section>
+				
+						<section class="level2">
+							<h1>Análisis de lluvias</h1>
+						  <img src="images/hazard3.png" width="1000">
+						  <figcaption><small>Fuente: Erener et al. (2012)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/condicionada.png" width="1000">
+						  <figcaption><small>Fuente: Jaiswal et al. (2010)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/condicionada1.png" width="900">
+						  <figcaption><small>Fuente: Berti et al. (2012)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/condicionada2.png" width="900">
+						  <figcaption><small></small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/condicionada3.png" width="1000">
+						  <figcaption><small>Fuente: Erener et al. (2012)</small></figcaption>
+						</section>
+				
+						<section class="level2">
+						  <img src="images/condicionada4.png" width="900">
+						  <figcaption><small>Fuente: Thiebes et al. (2017)</small></figcaption>
+						</section>
+				
+						<section>
+							<h1>Probabilidad de magnitud</h1>
+						  <p>The principle of regional magnitude–cumulative frequency (MCF) curves has long been used in seismology, where the 
+							observed power-law relationship between earthquake magnitude and frequency is known as the Gutenberg–Richter Law 
+							(Gutenberg and Richter, 1954). Bak et al. (1987) formalized the concept of scale-invariant (fractal) response, 
+							seemingly ubiquitous in nature, with the theory of self-organized criticality.</p>
+						  <img src="images/magnitud.jpg" width="400">
+						</section>
+				
+						<section>
+						  <p>Existen un número importante de correlaciones (power-law MF), pero son difíciles de comparar por:</p>
+						  <ul>
+							<li>La mayoría de inventarios no distinguen entre los tipos de movimientos en masa.</li>
+							<li>La selección de diferentes métodos de ploteo (cumulativa vs no cumulativa, linear vs logarítmico) (Brardoni & church, 2004).</li>
+							<li>Los inventarios difieren en definir la magnitud. (i) área en planta del área total de la zona de disturbio 
+							  (Guzzetti et al., 2002; Guthrie & Evans, 2004),  (ii) área sobre la ladera, (iii) el cuadrado del ancho 
+							  (Petellier et al (1997), o (iv) trabajo de campo (dai & Lee (2001; Hungr et al., 1999).</li>
+						  </ul>
+						</section>
+				
+						<section>
+						  <img src="images/magnitud1.gif" width="400">
+						  <p>MCF curves derived form the Queen Charlotte data, using four types of “magnitude”: total volume of the event, (V), 
+							source area, (A), total disturbed area, (At) and the length of the slope between the crest of the initial slide and 
+							the “deposition point” at a slope of 15°. (Hungr et al. 2008)</p>
+							<figcaption><small>Fuente: Malamud et al (2004); Corominas & Moya (2008)</small></figcaption>
+						</section>
+				
+						<section>
+						  <img src="images/magnitud2.png" width="700">
+						  <figcaption><small>Fuente: Stark & Hovious, 2001</small></figcaption>         
+						</section>
+				
+						<section>
+						  <img src="images/magnitud5.png" width="600">
+						  <figcaption><small>Fuente: Tanyas et al. (2018)</small></figcaption>         
+						</section>
+				
+						<section>
+						  <img src="images/magnitud3.png" width="900">
+						  <figcaption><small>Fuente: Malamud et al (2004); Corominas & Moya (2008)</small></figcaption>         
+						</section>
+				
+						<section>
+						  <img src="images/magnitud4.png" width="600">
+						  <figcaption><small>Fuente: Tanyas et al. (2018)</small></figcaption>         
+						</section>
+				
+						<section>
+						  <img src="images/doble-pareto.png" width="1000">
+						</section>
+				
+						<section>
+						  <img src="images/gamma-inversa.png" width="1000">
+						</section>
+
+				</section>
+
+				<section>
+
+					<section><h1>Propagación</h1></section>
+
+					<section class="level1">
+						<h1>Métodos para propagación</h1>
+						<br></br>
+						<ul>
+						  <li>Evidencias geológicas y geomorfológicas (Hoblitt et al., 1998)</li><br></br>
+						  <li>Métodos geométricos (Corominas et al., 2003; Copons & Vilaplana, 2008; Iverson et al., 1998)</li><br></br>
+						  <li>Métodos racionales</li>
+						</ul>       
+					  </section>   
+						
+						<section class="level2">
+							<h1>Métodos con evidencias geológicas</h1>
+						<ul>
+						  <li>Cartografía de los depósitos (antiguos y recientes)</li><br></br>
+						  <li>Estimar la mayor distancia alcanzada</li><br></br>
+						  <li>Si existe un número suficiente de MenM inventariados, estadísticas de la distancia alcanzada y su probabilidad 
+							puede ser estimada</li>
+						</ul> <br></br>
+						<h3>Restricciones:</h3>
+						<ul>
+						  <li>Los depósitos antiguos pueden ser removidos por erosión o cubiertos por nuevos depósitos</li>
+						  <li>La geometría y condiciones responsable por antiguos MenM pueden haber cambiado.</li>
+						  <li>Los resultados no pueden ser extrapolados a otras regiones</li>
+						</ul> 
+						</section>
+				
+						<section>
+							<h1>Métodos geométricos</h1>
+						  <p>La evaluación de la propagación se realiza a través el análisis de relaciones geométricas entre 
+							parámetros de los MenM y distancia recorrida.</p>
+						  <h3>Ángulo de distancia de viaje</h3>
+						  <p>Angulo que conecta el puto mas alto de la corona del MenM a la margen distal de la masa desplazada. La tangente de este 
+							ángulo es la relación entre el componente vertical (H) y el horizontal (L). Relaciones empíricas señalan una relación 
+							entre dicho ángulo y el volumen del MenM. Sin embargo se presentan bajos coeficientes de correlación y mucha dispersión. 
+							Cuando se diferencia por tipo de movimiento mejora.</p>
+							<p>Por lo tanto cuando se conoce la fuente y el volumen potencial se puede conocer la distancia de propagación.</p>
+						</section>
+				
+						<section>
+						  <h3>Modelo empírico de Rickenmann (1999)</h3>
+						  <img src="images/angulo-viaje.png" width="950">
+						</section>
+				
+						<section>
+						  <h3>Ángulo de sombra</h3>
+						  <img src="images/angulo-sombra.png" width="750">
+						  <figcaption><small>Fuente: Wieczorek et al., 1995</small></figcaption>
+						</section>
+											
+						<section class="level2">
+							<h1>Métodos racionales</h1>
+						  <h3>Métodos discretos</h3>
+						  <p>Cuando la granularidad de los movimientos es importante. El caso mas simpe es un bloque en caída de una ladera. 
+							El caso mas complejo es avalancha de rocas, el cual está compuesto por un conjunto de bloques de roca 
+							(esféricas o circulares) con unas leyes que describen las fuerzas de contacto. Generalmente se reduce el número
+							de bloques que conforman la avalancha. No se recomienda para otro tipo de eventos (deslizamientos, flujos de lodos, 
+							lahares, entre otros) debido a la reología del flujo de materiales.</p>
+							<img src="images/rockfall.png" width="500">
+						</section>
+						 
+						  <section>
+							<h3>Métodos continuos</h3>
+							<p>Están basados en la mecánica de medios continuos, y pueden incluir el acoplamiento del comportamiento mecánico con 
+							  la hidráulica y termo mecánica</p>
+							  <img src="images/ac_animation.gif" width="600">
+						  </section>
+				
+						  <section>
+							<h3>r.avaflow</h3>
+								<img src="images/r-avaflow.png" width="1000">
+						  </section>
+				
+						  <section>
+							<h3>Flow-R</h3>
+								<img src="images/flow-r.png" width="1000">
+						  </section>
+				
+				</section>
+						
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/menu/menu.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				slideNumber: 'c/t',
+				hash: true,
+				math: {
+					// mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+				menu: {
+					side: 'left', // 'left' or 'right'.
+					width: 'normal', // 'normal', 'wide', 'third', 'half', 'full', or
+					numbers: false,
+					titleSelector: 'h1, h2, h3',
+					useTextContentForMissingTitles: false,
+					hideMissingTitles: false,
+					markers: true,
+					custom: false,
+					themes: true,
+					themesPath: 'dist/theme/',			
+					transitions: false,  // ['None', 'Fade', 'Slide']
+					openButton: true,
+					openSlideNumber: true,
+					keyboard: true,
+					sticky: false,
+					autoOpen: true,
+					delayInit: false,
+					openOnInit: false,
+					loadIcons: true
+						},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu, RevealMath ],
+				dependencies: [
+				
+								]
+			});
+		</script>
+	</body>
+</html>
