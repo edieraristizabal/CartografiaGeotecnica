@@ -1,25 +1,34 @@
-# Geomorfología
+# Cartografía Geotécnica
 
-El curso de **Geomorfología** está orientado para estudiantes de semestres intermedios de Ingeniería Geológica e Ingeniería Ambiental que deseen adquirir conocimientos sobre los procesos endógenos y exógenos que modelan las geoformas de la superficie terrestre. Luego de una introducción a la geomorfología donde se estudia la historia, los modelos de evolución y las técnicas que existen dentro de la geomorfología, el curso se estructura en tres grandes bloques: 
+El curso de Cartografía Geotécnica está orientado para estudiantes de ingeniería que deseen adquirir conocimientos sobre métodos para la evaluación y zonificación de la susceptibilidad y amenaza por movimientos en masa y avenidas torrenciales en zonas de montaña, con enfoque en ordenamiento territorial. 
+El curso es teórico - práctico, en el cual se hace una revisión detallada del estado del arte y las diferentes metodologías de zonificación utilizadas alrededor del mundo, incluyendo métodos de aprendizaje automático (machine learning), minería de datos (data mining), y análisis espacial de datos.
+El alcance de este curso es aprender a construir modelos para cartografiar y construir mapas de susceptibilidad y amenaza como herramienta para el ordenamiento del territorio.
 
-1. Geomorfología de procesos endógenos
-2. Geomorfología de procesos exógenos
-3. Cartografía geomorfológica aplicada. 
-
-De esta forma se pretende que el estudiante conozca en detalle los procesos de formación del relieve por procesos desde el interior de la tierra, para posteriormente enfocarse en el modelado de dicho relieve por procesos dominados por las condiciones exógenas, iniciando en la montaña alta con ambiente glaciar y periglaciar, luego la montaña media y sus procesos morfodinámicos intensos, para terminar en la montaña baja y ambientes fluviales. Finalmente el curso brinda las herramientas de geomorfología aplicada para estudios de evaluación ambiental, ordenamiento del territorio, estudios de amenaza, entre otros, donde la cartografía geomorfológica juega un papel fundamental. El alcance de este curso es comprender el relieve y los procesos de modelación del paisaje con sus geoformas asociadas, y aplicar dichos conocimientos en cartografía.
 
 ## Programa del curso
-[Ir al programa...](/Programa_GEOMORFOLOGIA.pdf)
+[Ir al programa...](/Programa_CartoGeotecnia.pdf)
 
-## Geomorfología de procesos endógenos & exógenos
-[Ir a presentación...](/html/Geomorfologia.html)
-
-## Cartografía geomorfológica aplicada
-[Ir a presentación...](/html/CartoGeomorfologia.html)
+## Cartografía Geotécnica
+[Ir a presentación...](/html/CartografiaGeotecnica.html)
 
 ## Guía trabajo final
-* [Presentación](/trabajoGrupo/Guia_Presentacion.pdf) 
-* [Taller 2](/trabajoGrupo/Guia_TrabajoEscrito.pdf)
+* [Taller 1](/TALLERES/taller1_inventario.ipynb) 
+* [Taller 2](/TALLERES/taller2_AED.ipynb) 
+* [Taller 3](/TALLERES/taller3_heuristico.ipynb) 
+* [Taller 4](/TALLERES/taller4_bivariado.ipynb)
+* [Taller 5](/TALLERES/taller5_RL.ipynb) 
+* [Taller 6](/TALLERES/taller6_ML.ipynb)
+* [Taller 8](/TALLERES/taller8_evaluacionRL.ipynb)
+* [Taller 8](/TALLERES/taller8_evaluacionML.ipynb)
+* [Taller 8](/TALLERES/taller8_AUC.ipynb)
+
+
+
+ 
+
+
+
+
 
 
 

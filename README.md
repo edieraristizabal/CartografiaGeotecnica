@@ -4,6 +4,3 @@ El curso de Cartografía Geotécnica está orientado para estudiantes de ingenie
 El curso es teórico - práctico, en el cual se hace una revisión detallada del estado del arte y las diferentes metodologías de zonificación utilizadas alrededor del mundo, incluyendo métodos de aprendizaje automático (machine learning), minería de datos (data mining), y análisis espacial de datos.
 El alcance de este curso es aprender a construir modelos para cartografiar y construir mapas de susceptibilidad y amenaza como herramienta para el ordenamiento del territorio.
 
-## CONTENIDO
-### [Clases](https://github.com/edieraristizabal/CartografiaGeotecnica/tree/master/CLASES)
-### [Talleres](https://github.com/edieraristizabal/CartografiaGeotecnica/tree/master/TALLERES)
