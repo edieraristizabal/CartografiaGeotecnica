@@ -6,7 +6,7 @@ El alcance de este curso es aprender a construir modelos para cartografiar y con
 
 
 ## Programa del curso
-[Ir al programa...](/Programa_CartoGeotecnia.pdf)
+[Ir al programa...](/Programa_CartoGeotecnica.pdf)
 
 ## Cartografía Geotécnica
 [Ir a presentación...](/html/CartografiaGeotecnica.html)
