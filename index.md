@@ -12,15 +12,15 @@ El alcance de este curso es aprender a construir modelos para cartografiar y con
 [Ir a presentación...](/html/CartografiaGeotecnica.html)
 
 ## Guía trabajo final
-* [Taller 1](/TALLERES/taller1_inventario.ipynb) 
-* [Taller 2](/TALLERES/taller2_AED.ipynb) 
-* [Taller 3](/TALLERES/taller3_heuristico.ipynb) 
-* [Taller 4](/TALLERES/taller4_bivariado.ipynb)
-* [Taller 5](/TALLERES/taller5_RL.ipynb) 
-* [Taller 6](/TALLERES/taller6_ML.ipynb)
-* [Taller 8](/TALLERES/taller8_evaluacionRL.ipynb)
-* [Taller 8](/TALLERES/taller8_evaluacionML.ipynb)
-* [Taller 8](/TALLERES/taller8_AUC.ipynb)
+* [Taller 1](/TALLERES/Taller1_inventario.ipynb) 
+* [Taller 2](/TALLERES/Taller2_AED.ipynb) 
+* [Taller 3](/TALLERES/Taller3_heuristico.ipynb) 
+* [Taller 4](/TALLERES/Taller4_bivariado.ipynb)
+* [Taller 5](/TALLERES/Taller5_RL.ipynb) 
+* [Taller 6](/TALLERES/Taller6_ML.ipynb)
+* [Taller 8](/TALLERES/Taller8_evaluacionRL.ipynb)
+* [Taller 8](/TALLERES/Taller8_evaluacionML.ipynb)
+* [Taller 8](/TALLERES/Taller8_AUC.ipynb)
 
 
 
