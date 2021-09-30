@@ -18,9 +18,9 @@ El alcance de este curso es aprender a construir modelos para cartografiar y con
 * [Taller 4](/TALLERES/Taller4_bivariado.ipynb)
 * [Taller 5](/TALLERES/Taller5_RL.ipynb) 
 * [Taller 6](/TALLERES/Taller6_ML.ipynb)
-* [Taller 8](/TALLERES/Taller8_evaluacionRL.ipynb)
-* [Taller 8](/TALLERES/Taller8_evaluacionML.ipynb)
-* [Taller 8](/TALLERES/Taller8_AUC.ipynb)
+* [Taller 8](/TALLERES/Taller7_evaluacionRL.ipynb)
+* [Taller 8](/TALLERES/Taller7_evaluacionML.ipynb)
+* [Taller 8](/TALLERES/Taller7_AUC.ipynb)
 
 
 
