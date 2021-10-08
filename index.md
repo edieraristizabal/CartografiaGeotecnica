@@ -8,6 +8,12 @@ El alcance de este curso es aprender a construir modelos para cartografiar y con
 ## Programa del curso
 [Ir al programa...](/Programa_CartoGeotecnica.pdf)
 
+## Horario del curso
+Miercoles & Viernes 10:00 - 12:00 a.m.
+
+## Link para clases virtuales
+[https://meet.google.com/zxp-ipoi-gax](https://meet.google.com/zxp-ipoi-gax)
+
 ## Cartografía Geotécnica
 [Ir a presentación...](/html/CartografiaGeotecnica.html)
 
