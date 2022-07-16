@@ -18,7 +18,7 @@ Miercoles & Viernes 10:00 - 12:00 a.m.
 
 * Introducción al curso
 
-* Ambiente de trabajo}
+* Ambiente de trabajo
 
 * Geoamenazas & Ordenamiento territorial
 
