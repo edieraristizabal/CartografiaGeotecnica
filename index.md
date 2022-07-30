@@ -64,6 +64,11 @@ El curso se evaluará mediante talleres para la zonificación de la susceptibili
 El 40% restante de la nota se evaluará mediante un trabajo final que compila el mapa final de zonificacion de la cuenca. Este
 trabajo consta de una presentacion (20%) y un trabajo escrito (20%) tipo artículo. La presentación será de 10 minutos utilizando las herramientas que considere necesario el equipo; mientras que para el trabajo escrito se deberá seleccionar una revista y acogerse a las normas de presentación de dicha revista. La entrega de la presentación y el trabajo escrito se realizará a través de la herramienta Github, donde cada grupo deberá crear un repositorio y cargar alli la presentación, el trabajo escrito, los códigos utilizados y todos los datos, tales como el inventario, el DEM, los mapas de las variables, entre otros.
 
+## Libro guía
+El libro guía del curso está en construcción. Por lo tanto las observaciones y recomendaciones son bienvenidas
+
+[Libro Guía Cartografía Geotécnica](https://edieraristizabal.github.io/Libro_cartoGeotecnia/intro.html)
+
 
 
  
