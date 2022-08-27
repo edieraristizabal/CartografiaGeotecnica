@@ -18,11 +18,11 @@ driver = gdal.GetDriverByName('GTiff')
 file = gdal.Open('G:/My Drive/ANALISIS ESPACIAL APLICADO/datos/raster/slope_rad')
 pendiente = file.GetRasterBand(1)
 pendiente = pendiente.ReadAsArray()
-pendiente=np.where(pendiente==-3.4028234663852886e+38,np.nan,pendiente)
+pendiente=np.where(pendiente==-3.4028234663852886e+38,np.nan,pendiente) 
 pendiente=pendiente*180/np.pi
 pendiente_vector=pendiente.ravel()
 pendiente_vector2=np.nan_to_num(pendiente_vector)
-pendiente_vector_MenM=pendiente_vector[~np.isnan(pendiente_vector)] # para eliminar  del vector los datos inf
+pendiente_vector_MenM=pendiente_vector[~np.isnan(pendiente_vector)]  #para eliminar  del vector los datos inf
 
 raster = gdal.Open('G:/My Drive/ANALISIS ESPACIAL APLICADO/datos/raster/curvatura')
 curvatura=raster.GetRasterBand(1)

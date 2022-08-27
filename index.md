@@ -38,35 +38,35 @@ Taller 3 -- Información secundaria
 
 * Inventario de eventos\\
 Lectura: [Guzzetti et al., (2012)](https://www.sciencedirect.com/science/article/pii/S0012825212000128)\\
-[Taller 4 - Inventario](/TALLERES/Taller 4_Inventario/Taller4_inventario.ipynb) 
+Taller 4 - Inventario de movimientos en masa
 
 * Exploración y selección de variables\\
 Lectura: [Aristizábal et al., (2022)](https://www.researchgate.net/publication/361824293_Umbrales_de_lluvia_como_detonante_de_movimientos_en_masa_en_el_piedemonte_de_la_cordillera_Central_en_los_Andes_colombianos)\\
-[Taller 5 - AED](/TALLERES/Taller 5_AED/Taller5_AED.ipynb) 
+Taller 5 - Análisis exploratorio de datos 
 
 * Métodos heurísticos\\
 Lectura: [Mendoza & Aristizábal (2017)](https://www.researchgate.net/publication/321230343_Metodologia_para_la_zonificacion_de_la_susceptibilidad_por_movimientos_en_masa_en_proyectos_lineales_Estudio_de_caso_en_elacueducto_del_municipio_de_FredoniaAntioquia)\\
-[Taller 6 - Heuristico](/TALLERES/Taller 6_Heuristicas/Taller6_heuristico.ipynb) 
+Taller 6 - Modelos heuristicos 
 
 * Métodos estadísticos bivariados\\
 Lectura: [Aristizábal et al., (2019)](https://www.researchgate.net/publication/336778390_Metodos_estadisticos_para_la_evaluacion_de_la_susceptibilidad_por_movimientos_en_masa)\\
-[Taller 7 - Bivariado](/TALLERES/Taller 7_Bivariadas/Taller7_bivariado.ipynb)
+Taller 7 - Modelos bivariados
 
 * Métodos estadísticos multivariados\\
 Lectura: [Ospina_gutierrez & Aristizábal (2021)](https://www.researchgate.net/publication/350609109_Aplicacion_de_inteligencia_artificial_y_tecnicas_de_aprendizaje_automatico_para_la_evaluacion_de_la_susceptibilidad_por_movimientos_en_masa)\\
-[Taller 8 - Multivariado](/TALLERES/Taller 8_Multivariadas/Taller8_RL.ipynb) 
+Taller 8 - Modelos Multivariado 
 
 * Métodos con base física\\
 Lectura: [Aristizábal et al., (2015)](https://www.researchgate.net/publication/275723803_SHIA_Landslide_a_distributed_conceptual_and_physically_based_model_to_forecast_the_temporal_and_spatial_occurrence_of_shallow_landslides_triggered_by_rainfall_in_tropical_and_mountainous_basins)\\
-Taller 9 -- Métodos físicos acoplados
+Taller 9 - Modelos con base física
 
 * Validación y clasificación\\
 Lectura: [García-Aristizábal et al., (2018)](https://www.researchgate.net/publication/330764491_Implementacion_del_modelo_TRIGRS_con_analisis_de_confiabilidad_para_la_evaluacion_de_la_amenaza_a_movimientos_en_masa_superficiales_detonados_por_lluvia)\\
-[Taller 10 - Evaluación](/TALLERES/Taller 10_Evaluacion/Taller10_evaluacionRL.ipynb)
+Taller 10 - Evaluación del modelo
 
 * Probabilidad temporal y magnitud\\
 Lectura: [Aristizábal et al., (2019)](https://www.researchgate.net/publication/336197717_Evaluacion_de_la_amenaza_por_movimientos_en_masa_detonados_por_lluvias_para_una_region_de_los_Andes_colombianos_estimando_la_probabilidad_espacial_temporal_y_magnitud)\\
-Taller 11 -- Amenaza
+Taller 11 - Evaluación de la probailidad temporal
 
 * Métodos de propagación\\
 Lectura: [Aristizábal et al., (2020)](https://www.researchgate.net/publication/338220178_Definicion_y_clasificacion_de_las_avenidas_torrenciales_y_su_impacto_en_los_Andes_colombianos)\\
