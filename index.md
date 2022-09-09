@@ -25,7 +25,7 @@ Lectura: [Aristizábal & Sanchez (2020)](https://www.researchgate.net/publicatio
 Lectura: [Aristizábal et al., (2020)](https://www.researchgate.net/publication/354447399_The_Definition_of_Areas_with_Hazard_Condition_and_Areas_with_Risk_Condition_in_Land_Use_Planning_in_Colombia)
 
 * Hidrología de ladera & estabilidad\\
-Lectura: [van Tol et al., 2011](https://www.researchgate.net/publication/221921473_Soil_Indicators_of_Hillslope_Hydrology)\\
+Lectura: [Bogaard & Greco (2016)](https://www.researchgate.net/publication/285573273_Landslide_hydrology_from_hydrology_to_pore_pressure)\\
 Taller 1 -- Selección de la cuenca
 
 * Factores condicionantes & detonantes\\
