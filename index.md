@@ -85,7 +85,8 @@ El libro guía del curso está en construcción. Por lo tanto las observaciones 
 
 ## Guías del SGC
 [Guía metodológica para estudios básicos](https://libros.sgc.gov.co/index.php/editorial/catalog/view/34/20/248)\\
-[Guía metodológica para estudios de detalle](https://libros.sgc.gov.co/index.php/editorial/catalog/view/32/19/242)
+[Guía metodológica para estudios de detalle](https://libros.sgc.gov.co/index.php/editorial/catalog/view/32/19/242)\\
+[Guía metodológica para zonificación de amenaza por avenidas torrenciales](https://libros.sgc.gov.co/index.php/editorial/catalog/book/75)
 
  
 
