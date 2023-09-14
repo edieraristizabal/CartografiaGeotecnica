@@ -83,6 +83,9 @@ La entrega de los talleres, de la presentación y el trabajo escrito se realizar
 El libro guía del curso está en construcción. Por lo tanto las observaciones y recomendaciones son bienvenidas\\
 [Libro Guía Cartografía Geotécnica](https://edieraristizabal.github.io/Libro_cartoGeotecnia/intro.html)
 
+## Lecturas recomendadas
+[Cruden & Varnes 1996 - Landslides types and processes](https://www.researchgate.net/publication/288658145_Landslides_Investigation_and_Mitigation)
+
 ## Guías del SGC
 [Guía metodológica para estudios básicos](https://libros.sgc.gov.co/index.php/editorial/catalog/view/34/20/248)\\
 [Guía metodológica para estudios de detalle](https://libros.sgc.gov.co/index.php/editorial/catalog/view/32/19/242)\\
