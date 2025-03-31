@@ -10,6 +10,9 @@ El alcance de este curso es aprender a construir modelos para cartografiar y con
 ## Horario del curso
 Miercoles & Viernes 10:00 - 12:00 a.m.
 
+## Aula 
+M3-225
+
 ## Presentación
 [Ir a presentación...](/html/CartografiaGeotecnica.html)
 
