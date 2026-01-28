@@ -13,8 +13,11 @@ Miercoles & Viernes 10:00 - 12:00 a.m.
 ## Aula 
 M3-225
 
-## Presentación
-[Ir a presentación...](/html/CartografiaGeotecnica.html)
+## Diapositivas del curso
+[Ir a diapositivas...](/html/CartografiaGeotecnica.html)
+
+## Libro del curso
+[Ir a libro...]([/html/CartografiaGeotecnica.html](https://edieraristizabal.github.io/Libro_cartoGeotecnia/intro.html))
 
 
 ## Contenido del curso
@@ -29,51 +32,42 @@ Lectura: [Aristizábal et al., (2020)](https://www.researchgate.net/publication/
 
 * Hidrología de ladera & estabilidad\\
 Lectura: [Bogaard & Greco (2016)](https://www.researchgate.net/publication/285573273_Landslide_hydrology_from_hydrology_to_pore_pressure)\\
-Taller 1 -- Selección de la cuenca
 
 * Factores condicionantes & detonantes\\
 Lectura: [Aristizábal et al., (2020)](https://www.researchgate.net/publication/346961951_Analisis_de_la_amenaza_por_movimientos_en_masa_detonados_por_sismo_en_los_Andes_colombianos_caso_de_estudio_Barbosa_Antioquia)\\
-Taller 2 -- Cartografía base de la cuenca
 
 * Principios de zonificación\\
 Lectura: [Fell et al., (2008)](https://www.sciencedirect.com/science/article/abs/pii/S0013795208001762?via%3Dihub)\\
-Taller 3 -- Información secundaria
+Lectura: [Petschko et al., (2014)](https://nhess.copernicus.org/articles/14/95/2014/nhess-14-95-2014.pdf)\\
+
 
 * Inventario de eventos\\
 Lectura: [Guzzetti et al., (2012)](https://www.sciencedirect.com/science/article/pii/S0012825212000128)\\
-Taller 4 - Inventario de movimientos en masa
 
 * Exploración y selección de variables\\
 Lectura: [Aristizábal et al., (2022)](https://www.researchgate.net/publication/361824293_Umbrales_de_lluvia_como_detonante_de_movimientos_en_masa_en_el_piedemonte_de_la_cordillera_Central_en_los_Andes_colombianos)\\
-Taller 5 - Análisis exploratorio de datos 
 
 * Métodos heurísticos\\
 Lectura: [Mendoza & Aristizábal (2017)](https://www.researchgate.net/publication/321230343_Metodologia_para_la_zonificacion_de_la_susceptibilidad_por_movimientos_en_masa_en_proyectos_lineales_Estudio_de_caso_en_elacueducto_del_municipio_de_FredoniaAntioquia)\\
-Taller 6 - Modelos heuristicos 
 
 * Métodos estadísticos bivariados\\
 Lectura: [Aristizábal et al., (2019)](https://www.researchgate.net/publication/336778390_Metodos_estadisticos_para_la_evaluacion_de_la_susceptibilidad_por_movimientos_en_masa)\\
-Taller 7 - Modelos bivariados
 
 * Métodos estadísticos multivariados\\
 Lectura: [Ospina_gutierrez & Aristizábal (2021)](https://www.researchgate.net/publication/350609109_Aplicacion_de_inteligencia_artificial_y_tecnicas_de_aprendizaje_automatico_para_la_evaluacion_de_la_susceptibilidad_por_movimientos_en_masa)\\
-Taller 8 - Modelos Multivariado 
 
 * Métodos con base física\\
 Lectura: [Aristizábal et al., (2015)](https://www.researchgate.net/publication/275723803_SHIA_Landslide_a_distributed_conceptual_and_physically_based_model_to_forecast_the_temporal_and_spatial_occurrence_of_shallow_landslides_triggered_by_rainfall_in_tropical_and_mountainous_basins)\\
-Taller 9 - Modelos con base física
 
 * Validación y clasificación\\
 Lectura: [García-Aristizábal et al., (2018)](https://www.researchgate.net/publication/330764491_Implementacion_del_modelo_TRIGRS_con_analisis_de_confiabilidad_para_la_evaluacion_de_la_amenaza_a_movimientos_en_masa_superficiales_detonados_por_lluvia)\\
-Taller 10 - Evaluación del modelo
 
 * Probabilidad temporal y magnitud\\
 Lectura: [Aristizábal et al., (2019)](https://www.researchgate.net/publication/336197717_Evaluacion_de_la_amenaza_por_movimientos_en_masa_detonados_por_lluvias_para_una_region_de_los_Andes_colombianos_estimando_la_probabilidad_espacial_temporal_y_magnitud)\\
-Taller 11 - Evaluación de la probailidad temporal
+Lectura: [Steger et al., (2021)](https://www.sciencedirect.com/science/article/pii/S0048969721010020#bb0445)\\
 
 * Métodos de propagación\\
 Lectura: [Aristizábal et al., (2020)](https://www.researchgate.net/publication/338220178_Definicion_y_clasificacion_de_las_avenidas_torrenciales_y_su_impacto_en_los_Andes_colombianos)\\
-Taller 12 -- Propagación 
 
 ## Evaluación del curso
 El curso se evaluará mediante talleres para la zonificación de la susceptibilidad y/o amenaza de una cuenca seleccionada con un valor del 5%. Para la elaboración de los talleres se deberán realizar individualmente y deberán adquirir la información necesaria de cada cuenca. La búsqueda y obtención de información adecuada hace parte de la evaluación de los Talleres. Cada persona deberá elaborar los talleres en su cuenca de estudio.
