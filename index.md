@@ -11,13 +11,13 @@ El alcance de este curso es aprender a construir modelos para cartografiar y con
 Miercoles & Viernes 10:00 - 12:00 a.m.
 
 ## Aula 
-M3-225
+M7-501
 
 ## Diapositivas del curso
 [Ir a diapositivas...](/html/CartografiaGeotecnica.html)
 
 ## Libro del curso
-[Ir a libro...]([/html/CartografiaGeotecnica.html](https://edieraristizabal.github.io/Libro_cartoGeotecnia/intro.html))
+[Ir a libro...](https://edieraristizabal.github.io/Libro_cartoGeotecnia/intro.html)
 
 
 ## Contenido del curso
