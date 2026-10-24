@@ -22,6 +22,7 @@ bibtex_bibfiles:
   - 100_references.bib
 sphinx:
   config:
+    language: es
     bibtex_reference_style: author_year
     # cada capítulo tiene su propia bibliografía: las repeticiones entre capítulos son intencionales
     suppress_warnings: ["bibtex.duplicate_citation", "bibtex.duplicate_label"]

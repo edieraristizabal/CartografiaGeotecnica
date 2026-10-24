@@ -74,6 +74,8 @@ Programa_CartoGeotecnica.pdf
 Programa_CartoGeotecnica.tex
 README.md
 _config.yml
+_layouts/
+    default.html
 build/
 docs/
 html/
@@ -95,6 +97,7 @@ Material fuente que **no** se sube (libros guía, presentaciones originales, doc
 
 - **El Action no ejecuta los notebooks** (`execute_notebooks: "off"`): publica las salidas guardadas en cada `.ipynb`. Si se cambia código, ejecutar el notebook localmente y guardarlo con sus salidas antes del commit.
 - `libro/requirements.txt` contiene solo lo necesario para construir el libro; `libro/requirements-notebooks.txt` (si existe) lista las librerías para ejecutar los notebooks.
+- Si git falla con `bad object refs/desktop.ini` o `failed to perform geometric repack`, es porque Windows/Google Drive creó archivos `desktop.ini` dentro de `.git/`: borrarlos con `find .git -name desktop.ini -delete` y repetir el comando.
 - Compilar localmente: `C:\Users\edier\.jbenv\Scripts\jupyter-book.exe build libro` y abrir `libro/_build/html/index.html`.
 
 
@@ -115,6 +118,7 @@ Material fuente que **no** se sube (libros guía, presentaciones originales, doc
 
 Cada cambio al repositorio se anota aquí, el más reciente primero, con el formato `- **AAAA-MM-DD**: qué se cambió y por qué (archivos principales).` Esta sección es la memoria del curso entre sesiones: leerla antes de empezar a trabajar.
 
+- **2026-10-24**: Interfaz en español: `_layouts/default.html` traducido ("Ver el proyecto en GitHub", "Este proyecto es mantenido por", `lang` = es), reemplaza el texto en inglés del tema minimal de Jekyll; `language: es` en `libro/_config.yml` para la interfaz del libro.
 - **2026-10-24**: Revisión de idioma: se tradujeron al español 17 bloques en inglés de `html/CartografiaGeotecnica.html` (características de Python, métodos de inventario, distribución de Poisson, citas de Laplace y Poincaré, SINMAP, análisis pseudoestático y de Newmark, curvas magnitud-frecuencia) y se corrigió una etiqueta `</span>` mal cerrada. El libro ya estaba en español. Se mantienen en inglés títulos de libros, enlaces y tweets incrustados.
 - **2026-10-24**: CLAUDE.md creado con resumen del contenido, estructura, flujo de ramas, pendientes y este registro.
 - **2026-10-24**: Unificación en un solo repositorio: el libro (antes `Libro_cartoGeotecnia`) se copió a `libro/` con `execute_notebooks: off`; URLs de datos en 7 notebooks cambiadas de `Libro_cartoGeotecnia/master/data` a `CartografiaGeotecnica/master/libro/data`; workflow `deploy.yml`; `_config.yml` con `baseurl: /CartografiaGeotecnica`; enlaces de `index.md` relativos y apuntando a `/CartografiaGeotecnica/libro/`; requisitos para ejecutar notebooks movidos a `libro/requirements-notebooks.txt`.
