@@ -5,7 +5,7 @@ El curso es teórico - práctico, en el cual se hace una revisión detallada del
 El alcance de este curso es aprender a construir modelos para cartografiar y construir mapas de susceptibilidad y amenaza como herramienta para el ordenamiento del territorio.
 
 ## Programa del curso
-[Ir al programa...](/Programa_CartoGeotecnica.pdf)
+[Ir al programa...](Programa_CartoGeotecnica.pdf)
 
 ## Horario del curso
 Miercoles & Viernes 10:00 - 12:00 a.m.
@@ -14,10 +14,10 @@ Miercoles & Viernes 10:00 - 12:00 a.m.
 M7-501
 
 ## Diapositivas del curso
-[Ir a diapositivas...](/html/CartografiaGeotecnica.html)
+[Ir a diapositivas...](html/CartografiaGeotecnica.html)
 
 ## Libro del curso
-[Ir a libro...](https://edieraristizabal.github.io/Libro_cartoGeotecnia/intro.html)
+[Ir a libro...](https://edieraristizabal.github.io/CartografiaGeotecnica/libro/intro.html)
 
 
 ## Contenido del curso
@@ -78,7 +78,7 @@ La entrega de los talleres, de la presentación y el trabajo escrito se realizar
 
 ## Libro guía
 El libro guía del curso está en construcción. Por lo tanto las observaciones y recomendaciones son bienvenidas\\
-[Libro Guía Cartografía Geotécnica](https://edieraristizabal.github.io/Libro_cartoGeotecnia/intro.html)
+[Libro Guía Cartografía Geotécnica](https://edieraristizabal.github.io/CartografiaGeotecnica/libro/intro.html)
 
 ## Lecturas recomendadas
 [Cruden & Varnes 1996 - Landslides types and processes](https://www.researchgate.net/publication/288658145_Landslides_Investigation_and_Mitigation)

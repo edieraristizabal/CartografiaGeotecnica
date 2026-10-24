@@ -1,0 +1,7 @@
+desde la raiz de la carpeta
+
+# Primero, compila el libro
+jupyter-book build .
+
+# este comando hace el add, commit y actualiza en la rama gh-pages la pagina
+ghp-import -n -p -f _build/html

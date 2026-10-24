@@ -1,0 +1,39 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Cartografía Geotécnica
+author: Edier V. Aristizábal G.
+email: edieraristizabal@gmail.com
+copyright: "2022" 
+logo: logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: "off"
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: CartoGeotecnia.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - 100_references.bib
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+    # cada capítulo tiene su propia bibliografía: las repeticiones entre capítulos son intencionales
+    suppress_warnings: ["bibtex.duplicate_citation", "bibtex.duplicate_label"]
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/edieraristizabal/CartografiaGeotecnica  # Online location of your book
+  path_to_book: libro  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  baseurl: https://edieraristizabal.github.io/CartografiaGeotecnica/libro/
+  use_issues_button: true
+  use_repository_button: true

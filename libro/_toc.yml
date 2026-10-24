@@ -1,0 +1,24 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: 00_medialuna
+- file: 00_introduccion
+- file: 01_normatividad
+- file: 02_estadoarte
+- file: 03_metodos
+- file: 04_susceptibilidad
+- file: 05_inventario
+- file: 06_variables
+- file: 07_detonante
+- file: 08_heuristico
+- file: 09_estadistico
+- file: 10_fisico
+- file: 11_evaluacion
+- file: 12_amenaza
+- file: 13_flujos
+- file: 14_roca
+- file: 15_python
+- file: 100_references
