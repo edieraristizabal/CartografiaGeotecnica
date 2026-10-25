@@ -118,6 +118,7 @@ Material fuente que **no** se sube (libros guía, presentaciones originales, doc
 
 Cada cambio al repositorio se anota aquí, el más reciente primero, con el formato `- **AAAA-MM-DD**: qué se cambió y por qué (archivos principales).` Esta sección es la memoria del curso entre sesiones: leerla antes de empezar a trabajar.
 
+- **2026-10-25**: `README.md` con la sección "Enlaces del curso" (página, presentación y libro publicados) y el enlace a la página personal https://edieraristizabal.github.io/.
 - **2026-10-24**: Interfaz en español: `_layouts/default.html` traducido ("Ver el proyecto en GitHub", "Este proyecto es mantenido por", `lang` = es), reemplaza el texto en inglés del tema minimal de Jekyll; `language: es` en `libro/_config.yml` para la interfaz del libro.
 - **2026-10-24**: Revisión de idioma: se tradujeron al español 17 bloques en inglés de `html/CartografiaGeotecnica.html` (características de Python, métodos de inventario, distribución de Poisson, citas de Laplace y Poincaré, SINMAP, análisis pseudoestático y de Newmark, curvas magnitud-frecuencia) y se corrigió una etiqueta `</span>` mal cerrada. El libro ya estaba en español. Se mantienen en inglés títulos de libros, enlaces y tweets incrustados.
 - **2026-10-24**: CLAUDE.md creado con resumen del contenido, estructura, flujo de ramas, pendientes y este registro.
