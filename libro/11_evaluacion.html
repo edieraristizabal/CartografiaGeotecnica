@@ -1,0 +1,1523 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Evaluación del modelo &#8212; Cartografía Geotécnica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '11_evaluacion';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://edieraristizabal.github.io/CartografiaGeotecnica/libro/11_evaluacion.html" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Análisis del factor detonante" href="12_amenaza.html" />
+    <link rel="prev" title="Métodos con base física" href="10_fisico.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Cartografía Geotécnica - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Cartografía Geotécnica - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    .
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_medialuna.html">Media Luna (1954)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_normatividad.html">Amenaza &amp; ordenamiento territorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_estadoarte.html">Estado del arte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_metodos.html">Caracterización de movimientos en masa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_susceptibilidad.html">Susceptibilidad y amenaza</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_inventario.html">Inventario de movimientos en masa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_variables.html">Variables condicionantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_detonante.html">Factores detonantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_heuristico.html">Métodos basados en el conocimiento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_estadistico.html">Métodos basados en datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_fisico.html">Métodos con base física</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Evaluación del modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_amenaza.html">Análisis del factor detonante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_flujos.html">Movimientos en masa tipo flujos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_roca.html">Movimientos en masa en roca</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_python.html">Python</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="100_references.html">Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/edieraristizabal/CartografiaGeotecnica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/edieraristizabal/CartografiaGeotecnica/issues/new?title=Issue%20on%20page%20%2F11_evaluacion.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/11_evaluacion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Evaluación del modelo</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-previos">Requisitos previos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-y-prediccion">Desempeño y predicción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-cruzada">Validación cruzada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">Matriz de confusión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-positive-rate"><em>False positive rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-negative-rate"><em>True negative rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-negative-rate"><em>False negative rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-positive-rate"><em>True positive rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy"><em>Accuracy</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-measure"><em>F-measure</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc">Curva ROC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python"><em>Python</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Validación cruzada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-del-modelo">Desempeño del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacidad-de-prediccion">Capacidad de predicción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-mapa-de-susceptibilidad-final">Calcular mapa de susceptibilidad final</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividades">Actividades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="evaluacion-del-modelo">
+<h1>Evaluación del modelo<a class="headerlink" href="#evaluacion-del-modelo" title="Link to this heading">#</a></h1>
+<section id="objetivos-de-aprendizaje">
+<h2>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar este capítulo, el estudiante será capaz de:</p>
+<ul class="simple">
+<li><p>Construir e interpretar una matriz de confusión para evaluar modelos de susceptibilidad a movimientos en masa.</p></li>
+<li><p>Calcular e interpretar métricas de evaluación: precisión, recall, F1-score, especificidad y AUC-ROC.</p></li>
+<li><p>Trazar curvas ROC y Precisión-Recall e identificar el umbral óptimo de clasificación.</p></li>
+<li><p>Comparar múltiples modelos usando AUC como métrica de ranking.</p></li>
+<li><p>Distinguir entre evaluación con datos de entrenamiento y datos independientes (validación cruzada).</p></li>
+</ul>
+<p><strong>Duración estimada:</strong> 2–3 horas</p>
+</section>
+<section id="requisitos-previos">
+<h2>Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Python:</strong> <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> (<code class="docutils literal notranslate"><span class="pre">metrics</span></code>, <code class="docutils literal notranslate"><span class="pre">model_selection</span></code>), <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p></li>
+<li><p><strong>Estadística:</strong> probabilidad de detección, tasa de falsos positivos, pruebas de hipótesis básicas.</p></li>
+<li><p><strong>Capítulo anterior:</strong> <code class="docutils literal notranslate"><span class="pre">09_estadistico</span></code> — los modelos evaluados aquí fueron entrenados en ese capítulo.</p></li>
+</ul>
+<p>Tanto los modelos heurísticos, estadísticos o con base física son simplemente simplificaciones y aproximaciones a la realidad, la cual es mucho más compleja y guarda elementos que desconocemos. Es por eso que debemos evaluar que tanto de aquella realidad estamos realmente representando. Para esto inicialmente debemos establecer las siguientes definiciones:</p>
+<ul class="simple">
+<li><p><strong>Exactitud</strong> (<em>accuracy</em>): se refiere al grado de qué tan cerca está la medida o valor mapeado o clase de un mapa a su valor verdadero o clase en el campo.</p></li>
+<li><p><strong>Error</strong>: la diferencia entre el valor mapeado o la clase y el valor o clase verdadero.</p></li>
+<li><p><strong>Precisión</strong>: referente a una medida como el grado al cual medidas repetidas bajo condiciones invariantes muestran el mismo resultado.</p></li>
+<li><p><strong>Incertidumbre</strong> (<em>uncertainty</em>): grado con el cual las características actuales del terreno pueden ser presentadas espacialmente en un mapa.</p></li>
+</ul>
+<p>Los términos objetividad y subjetividad son usados para señalar si los diferentes pasos tomados en la determinación de un grado de amenaza son verificables y reproducibles por otro investigador, o si ellos dependen del juicio personal del investigador.</p>
+<figure class="align-default" id="precision">
+<a class="reference internal image-reference" href="https://www.forecast.app/hs-fs/hubfs/accuracy-precision.jpg?width=454&amp;name=accuracy-precision.jpg"><img alt="modelos" src="https://www.forecast.app/hs-fs/hubfs/accuracy-precision.jpg?width=454&amp;name=accuracy-precision.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 83 </span><span class="caption-text">Exactitud y precisión de un modelo.</span><a class="headerlink" href="#precision" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Existen dos tipos de incertidumbre asociada a los modelos. La incertidumbre aleatoria que se refiere a la variabilidad que conocemos. Está implícita en muchas de las variables que incorporamos dentro de los modelos. Esta incertidumbre puede ser incorporada en nuestro análisis, y es precisamente la que tratamos de evaluar. Pero es importante tener en cuenta que existe la incertidumbre epistémica, la cual está asociada al desconocimiento o los limitantes que tenemos para describir dichos fenómenos físicos que estamos modelando. Debido precisamente a que se refiere a aquellos elementos que aún desconocemos, no puede entonces evaluarse o incorporarse directamente en los modelos.</p>
+</section>
+<section id="desempeno-y-prediccion">
+<h2>Desempeño y predicción<a class="headerlink" href="#desempeno-y-prediccion" title="Link to this heading">#</a></h2>
+<p>La aceptación de un modelo debe responder al menos a tres criterios:</p>
+<ul class="simple">
+<li><p>Su adecuación (conceptual y matemáticamente) en describir el comportamiento del sistema</p></li>
+<li><p>Su robustez a pequeños cambios de los parámetros de entrada (sensibilidad a los datos)</p></li>
+<li><p>Su exactitud en predecir los resultados.</p></li>
+</ul>
+<p>De esta forma la evaluación de un modelo debe ser revisada contra la información usada para construir el modelo, la cual se refiere a la bondad del ajuste del modelo, y responde a la pregunta ¿qué tan bien el modelo se desempeña?. Pero también debe evaluarse el modelo contra el <em>futuro</em>, y que responde a la pregunta ¿qué tan bien el modelo predice?, y se refiere a la habilidad del modelo para predecir, en este caso, la ocurrencia de futuros deslizamientos.</p>
+</section>
+<section id="validacion-cruzada">
+<h2>Validación cruzada<a class="headerlink" href="#validacion-cruzada" title="Link to this heading">#</a></h2>
+<p>Como se menciona anteriormente la evaluación del modelo se debe realizar en dos campos, en términos del desempeño y en términos de la capacidad de predicción. La más compleja de estas evaluaciones se refiere a la capacidad de predicción, ya que sólo la ocurrencia de nuevos eventos a lo largo del tiempo puede determinar la capacidad de predicción de nuestro modelo. Pero precisamente la evaluación del desempeño, como de la predicción, se requieren al momento de construir el modelo.</p>
+<p>Para esto existen diferentes estrategias de partición de los datos que nos permiten obtener estas evaluaciones. Esta técnica se denomina validación cruzada y se refiere a un método de remuestreo que utiliza diferentes porciones de los datos para entrenar y evaluar un modelo en diferentes iteracciones. Esta técnica se puede utilizar tanto para la partición de datos espacialmente, es decir utilizar un área especifica para entrenar el modelo y evaluar su desempeño, y otra área de la zona de estudio, para evaluar la capacidad de predicción. O es también posible la partición temporal, es decir utilizar los datos en un rango de tiempo para entrenar el modelo y evaluar el desempeño del modelo, y utilizar otro rango de tiempo, generalmente posterior al inicial, para evaluar la capacidad de predicción. Para la evaluación de modelos de susceptibilidad por movimientos en masa se utiliza la primera de estas estrategias, partición espacial; sin embargo dicha partición no se realiza generalmente en áreas, ya que posiblemente existan diferencias entre ambas áreas en el mecanismo que gobierna el proceso, por lo tanto el error aumenta pero debido a que el modelo construido no representa el mecanismo del área donde se va a evaluar. De esta forma la partición de los datos se realiza aleatoriamente sobre toda el área de estudio.</p>
+<figure class="align-default" id="cross-validation">
+<a class="reference internal image-reference" href="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs12665-021-09770-9/MediaObjects/12665_2021_9770_Fig4_HTML.png?as=webp"><img alt="cross validation" src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs12665-021-09770-9/MediaObjects/12665_2021_9770_Fig4_HTML.png?as=webp" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 84 </span><span class="caption-text">Procedimiento para validación cruzada.</span><a class="headerlink" href="#cross-validation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>No existe un porcentaje o radio de separación único utilizado, pero los porcentajes más comunes utilizados están entre 80:20 y 70:30, lo cual significa 80% de los datos para entrenamiento o construcción del modelo, y el 20% restante para evaluar la capacidad de predicción.</p>
+<p>La guía del Servicio Geológico Colombiano (2017) establece que la selección de los subconjuntos de entrenamiento y validación del inventario de movimientos en masa puede basarse en criterios espaciales, temporales o de selección aleatoria. Una buena práctica recomendada para validar la capacidad de predicción espacio-temporal consiste en entrenar el modelo con un inventario histórico de movimientos en masa de tipo geomorfológico (es decir, eventos antiguos, ya cicatrizados en el terreno) y validarlo contra un inventario de eventos recientes o de un evento detonante específico, lo que permite evaluar de forma más rigurosa la verdadera capacidad predictiva del modelo ante condiciones futuras, en lugar de una simple partición aleatoria del mismo inventario. En Colombia, la razón 80:20 es la más consistentemente reportada: tanto en el estudio del Valle de Aburrá (<span class="bibtex-citation" id="id1">Aristizábal <em>et al.</em> [<a class="reference internal" href="#id27" title="Edier Aristizábal, López S., Sánchez O., Vásquez M., Rincón F., Ruiz-Vásquez D., Restrepo S., and Valencia J.S. Evaluación de la amenaza por movimientos en masa detonados por lluvias para una región de los andes colombianos estimando la probabilidad espacial, temporal, y magnitud. Boletín de Geología, pages 85-105, 2019. URL: http://eusoils.jrc.ec.europa.eu/library/themes/Landslides/, doi:10.18273/revbol.v41n3-2019004.">2019</a>]</span>) como en el estudio rural de Andes, Antioquia (<span class="bibtex-citation" id="id2">Aristizábal <em>et al.</em> [<a class="reference internal" href="#id30" title="Edier Aristizábal, F. García, R. J. Marín, F. Gómez, and J. Guzmán. Rainfall-intensity effect on landslide hazard assessment due to climate change in north-western colombian andes. Revista Facultad de Ingeniería Universidad de Antioquia, pages 1-16, 2022. URL: https://www.doi.org/10.17533/udea.redin.20201215, doi:10.17533/udea.redin.20201215.">2022</a>]</span>), se destinó el 80% del inventario histórico para la construcción del modelo y el 20% restante como conjunto independiente para evaluar la tasa de predicción.</p>
+</section>
+<section id="matriz-de-confusion">
+<h2>Matriz de confusión<a class="headerlink" href="#matriz-de-confusion" title="Link to this heading">#</a></h2>
+<p>Tanto para el desempeño como para la capacidad de predicción se utilizan las mismas métricas de evaluación, solo que se especifica si se refiere al desempeño del modelo o la capacidad de predicción. Generalmente, las métricas para el desempeño del modelo presentan mejores valores comparado con la capacidad de predicción. Y esto se debe a que el desempeño se evalúa con datos que el modelo conoce y a los cuales se ajustó, mientras que los datos que evaluan la capacidad de predicción no han sido conocidos por el modelo, y precisamente entre las dos métricas, la que generalmente se presenta al final de los procedimientos es la capacidad de predicción. La evaluación del desempeño del modelo corresponde a un paso interno que permite al modelador ajustar los parámetros del modelo.</p>
+<p>Para la evaluación de los modelos de susceptibilidad por movimientos en masa se utilizan diferentes métricas:</p>
+<ul class="simple">
+<li><p>Distancia a la clasificación perfecta</p></li>
+<li><p>curva ROC (<em>Receiver Operating Characteristic</em>)</p></li>
+<li><p>Área bajo la curva ROC (AUROC)</p></li>
+</ul>
+<p>Sin embargo todas estas parten de la <strong>matriz de confusión</strong> o también denominada matriz de contingencia o matriz de error. Esta matriz corresponde a una tabla cruzada de frecuencias para una variable categórica binaria, que compara los resultados de salida del modelo contra los valores de la variable dependiente reales o medidos, en este caso el inventario de movimientos en masa. En palabras sencillas, compara las predicciones del modelo con los datos.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="https://rapidminer.com/wp-content/uploads/2022/06/Confusion-Matrix-1.jpeg"><img alt="matriz de confusion" src="https://rapidminer.com/wp-content/uploads/2022/06/Confusion-Matrix-1.jpeg" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 85 </span><span class="caption-text">Matriz de confusión.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A partir de dicha matriz se obtienen los verdaderos positivos (<em>tp</em>), los cuales se refieren a las celdas que el modelo señala como inestables y que efectivamente en el inventario de movimientos en masa son eventos, los verdaderos negativos (<em>tn</em>), los cuales se refieren a las celdas que el modelo señala como estables y que en el inventario de movimientos en masa no hay registro de eventos. Tanto los <em>tp</em> como los <em>tn</em> corresponden a los aciertos del modelo. Por otro lado los errores son evaluados por los falsos positivos (<em>fp</em>), también conocidos como errores tipo I, los cuales se refieren a las celdas que el modelo señala como inestables y que en el inventario de movimientos en masa no registran eventos, y los falsos negativos (<em>fn</em>), también conocidos como errores tipo II, los cuales corresponden a las celdas que el modelo señala como estables y que en el inventario de movimientos en masa registran eventos.</p>
+<p>Considerando que el mayor interés en los mapas de susceptibilidad corresponde a identificar aquellas áreas potencialmente inestables, generalmente son más importantes las celdas inestables, es decir los verdaderos positivos y falsos positivos. Por lo tanto, se debe ser cuidadoso con las métricas utilizadas, ya que  esto puede llevar a errores en este tipo de modelos que son por naturaleza desbalanceados. Un modelo muy malo puede tener valores de <em>tp</em> muy altos simplemente asignándole valores de inestable a todas las celdas de la cuenca. Esto arroja un modelo con un desempeño y capacidad de predicción del 100%, sin embargo si se revisan los falsos positivos, es decir los errores por sobre estimación, estos también van a ser cercanos al 100%. Entonces un buen modelo es aquel que identifica las áreas inestables, altos valores de <em>tp</em>, y al mismo tiempo valores bajos de <em>fp</em>. Pero la realidad señala que el aumento de los <em>tp</em> lleva consigo el aumento de los <em>fp</em>, por lo tanto un buen modelo debe encontrar el mejor equilibrio entre ambas métricas.</p>
+<p>A partir de esta matriz se construye una serie de métricas que permite evaluar el modelo:</p>
+<section id="false-positive-rate">
+<h3><em>False positive rate</em><a class="headerlink" href="#false-positive-rate" title="Link to this heading">#</a></h3>
+<p>También conocido como <strong>error tipo I</strong>, y explica la capacidad que tiene el modelo de equivocarse entre las celdas estables.</p>
+</section>
+<section id="true-negative-rate">
+<h3><em>True negative rate</em><a class="headerlink" href="#true-negative-rate" title="Link to this heading">#</a></h3>
+<p>También conocido como <strong>specificity</strong> o <strong>recall</strong> y explica la capacidad que tiene el modelo de acertar entre las celdas inestables.</p>
+</section>
+<section id="false-negative-rate">
+<h3><em>False negative rate</em><a class="headerlink" href="#false-negative-rate" title="Link to this heading">#</a></h3>
+<p>También denominado <em>error tipo II</em>, y explica la capacidad que tiene el modelo de equivocarse entre las celdas inestables.</p>
+</section>
+<section id="true-positive-rate">
+<h3><em>True positive rate</em><a class="headerlink" href="#true-positive-rate" title="Link to this heading">#</a></h3>
+<p>También conocido como <em>precision</em>, y explica la capacidad que tiene el modelo de acertar entre las celdas estables</p>
+</section>
+<section id="accuracy">
+<h3><em>Accuracy</em><a class="headerlink" href="#accuracy" title="Link to this heading">#</a></h3>
+<p>Se refiere a que también el modelo clasifica, tanto celdas estables como inestables, con respecto al total de celdas, es decir el porcentaje de celdas que acierta el modelo. Esta métrica también es afectada por el desbalanceo original que representa el problema. Es decir, que puede arrojar valores muy altos, aunque el modelo sea mediocre, ya que los verdaderos negativo <em>tn</em> tienden a ser muy altos, es fácil predecir los <em>no</em>, y esto incrementa el valor del <em>accuracy</em>.</p>
+</section>
+<section id="f-measure">
+<h3><em>F-measure</em><a class="headerlink" href="#f-measure" title="Link to this heading">#</a></h3>
+<p>Esta métrica trata de compensar el desbalanceo y se estima como.</p>
+<p><span class="math notranslate nohighlight">\(F-measure=\frac{2*Recall*Precision}{Recall+Precision}\)</span></p>
+</section>
+</section>
+<section id="curva-roc">
+<h2>Curva ROC<a class="headerlink" href="#curva-roc" title="Link to this heading">#</a></h2>
+<p>La matriz de contingencia puede llevarse a un espacio bidimensional que compara los <em>True positive rate</em> o <em>Sensitivity</em> en el eje <em>y</em> contra el <em>False positive rate</em> en el eje <em>x</em>, que se estima como <span class="math notranslate nohighlight">\(1-Specificity\)</span>. Esto nos permite comparar el desempeño de diferentes modelos. El modelo con el mejor desempeño teórico posible corresponde a la esquina superior derecha del gráfico, ya que representa el punto con el 100% de aciertos contra el 0% de equivocaciones. La distancia euclidiana a dicho punto corresponde a la <strong>Distancia a la clasificación perfecta (r)</strong>, por lo tanto los modelos con una menor distancia presentan un mejor desempeño.</p>
+<p><span class="math notranslate nohighlight">\(r=\sqrt{fpr^2 + (1-tpr)^2}\)</span></p>
+<figure class="align-default" id="r">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/0b/82/e2/0b82e29fa53d0de12645b9dfabf2b100.jpg"><img alt="r" src="https://i.pinimg.com/564x/0b/82/e2/0b82e29fa53d0de12645b9dfabf2b100.jpg" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 86 </span><span class="caption-text">Distancia a la clasificación perfecta.</span><a class="headerlink" href="#r" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Hasta este punto hemos evaluado métricas que requieren que la variable dependiente <span class="math notranslate nohighlight">\(y\)</span> sea binaria, es decir 0 ó 1. Esto implica que para modelos que arrojan un rango de valores para cada celda, donde un extremo de estos valores representa celdas inestables y el otro extremo representa celdas estables, es necesario entonces establecer un umbral que separe entre estos dos rangos, estables e inestables. Para modelos con base fisica basados en el factor de seguridad, este procedimiento es mucho más sencillo, porque el valor del factor de seguridad de 1 representa un umbral establecido por el propio modelo. Para modelos con regresión logística, bivariados, o incluso modelos con base física pero basados en índice de confiabilidad, por ejemplo, dicho umbral no es claro. Esto es importante porque entonces los resultados de la evaluación del modelo están en función del umbral seleccionado. ¿Cómo entonces poder evaluar un modelo con una métrica independiente del umbral?</p>
+<p>Lo que responde esto es la curva ROC, y específicamente el área bajo la curva ROC. Esta curva se construye graficando múltiples puntos, tantos como se desee, asignando diferentes umbrales. es decir que la curva ROC representa todos los puntos del modelo para todo el rango de valores del índice de susceptibilidad obtenidos.</p>
+<figure class="align-default" id="auroc">
+<a class="reference internal image-reference" href="https://www.researchgate.net/publication/351506473/figure/fig2/AS:1022506102169601&#64;1620795860506/ROC-curves-and-area-under-curve-AUC.png"><img alt="auroc" src="https://www.researchgate.net/publication/351506473/figure/fig2/AS:1022506102169601&#64;1620795860506/ROC-curves-and-area-under-curve-AUC.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 87 </span><span class="caption-text">Curva ROC y área bajo la curva (AUROC).</span><a class="headerlink" href="#auroc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El valor del AUROC varía entre 0 y 1, donde 1 es un modelo perfecto. Generalmente en el espacio de la curva ROC se gráfica una línea diagonal que representa un AUROC del 0.5. Esta se utiliza como referente de un modelo mediocre que tiene un número igual de aciertos a desaciertos, lo que se busca es obtener modelos con mayores aciertos que desaciertos, por lo tanto implica curvas convexas donde el AUROC &gt; 0.5.</p>
+<p>Para traducir el valor cuantitativo del AUC en una categoría cualitativa de desempeño, la literatura de zonificación de amenazas (por ejemplo, las guías SafeLand/JTC-1) recurre frecuentemente a la escala propuesta por Swets (1988), según la cual un modelo se considera moderadamente preciso con valores de AUC superiores a 0,7, y altamente preciso con valores superiores a 0,9; en general, cualquier valor superior a 0,5 indica que el modelo predice mejor que el azar y puede aceptarse. Estudios latinoamericanos de susceptibilidad han adoptado clasificaciones similares: un valor de AUC de 0,837, por ejemplo, se clasifica como de calidad predictiva «muy buena» según los rangos propuestos por Roy y Saha (2019) y por Sonker, Tripathi y Singh (2021). En cuanto a la comparación formal entre las curvas ROC de dos modelos distintos, el referente matemático clásico es el trabajo de Hanley y McNeil (1982), quienes establecieron las bases estadísticas para calcular y comparar valores de AUC; sin embargo, en la práctica de la zonificación de amenazas es más común evaluar la robustez de un modelo mediante métricas complementarias e independientes del umbral de corte, como las curvas de costo (<em>cost curves</em>), que ponderan explícitamente el costo esperado de los falsos positivos frente a los falsos negativos, en lugar de basarse en una única prueba de significancia estadística sobre la diferencia entre AUC.</p>
+<figure class="align-default" id="auroc1">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/ad/6a/5a/ad6a5a68d8dcb06b7a08b135150efc94.jpg"><img alt="auroc1" src="https://i.pinimg.com/564x/ad/6a/5a/ad6a5a68d8dcb06b7a08b135150efc94.jpg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 88 </span><span class="caption-text">Modelo completamente erróneo.</span><a class="headerlink" href="#auroc1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="auroc2">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/0d/4b/60/0d4b60a775acbfa8cd645df32ef3b9f7.jpg"><img alt="auroc2" src="https://i.pinimg.com/564x/0d/4b/60/0d4b60a775acbfa8cd645df32ef3b9f7.jpg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 89 </span><span class="caption-text">Modelo perfecto.</span><a class="headerlink" href="#auroc2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="auroc3">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/80/40/ee/8040ee1f9c25c45b3a5ae773a48e1660.jpg"><img alt="auroc3" src="https://i.pinimg.com/564x/80/40/ee/8040ee1f9c25c45b3a5ae773a48e1660.jpg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 90 </span><span class="caption-text">Modelo mediocre.</span><a class="headerlink" href="#auroc3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="auroc4">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/c6/48/af/c648af60209d8a97bdbddd5dc8c99d60.jpg"><img alt="auroc" src="https://i.pinimg.com/564x/c6/48/af/c648af60209d8a97bdbddd5dc8c99d60.jpg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 91 </span><span class="caption-text">Modelo adecuado.</span><a class="headerlink" href="#auroc4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="python">
+<h2><em>Python</em><a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A continuación se importa el inventario de movimientos en masa, así como los mapas de las variables predictoras a utilizar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raster</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/edieraristizabal/CartografiaGeotecnica/master/libro/data/miel/Inventario_MenM.tif'</span><span class="p">)</span>
+<span class="n">inventario</span><span class="o">=</span><span class="n">raster</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">raster_mask</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/edieraristizabal/CartografiaGeotecnica/master/libro/data/miel/Pendiente.tif'</span><span class="p">)</span>
+<span class="n">msk</span><span class="o">=</span><span class="n">raster_mask</span><span class="o">.</span><span class="n">read_masks</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">msk</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">msk</span><span class="o">==</span><span class="mi">255</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">inventario</span><span class="o">=</span><span class="n">msk</span><span class="o">*</span><span class="n">inventario</span>
+<span class="n">inventario_vector</span><span class="o">=</span><span class="n">inventario</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">inventario_vector_MenM</span><span class="o">=</span><span class="n">inventario_vector</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">inventario_vector</span><span class="p">)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">inventario</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">inventario_vector_MenM</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(910801,)
+</pre></div>
+</div>
+<img alt="_images/079e4b34260412868bca4379309e31cdb19c4f94b0c37e18333e2343546a6684.png" src="_images/079e4b34260412868bca4379309e31cdb19c4f94b0c37e18333e2343546a6684.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raster</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/edieraristizabal/CartografiaGeotecnica/master/libro/data/miel/Aspecto.tif'</span><span class="p">)</span>
+<span class="n">aspecto</span><span class="o">=</span><span class="n">raster</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">aspecto</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">aspecto</span><span class="o">&lt;-</span><span class="mi">100</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">aspecto</span><span class="p">)</span>
+<span class="n">aspecto_vector</span><span class="o">=</span><span class="n">aspecto</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">aspecto_vector_MenM</span><span class="o">=</span><span class="n">aspecto_vector</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">aspecto_vector</span><span class="p">)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">aspecto</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1cee5b9f110&gt;
+</pre></div>
+</div>
+<img alt="_images/e5c94c25c6fe0c43b6053ab1a13c998329a95f3a2385d503b5dab6cb4b38272d.png" src="_images/e5c94c25c6fe0c43b6053ab1a13c998329a95f3a2385d503b5dab6cb4b38272d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raster</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/edieraristizabal/CartografiaGeotecnica/master/libro/data/miel/Pendiente.tif'</span><span class="p">)</span>
+<span class="n">pendiente</span><span class="o">=</span><span class="n">raster</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pendiente</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pendiente</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">pendiente</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pendiente</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
+<span class="n">pendiente_vector</span><span class="o">=</span><span class="n">pendiente</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">pendiente_vector_MenM</span><span class="o">=</span><span class="n">pendiente_vector</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">pendiente_vector</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/be98cf53cfd6c8a517a2a2eaedc6e5b96ec265606056e72ac96554e47379e312.png" src="_images/be98cf53cfd6c8a517a2a2eaedc6e5b96ec265606056e72ac96554e47379e312.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raster</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/edieraristizabal/CartografiaGeotecnica/master/libro/data/miel/Geologia_Superficial.tif'</span><span class="p">)</span>
+<span class="n">geologia</span><span class="o">=</span><span class="n">raster</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">geologia</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">geologia</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">geologia</span><span class="p">)</span>
+<span class="n">geologia_vector</span><span class="o">=</span><span class="n">geologia</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">geologia_vector_MenM</span><span class="o">=</span><span class="n">geologia_vector</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">geologia_vector</span><span class="p">)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">geologia</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f33182610bf907fff0eb9afa101cf9172d671dbb0e725d66166eeba309f1732a.png" src="_images/f33182610bf907fff0eb9afa101cf9172d671dbb0e725d66166eeba309f1732a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s1">'inventario'</span><span class="p">:</span><span class="n">inventario_vector_MenM</span><span class="p">,</span><span class="s1">'pendiente'</span><span class="p">:</span><span class="n">pendiente_vector_MenM</span><span class="p">,</span><span class="s1">'aspecto'</span><span class="p">:</span><span class="n">aspecto_vector_MenM</span><span class="p">,</span><span class="s1">'geologia'</span><span class="p">:</span><span class="n">geologia_vector_MenM</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"inventario"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'inventario'</span><span class="p">]</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pendiente</th>
+      <th>aspecto</th>
+      <th>geologia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.862183</td>
+      <td>208.523560</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12.265345</td>
+      <td>207.437332</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12.469252</td>
+      <td>202.684647</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13.148026</td>
+      <td>211.619766</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>14.091524</td>
+      <td>220.028976</td>
+      <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s1">'balanced'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3>Validación cruzada<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span> 
+<span class="n">x_train</span><span class="p">,</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span><span class="o">=</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Tamaño de variables de entrenamiento:'</span><span class="p">,</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Tamaño de labels de entrenamiento:'</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Tamaño de variables de validación:'</span><span class="p">,</span> <span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Tamaño de labels de validación:'</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tamaño de variables de entrenamiento: (728640, 3)
+Tamaño de labels de entrenamiento: (728640,)
+Tamaño de variables de validación: (182161, 3)
+Tamaño de labels de validación: (182161,)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="desempeno-del-modelo">
+<h3>Desempeño del modelo<a class="headerlink" href="#desempeno-del-modelo" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_train_pred</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span> <span class="c1"># utiliza por defecto el valor de 0,5, por encima es uno y por debajo es 0</span>
+<span class="n">y_train_probs</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">x_train</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[727313,      0],
+       [   395,    932]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_train_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00    727313
+         1.0       1.00      0.70      0.83      1327
+
+    accuracy                           1.00    728640
+   macro avg       1.00      0.85      0.91    728640
+weighted avg       1.00      1.00      1.00    728640
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_train_probs</span><span class="p">)</span>
+<span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'darkorange'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'ROC curve (AUC = </span><span class="si">%0.2f</span><span class="s1">)'</span> <span class="o">%</span> <span class="n">roc_auc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'navy'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'FPR'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'TPR'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'ROC Curve for training'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, 'ROC Curve for training')
+</pre></div>
+</div>
+<img alt="_images/3201bad08a960b5683b0e82d599911a9e85a61915349a35d7d3a577611c4a17c.png" src="_images/3201bad08a960b5683b0e82d599911a9e85a61915349a35d7d3a577611c4a17c.png" />
+</div>
+</div>
+</section>
+<section id="capacidad-de-prediccion">
+<h3>Capacidad de predicción<a class="headerlink" href="#capacidad-de-prediccion" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_val_pred</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span> 
+<span class="n">y_val_probs</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">x_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_val_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[181864,      4],
+       [   293,      0]], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_val_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00    181868
+         1.0       0.00      0.00      0.00       293
+
+    accuracy                           1.00    182161
+   macro avg       0.50      0.50      0.50    182161
+weighted avg       1.00      1.00      1.00    182161
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_val_probs</span><span class="p">)</span>
+<span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'darkorange'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'ROC curve (AUC = </span><span class="si">%0.2f</span><span class="s1">)'</span> <span class="o">%</span> <span class="n">roc_auc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'navy'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'FPR'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'TPR'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'ROC Curve for prediction'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, 'ROC Curve for prediction')
+</pre></div>
+</div>
+<img alt="_images/7c65cdf4aa1a3755c8c7eacc11733e6f14036e84b3ce8e643bb817f34825114f.png" src="_images/7c65cdf4aa1a3755c8c7eacc11733e6f14036e84b3ce8e643bb817f34825114f.png" />
+</div>
+</div>
+<p>Para obtener los valores del index de susceptibilidad utilizados para cada punto de la curva se obtiene el thresholds, para esto vamos a construir un dataframe calculando además el 1-fpr y el tf.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tpr</span><span class="p">))</span> <span class="c1"># index for df</span>
+<span class="n">roc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'fpr'</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">i</span><span class="p">),</span><span class="s1">'tpr'</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">tpr</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">),</span> <span class="s1">'1-fpr'</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">fpr</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">),</span> <span class="s1">'tf'</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">tpr</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">fpr</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">),</span> <span class="s1">'threshold'</span> <span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">)})</span>
+<span class="n">roc</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tpr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fpr</th>
+      <th>tpr</th>
+      <th>1-fpr</th>
+      <th>tf</th>
+      <th>threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>-1.000000</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.000005</td>
+      <td>0.000000</td>
+      <td>0.999995</td>
+      <td>-0.999995</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.000022</td>
+      <td>0.000000</td>
+      <td>0.999978</td>
+      <td>-0.999978</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000066</td>
+      <td>0.000000</td>
+      <td>0.999934</td>
+      <td>-0.999934</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000225</td>
+      <td>0.000000</td>
+      <td>0.999775</td>
+      <td>-0.999775</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.000852</td>
+      <td>0.010239</td>
+      <td>0.999148</td>
+      <td>-0.988909</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.002821</td>
+      <td>0.017065</td>
+      <td>0.997179</td>
+      <td>-0.980114</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.011409</td>
+      <td>0.040956</td>
+      <td>0.988591</td>
+      <td>-0.947635</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Para estimar el punto más cercano a la clasificación perfecta (esquina superior izquierda de ROC), el cual corresponde al umbral que presenta la mejor matriz de confusión, se puede realizar lo siguiente:</p>
+<ul class="simple">
+<li><p>Utilizar la función argsort</p></li>
+<li><p>Buscar en el dataframe el umbral que corresponde al valor de tf=0</p></li>
+<li><p>Graficar TPR y 1-FPR. El intercepto de dichas gráficas corresponde al umbral buscado.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#funcion argsort</span>
+<span class="n">best</span><span class="o">=</span><span class="n">roc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[(</span><span class="n">roc</span><span class="o">.</span><span class="n">tf</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="mi">1</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        fpr       tpr     1-fpr        tf  threshold
+7  0.011409  0.040956  0.988591 -0.947635        0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot tpr vs 1-fpr</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">roc</span><span class="p">[</span><span class="s1">'tpr'</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">'TPR'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">roc</span><span class="p">[</span><span class="s1">'1-fpr'</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'1-FPR'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'1-False Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Receiver operating characteristic'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower left"</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0c63da4b07e0090f644f8bc31f13736c733ea664a4db4d7e98e85b8e046f745e.png" src="_images/0c63da4b07e0090f644f8bc31f13736c733ea664a4db4d7e98e85b8e046f745e.png" />
+</div>
+</div>
+<p>Otra figura muy utilizada, especialmente cuando se tienen bases de datos desbalanceadas, como en estos casos, se utiliza la gráfica precisión-recall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">precision_recall_curve</span><span class="p">,</span> <span class="n">average_precision_score</span>
+
+<span class="c1"># Calculate the Precision-Recall curve</span>
+<span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">th2</span> <span class="o">=</span> <span class="n">precision_recall_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_val_probs</span><span class="p">)</span>
+<span class="n">pr_auc</span> <span class="o">=</span> <span class="n">average_precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_val_probs</span><span class="p">)</span>
+
+<span class="c1"># Plot the Precision-Recall curve</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">recall</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'darkorange'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'PR curve (AUC = </span><span class="si">%0.2f</span><span class="s1">)'</span> <span class="o">%</span> <span class="n">pr_auc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Recall'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Precision'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Precision-Recall Curve'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/256e13f652fc779bee1af6c69630b01624a9a4bc4d3f617b870c07479303df64.png" src="_images/256e13f652fc779bee1af6c69630b01624a9a4bc4d3f617b870c07479303df64.png" />
+</div>
+</div>
+</section>
+<section id="calcular-mapa-de-susceptibilidad-final">
+<h3>Calcular mapa de susceptibilidad final<a class="headerlink" href="#calcular-mapa-de-susceptibilidad-final" title="Link to this heading">#</a></h3>
+<p>Finalmente, cuando se obtiene el mejor modelo y los valores de métrica suficientes, entonces se obtiene el mapa de susceptibilidad con todos los datos, adicionalmente en este caso, para mantener la configuración espacial del mapa se construye el dataframe donde los datos NaN se modifican a cero(0).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pendiente_vector2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">pendiente_vector</span><span class="p">)</span>
+<span class="n">aspecto_vector2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">aspecto_vector</span><span class="p">)</span>
+<span class="n">geologia_vector2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">geologia_vector</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">=</span><span class="p">{</span><span class="s1">'pendiente'</span><span class="p">:</span><span class="n">pendiente_vector2</span><span class="p">,</span><span class="s1">'aspecto'</span><span class="p">:</span><span class="n">aspecto_vector2</span><span class="p">,</span><span class="s1">'geologia'</span><span class="p">:</span><span class="n">geologia_vector2</span><span class="p">}</span>
+<span class="n">x_map</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">x_map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-3b7d443d-b54b-4ee5-8861-9a4be4accdc1">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pendiente</th>
+      <th>aspecto</th>
+      <th>geologia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1854705</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1854706</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1854707</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1854708</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1854709</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1854710 rows × 3 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3b7d443d-b54b-4ee5-8861-9a4be4accdc1')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-3b7d443d-b54b-4ee5-8861-9a4be4accdc1 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-3b7d443d-b54b-4ee5-8861-9a4be4accdc1');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<p>Con este dataframe y el modelo entrenado se calcula el valor para cada celda de la cuenca.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">x_map</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para eliminar los puntos por fuera de la cuenca, que se modificaron por 0, se importa otro mapa como mascara y se convierten los valores de estas celdas en NaN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#mascara para crear el mapa de la cuenca</span>
+<span class="n">raster</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/edieraristizabal/CartografiaGeotecnica/master/libro/data/Pendiente.tif'</span><span class="p">)</span>
+<span class="n">pendiente</span><span class="o">=</span><span class="n">raster</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#Convertir el vector de resultados a la matriz del mapa de la cuenca a aprtir de la matriz de pendiente</span>
+<span class="n">IS</span><span class="o">=</span><span class="n">y_pred</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">pendiente</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">IS</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pendiente</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">IS</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">IS</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1d98002e7617c7df4c978805dec9e6525678c2a902887872ae9f98f85ce44bb7.png" src="_images/1d98002e7617c7df4c978805dec9e6525678c2a902887872ae9f98f85ce44bb7.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="actividades">
+<h2>Actividades<a class="headerlink" href="#actividades" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Umbral de clasificación:</strong> En un modelo de Regresión Logística, el umbral por defecto para clasificar una celda como “deslizamiento” es 0.5. Varía este umbral entre 0.1 y 0.9 y grafica cómo cambian la precisión y el recall. ¿Qué umbral maximiza el F1-score? ¿Cuál sería el umbral apropiado si el objetivo es minimizar falsos negativos (no detectar una zona peligrosa)?</p></li>
+<li><p><strong>Validación cruzada espacial:</strong> Implementa una validación cruzada 5-fold usando <code class="docutils literal notranslate"><span class="pre">cross_val_score</span></code>. Compara el AUC promedio con el AUC obtenido al evaluar sobre los datos de entrenamiento. ¿Hay sobreajuste? ¿Cuánto difieren?</p></li>
+<li><p><strong>Comparación de modelos:</strong> Traza las curvas ROC de los cuatro métodos del capítulo 09 (FR, WoE, LR, RF) en el mismo gráfico. ¿Cuál tiene mayor AUC? ¿Es la diferencia estadísticamente significativa (prueba DeLong)?</p></li>
+<li><p><strong>Validación con datos externos:</strong> Descarga el inventario de un evento independiente (posterior al período de entrenamiento) y úsalo para validar el mapa de susceptibilidad del mejor modelo. Calcula el AUC de validación. ¿Se mantiene el rendimiento con datos no vistos?</p></li>
+</ol>
+</section>
+<section id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id5">
+<div role="list" class="citation-list">
+<div class="citation" id="id30" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Edier Aristizábal, F. García, R. J. Marín, F. Gómez, and J. Guzmán. Rainfall-intensity effect on landslide hazard assessment due to climate change in north-western colombian andes. <em>Revista Facultad de Ingeniería Universidad de Antioquia</em>, pages 1–16, 2022. URL: <a class="reference external" href="https://www.doi.org/10.17533/udea.redin.20201215">https://www.doi.org/10.17533/udea.redin.20201215</a>, <a class="reference external" href="https://doi.org/10.17533/udea.redin.20201215">doi:10.17533/udea.redin.20201215</a>.</p>
+</div>
+<div class="citation" id="id27" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
+<p>Edier Aristizábal, López S., Sánchez O., Vásquez M., Rincón F., Ruiz-Vásquez D., Restrepo S., and Valencia J.S. Evaluación de la amenaza por movimientos en masa detonados por lluvias para una región de los andes colombianos estimando la probabilidad espacial, temporal, y magnitud. <em>Boletín de Geología</em>, pages 85–105, 2019. URL: <a class="reference external" href="http://eusoils.jrc.ec.europa.eu/library/themes/Landslides/">http://eusoils.jrc.ec.europa.eu/library/themes/Landslides/</a>, <a class="reference external" href="https://doi.org/10.18273/revbol.v41n3-2019004">doi:10.18273/revbol.v41n3-2019004</a>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="10_fisico.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Métodos con base física</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="12_amenaza.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Análisis del factor detonante</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-previos">Requisitos previos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-y-prediccion">Desempeño y predicción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-cruzada">Validación cruzada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">Matriz de confusión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-positive-rate"><em>False positive rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-negative-rate"><em>True negative rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-negative-rate"><em>False negative rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#true-positive-rate"><em>True positive rate</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy"><em>Accuracy</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-measure"><em>F-measure</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-roc">Curva ROC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python"><em>Python</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Validación cruzada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-del-modelo">Desempeño del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacidad-de-prediccion">Capacidad de predicción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-mapa-de-susceptibilidad-final">Calcular mapa de susceptibilidad final</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividades">Actividades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Edier V. Aristizábal G.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

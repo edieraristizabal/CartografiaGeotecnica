@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Factores detonantes &#8212; Cartografía Geotécnica</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_detonante';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://edieraristizabal.github.io/CartografiaGeotecnica/libro/07_detonante.html" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Métodos basados en el conocimiento" href="08_heuristico.html" />
+    <link rel="prev" title="Variables condicionantes" href="06_variables.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Cartografía Geotécnica - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Cartografía Geotécnica - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    .
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_medialuna.html">Media Luna (1954)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_normatividad.html">Amenaza &amp; ordenamiento territorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_estadoarte.html">Estado del arte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_metodos.html">Caracterización de movimientos en masa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_susceptibilidad.html">Susceptibilidad y amenaza</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_inventario.html">Inventario de movimientos en masa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_variables.html">Variables condicionantes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Factores detonantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_heuristico.html">Métodos basados en el conocimiento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_estadistico.html">Métodos basados en datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_fisico.html">Métodos con base física</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_evaluacion.html">Evaluación del modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_amenaza.html">Análisis del factor detonante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_flujos.html">Movimientos en masa tipo flujos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_roca.html">Movimientos en masa en roca</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_python.html">Python</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="100_references.html">Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/edieraristizabal/CartografiaGeotecnica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/edieraristizabal/CartografiaGeotecnica/issues/new?title=Issue%20on%20page%20%2F07_detonante.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/07_detonante.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Factores detonantes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-previos">Requisitos previos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-precipitacion-como-factor-detonante">La precipitación como factor detonante</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-sismos-como-factor-detonante">Los sismos como factor detonante</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factores-sismicos">Factores sísmicos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividades">Actividades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="factores-detonantes">
+<h1>Factores detonantes<a class="headerlink" href="#factores-detonantes" title="Link to this heading">#</a></h1>
+<section id="objetivos-de-aprendizaje">
+<h2>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar este capítulo, el estudiante será capaz de:</p>
+<ul class="simple">
+<li><p>Distinguir entre factores condicionantes y factores detonantes de movimientos en masa.</p></li>
+<li><p>Explicar los mecanismos por los cuales la lluvia y los sismos desestabilizan las laderas.</p></li>
+<li><p>Describir el concepto de umbral de lluvia y sus tipos (intensidad-duración, lluvia acumulada-lluvia del evento).</p></li>
+<li><p>Comprender el rol de los factores antrópicos como detonantes secundarios.</p></li>
+</ul>
+<p><strong>Duración estimada:</strong> 1–2 horas</p>
+</section>
+<section id="requisitos-previos">
+<h2>Requisitos previos<a class="headerlink" href="#requisitos-previos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Hidrogeología:</strong> infiltración, presión de poros, nivel freático.</p></li>
+<li><p><strong>Geotecnia básica:</strong> resistencia al corte de suelos (criterio Mohr-Coulomb), concepto de factor de seguridad.</p></li>
+<li><p><strong>Capítulo anterior:</strong> <code class="docutils literal notranslate"><span class="pre">05_inventario</span></code>, <code class="docutils literal notranslate"><span class="pre">06_variables</span></code>.</p></li>
+</ul>
+<p>Los dos factores detonantes de movimientos en masa reconocidos y estudiados corresponden a la lluvia y los sismos. A continuación se presenta cada uno de ellos.</p>
+</section>
+<section id="la-precipitacion-como-factor-detonante">
+<h2>La precipitación como factor detonante<a class="headerlink" href="#la-precipitacion-como-factor-detonante" title="Link to this heading">#</a></h2>
+<p>Los movimientos en masa detonados por lluvias, generalmente denominados deslizamientos superficiales planares o <em>soil slip</em>, se caracterizan por su pequeño espesor (0,3 – 2 m) mucho menor a la longitud del movimiento, superficie de falla sub paralela a la pendiente y escarpe de área reducida (<span class="bibtex-citation" id="id1">Anderson and Sitar [<a class="reference internal" href="#id154" title="S. A. Anderson and N. Sitar. Analysis of rainfall-induced debris flows. Journal of Geotechnical Engineering, pages 544-552, 1995.">1995</a>]</span>). Estos movimientos son generados durante eventos intensos de lluvia por el aumento rápido de la presión de poros o por la pérdida del componente de cohesión aparente (<span class="bibtex-citation" id="id2">Wang and Sassa [<a class="reference internal" href="#id170" title="G. Wang and K. Sassa. Pore-pressure generation and movement of rainfall-induced landslides: effects of grain size and fine-particle content. Engineering Geology, 69:109–125, 2003.">2003</a>]</span>, <span class="bibtex-citation" id="id3">Terlien [<a class="reference internal" href="#id171" title="M. T. J. Terlien. The determination of statistical and deterministic hydrological landslide-triggering thresholds. Environmental Geology, 35(2-3):124–130, 1998.">1998</a>]</span>, <span class="bibtex-citation" id="id4">Crosta [<a class="reference internal" href="#id172" title="G. B. Crosta. Distributed modelling of shallow landslides triggered by intense rainfall. In Proceedings of the 8th International Congress, International Association for Engineering Geology and the Environment, 3757–3765. 1998.">1998</a>]</span>, <span class="bibtex-citation" id="id5">Crosta and Frattini [<a class="reference internal" href="#id72" title="G B Crosta and P Frattini. Distributed modelling of shallow landslides triggered by intense rainfall. Natural Hazards and Earth System Sciences, 3:81-93, 2003.">2003</a>]</span>). Posteriormente el material desplazado, por procesos de licuefacción o reducción rápida de la resistencia al cortante en condiciones no drenadas (<span class="bibtex-citation" id="id6">Anderson and Sitar [<a class="reference internal" href="#id154" title="S. A. Anderson and N. Sitar. Analysis of rainfall-induced debris flows. Journal of Geotechnical Engineering, pages 544-552, 1995.">1995</a>]</span>), se convierte en un flujo que se propaga ladera abajo erodando y trasportando sedimentos del canal, incrementando el volumen de material inicial desplazado (<span class="bibtex-citation" id="id7">Wang and Sassa [<a class="reference internal" href="#id170" title="G. Wang and K. Sassa. Pore-pressure generation and movement of rainfall-induced landslides: effects of grain size and fine-particle content. Engineering Geology, 69:109–125, 2003.">2003</a>]</span>;<span class="bibtex-citation" id="id8">Wieczorek <em>et al.</em> [<a class="reference internal" href="#id173" title="G. F. Wieczorek, N. D. Naeser, L. S. Eaton, B. A. Morgan, and K. M. Koczot. Debris-flow hazards in the blue ridge of central virginia. Environmental &amp; Engineering Geoscience, 6(1):3–23, 2000.">2000</a>]</span>). Para suelos parcialmente saturados, <span class="bibtex-citation" id="id9">Li <em>et al.</em> [<a class="reference internal" href="#id174" title="X. Li, L. Zhang, and H. Rahardjo. Influence of rainfall on slope failure: laboratory and numerical investigation. Computers and Geotechnics, 32:223–236, 2005.">2005</a>]</span> describen dicho proceso como el resultado de la infiltración de lluvia que reduce la succión de la matriz de los suelos en la ladera, esa reducción reduce a su vez la resistencia al cortante del material. Una vez el suelo está completamente saturado, la succión desaparece completamente, y un nivel freático colgado con presión de poros positiva se desarrolla. Esta presión de poros positiva reduce aun más la resistencia al cortante aumentando la probabilidad de ocurrencia de un movimiento.</p>
+<p><span class="bibtex-citation" id="id10">Gostelow [<a class="reference internal" href="#id175" title="T. P. Gostelow. Slope Stability: Geotechnical Engineering and Geomorphology. Elsevier Applied Science, 1991.">1991</a>]</span> e <span class="bibtex-citation" id="id11">Iiritano <em>et al.</em> [<a class="reference internal" href="#id176" title="G. Iiritano, M. Calvello, R. Greco, and L. Olivares. Effects of rainfall and soil properties on shallow landslide triggering. In Proceedings of the International Conference on Landslides, 479–484. 1998.">1998</a>]</span> consideran que la lluvia puede actuar de dos formas diferentes en la estabilidad de las laderas: (1) eventos de lluvia muy intensos que causan una reducción de la resistencia al cortante por reducción de la cohesión aparente generando movimientos inicialmente superficiales y (2) eventos de lluvia de larga duración que causan el incremento en la presión de poros sobre una superficie de falla potencial generando movimientos de masa mucho más profundos y frecuentemente a lo largo de superficies de cizalla pre-existentes. Los movimientos superficiales son usualmente detonados por lluvias cortas e intensas (<span class="bibtex-citation" id="id12">Crosta [<a class="reference internal" href="#id172" title="G. B. Crosta. Distributed modelling of shallow landslides triggered by intense rainfall. In Proceedings of the 8th International Congress, International Association for Engineering Geology and the Environment, 3757–3765. 1998.">1998</a>]</span>), en tanto que los movimientos profundos están más relacionados con la distribución y variación de la lluvia en periodos largos (<span class="bibtex-citation" id="id13">Aleotti [<a class="reference internal" href="#id177" title="P. Aleotti. A warning system for rainfall-induced shallow failures. Engineering Geology, 73:247–265, 2004.">2004</a>]</span>).</p>
+<p><span class="bibtex-citation" id="id14">Wilson and Wieczorek [<a class="reference internal" href="#id178" title="R. C. Wilson and G. F. Wieczorek. Rainfall thresholds for the initiation of debris flows at la honda, california. Environmental &amp; Engineering Geoscience, 1:11–27, 1995.">1995</a>]</span> sugieren que la precipitación puede inducir la generación de una zona saturada con el incremento lógico del nivel freático, especialmente para perfiles poco profundos; y por otro lado, <span class="bibtex-citation" id="id15">Rahardjo <em>et al.</em> [<a class="reference internal" href="#id182" title="H. Rahardjo, E.C. Leong, and D.G. Fredlund. Response of a residual soil slope to rainfall. Canadian Geotechnical Journal, 32:134–142, 1995.">1995</a>]</span> sugieren que un nivel freático colgado y temporal se forma en perfiles de suelo profundos, entre la superficie del terreno y el frente húmedo, reduciendo la presión de poros negativa e iniciando un flujo paralelo a la ladera que contribuye a la inestabilidad de la vertiente (<span class="bibtex-citation" id="id16">Crosta [<a class="reference internal" href="#id172" title="G. B. Crosta. Distributed modelling of shallow landslides triggered by intense rainfall. In Proceedings of the 8th International Congress, International Association for Engineering Geology and the Environment, 3757–3765. 1998.">1998</a>]</span>). Estas consideraciones permiten evaluar la presión de poros generada por el aumento de una capa saturada sobre una superficie de falla crítica predefinida, o por el contrario evaluar el desarrollo de la presión de poros a partir del avance de un frente húmedo.</p>
+<p><span class="bibtex-citation" id="id17">Collins and Znidarcic [<a class="reference internal" href="#id179" title="B.D. Collins and D. Znidarcic. Stability analyses of rainfall induced landslides. Journal of Geotechnical and Geoenvironmental Engineering, 130(4):362–372, 2004.">2004</a>]</span> proponen dos distintos mecanismos de falla generados por la infiltración. En el primer mecanismo la falla ocurre el aumento en la presión de poros positiva originando licuefacción del material, en tanto el segundo mecanismo la falla ocurre en presiones de poros negativas donde el material está aun en estado no saturado y la falla ocurre por reducción de la succión y la masa se comporta similar a un cuerpo rígido. Suelos de grano fino y baja infiltración no tienden a desarrollar presiones de poros positivas y la falla ocurre generalmente por reducción de la resistencia al cortante causada por pérdida de succión. En general los movimientos en masa superficiales están asociados con el desarrollo de presiones de poros positivas mientras movimientos más profundos están asociados a pérdida de succión (<span class="bibtex-citation" id="id18">Collins and Znidarcic [<a class="reference internal" href="#id179" title="B.D. Collins and D. Znidarcic. Stability analyses of rainfall induced landslides. Journal of Geotechnical and Geoenvironmental Engineering, 130(4):362–372, 2004.">2004</a>]</span>).</p>
+<p>Para describir los mecanismos que dan lugar a dichos eventos es necesario conocer el perfil de meteorización y comprender el comportamiento del agua a través del suelo. Inicialmente el agua precipitada se infiltra en el suelo en función de la permeabilidad de los horizontes superficiales del suelo. Cuando la intensidad de la lluvia es mayor a la permeabilidad del suelo los excedentes de agua drenan sobre la superficie de acuerdo con la pendiente y morfología del terreno. Entre tanto el agua que se infiltra ocupa los poros en el suelo y tiende a drenar hacia horizontes de suelo más profundos por efectos de la gravedad. Sin embargo los suelos pueden mantener un contenido de agua dentro de los poros más pequeños, debido a la adhesión (agua higroscópica) y la tensión superficial (agua capilar) que actúan como una película alrededor de las partículas del suelo contrarrestando el efecto de la gravedad. La fracción de agua capilar es utilizable por las plantas, a diferencia del agua higroscópica que no puede ser extraída por las raíces de las plantas. Si el contenido de agua aumenta del contenido capilar entonces la gravedad es suficiente para superar las tensiones superficiales, y el exceso de agua, denominada agua gravitacional o libre, percola como un frente húmedo hacia profundidad.</p>
+<figure class="align-default" id="perfil1">
+<a class="reference internal image-reference" href="https://www.researchgate.net/profile/Edier-Aristizabal/publication/275723803/figure/fig2/AS:614061867802642&#64;1523415166398/Water-content-into-the-soil-and-water-available-Root-depth-Z-r-soil-thickness-Z-s_W640.jpg"><img alt="perfil1" src="https://www.researchgate.net/profile/Edier-Aristizabal/publication/275723803/figure/fig2/AS:614061867802642&#64;1523415166398/Water-content-into-the-soil-and-water-available-Root-depth-Z-r-soil-thickness-Z-s_W640.jpg" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 39 </span><span class="caption-text">Contenido de agua en el suelo. Profundidad de raices (Zr), profundidad del suelo (Zs), humedad a punto de marchitex (Wpwp), humedad a capacidad de campo (Wfc), saturación (Ws)</span><a class="headerlink" href="#perfil1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El proceso de percolación es controlado por el perfil de suelo. La parte superior de los horizontes de suelo, que generalmente corresponden a suelos residuales, se caracterizan por la extinción total de la fábrica y estructura de la roca parental, y la influencia de la vegetación, la perturbación de los animales y los procesos químicos, que generan macroporos o estructuras relictas abiertas que incrementan en varios órdenes de magnitud la conductividad del agua en el suelo. A estos horizontes altamente perturbados le siguen horizontes saprolitícos, definidos como un material blando producto de la meteorización química de las rocas, y caracterizados por la formación de minerales secundarios, en los que la estructura y fábrica originales son preservadas debido al emplazamiento seudomórfico de los minerales originales sin alteración y transporte subsecuentes (<span class="bibtex-citation" id="id19">Fookes [<a class="reference internal" href="#id180" title="P. Fookes. Geology for Engineers: The Geological Model, Prediction, and Evaluation of Site Conditions. Geological Society of London, 1997.">1997</a>]</span>, <span class="bibtex-citation" id="id20">Voicu and Bardoux [<a class="reference internal" href="#id181" title="G. Voicu and M. Bardoux. Geological and geochemical controls on the genesis of the serra pelada au-pd-pt deposit, carajas mineral province, brazil. Mineralium Deposita, 37:461–474, 2002.">2002</a>]</span>). Debido a sus características físicas la conductividad hidráulica del suelo saprolítico es mucho menor a la capa superior de suelo residual, formando un contraste entre las conductividades, donde la tasa de lluvia e infiltración excede la tasa de percolación. A partir de esta superficie se forma como consecuencia un nivel freático colgado y flujo lateral saturado paralelo a la ladera denominado flujo subsuperficial (<span class="bibtex-citation" id="id21">Crosta [<a class="reference internal" href="#id172" title="G. B. Crosta. Distributed modelling of shallow landslides triggered by intense rainfall. In Proceedings of the 8th International Congress, International Association for Engineering Geology and the Environment, 3757–3765. 1998.">1998</a>]</span>; <span class="bibtex-citation" id="id22">Wilson and Wieczorek [<a class="reference internal" href="#id178" title="R. C. Wilson and G. F. Wieczorek. Rainfall thresholds for the initiation of debris flows at la honda, california. Environmental &amp; Engineering Geoscience, 1:11–27, 1995.">1995</a>]</span>; <span class="bibtex-citation" id="id23">Rahardjo <em>et al.</em> [<a class="reference internal" href="#id182" title="H. Rahardjo, E.C. Leong, and D.G. Fredlund. Response of a residual soil slope to rainfall. Canadian Geotechnical Journal, 32:134–142, 1995.">1995</a>]</span>).</p>
+<figure class="align-default" id="perfil">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/97/3e/bb/973ebb0ba09a295860f11f5ebf7df5ff.jpg"><img alt="perfil" src="https://i.pinimg.com/564x/97/3e/bb/973ebb0ba09a295860f11f5ebf7df5ff.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 40 </span><span class="caption-text">Típico perfil de meteorización simplificado en ambientes tropicales.</span><a class="headerlink" href="#perfil" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Adicional a este mecanismo de percolación del agua a través del perfil de suelo, existen macroporos o conductos comunicados que conectan directamente horizontes superficiales con niveles más profundos de suelo permitiendo la percolación, saturación e incremento del nivel freático colgado a velocidades considerablemente mayores.</p>
+<p>Estos mecanismos de percolación y saturación del suelo permiten entonces evaluar la estabilidad de una ladera ante la lluvia por el incremento de la presión de poros generadas por el avance de un frente húmedo a partir de la superficie del suelo, o por el contrario por el aumento de un nivel freático colgado desde un cambio de la conductividad hidráulica en el perfil de suelo</p>
+<figure class="align-default" id="pwt">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/d7/62/cf/d762cf27e7612a7e27912afa3cbfd4c8.jpg"><img alt="perched water table" src="https://i.pinimg.com/564x/d7/62/cf/d762cf27e7612a7e27912afa3cbfd4c8.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 41 </span><span class="caption-text">Mecanismo de nivel freático colgado.</span><a class="headerlink" href="#pwt" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="frente-humedo">
+<a class="reference internal image-reference" href="https://i.pinimg.com/564x/bd/de/3b/bdde3b4bdfcbdabd26005d022f154d17.jpg"><img alt="frente humedo" src="https://i.pinimg.com/564x/bd/de/3b/bdde3b4bdfcbdabd26005d022f154d17.jpg" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 42 </span><span class="caption-text">Mecanismo de avance del frente humedo.</span><a class="headerlink" href="#frente-humedo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>En términos de estabilidad los esfuerzos que son transmitidos al suelo son soportados por las partículas y los fluidos dentro de los poros. Sin embargo solo las partículas del suelo pueden soportar los esfuerzos de corte responsable de la ocurrencia de movimientos en masa. Por lo tanto, cuando la presión de poros aumenta los esfuerzos que son transmitidos a las partículas del suelo disminuyen porque son soportados por el agua en los poros, conservando los esfuerzos totales esencialmente constantes pero disminuyendo los esfuerzos efectivos (<span class="bibtex-citation" id="id24">Graham [<a class="reference internal" href="#id183" title="J. Graham. Methods of stability analysis. Geotechnique, 34:405–423, 1984.">1984</a>]</span>). La situación más crítica para la estabilidad de la ladera corresponde cuando la zona saturada alcanza la superficie de la ladera y la presión de poros es máxima (<span class="bibtex-citation" id="id25">Anderson and Sitar [<a class="reference internal" href="#id154" title="S. A. Anderson and N. Sitar. Analysis of rainfall-induced debris flows. Journal of Geotechnical Engineering, pages 544-552, 1995.">1995</a>]</span>).</p>
+<p>La falla de la ladera se puede presentar durante o después del evento de lluvia en condiciones saturadas o parcialmente saturadas. Para condiciones parcialmente saturadas la falla puede ocurrir en presiones de poros negativas por reducción de la succión, y la masa de suelo fallada se comporta similar a un cuerpo rígido. Por otra parte, una vez el suelo está completamente saturado, la succión desaparece completamente, y se desarrollan presiones de poro positiva. Este aumento de presión de poros reduce la resistencia al cortante originando licuefacción estática del material o reducción rápida de la resistencia al cortante en condiciones no drenadas, y la masa de suelo fallada se comporta como un flujo (<span class="bibtex-citation" id="id26">Collins and Znidarcic [<a class="reference internal" href="#id179" title="B.D. Collins and D. Znidarcic. Stability analyses of rainfall induced landslides. Journal of Geotechnical and Geoenvironmental Engineering, 130(4):362–372, 2004.">2004</a>]</span>; <span class="bibtex-citation" id="id27">Anderson and Sitar [<a class="reference internal" href="#id154" title="S. A. Anderson and N. Sitar. Analysis of rainfall-induced debris flows. Journal of Geotechnical Engineering, pages 544-552, 1995.">1995</a>]</span>; <span class="bibtex-citation" id="id28">Wang and Sassa [<a class="reference internal" href="#id170" title="G. Wang and K. Sassa. Pore-pressure generation and movement of rainfall-induced landslides: effects of grain size and fine-particle content. Engineering Geology, 69:109–125, 2003.">2003</a>]</span>; <span class="bibtex-citation" id="id29">Li <em>et al.</em> [<a class="reference internal" href="#id174" title="X. Li, L. Zhang, and H. Rahardjo. Influence of rainfall on slope failure: laboratory and numerical investigation. Computers and Geotechnics, 32:223–236, 2005.">2005</a>]</span>).</p>
+<p>Sin embargo es necesario tener en cuenta que para lograr una condición del suelo parcialmente saturado en ambientes tropicales húmedos, se requieren largos periodos de tiempo anteriores sin lluvia, y dicha condición no saturada se conserva justo en el comienzo del evento de lluvia. Por lo que durante el período de lluvia inicial, la condición no saturada controla la mecánica de suelos y los movimientos en masa superficiales se producen por la reducción de succión, pero después de un corto período de lluvias, las condiciones de saturación aparecen y controlan la ocurrencia de deslizamientos superficiales por presiones de poros positivas. Para las condiciones de clima tropical húmedo, la lluvia es un fenómeno común, lo que resulta en un perfil de suelo a capacidad de campo muy cerca a condiciones de saturación, y los deslizamientos de tierra en consecuencia son poco profundos y se producen en su mayoría debido a presiones de poro positivas.</p>
+<p>El flujo el agua en el suelo se presenta en dos escalas espaciales y temporales diferentes. El flujo horizontal en condiciones estáticas, y el flujo vertical en condiciones transitorias. Para considerar el aumento de la presión de poros como el resultado del flujo subsuperficial paralelo a la ladera se consideran condiciones de flujo estáticas que evalúan el control topográfico en la presión de poros. Por el contrario, cuando se quiere considerar el aumento de presiones de poros por el avance del frente húmedo generalmente se consideran flujos dinámicos transitorios. En términos generales los autores concuerdan que las condiciones de flujo estáticas responden a condiciones iniciales o antecedentes como resultado del largo plazo, en tanto que las condiciones transitorias responde a eventos de lluvia específicos. Por lo tanto la cabeza de presión de agua dentro del suelo puede ser expresada como la suma de dos componentes, la cabeza producida por el flujo lateral en el largo plazo en estado estático asociado a la lluvia antecedente, y la respuesta de la cabeza de presión en el corto plazo en estado transitorio asociado a un evento de lluvia específico (<span class="bibtex-citation" id="id30">Iverson [<a class="reference internal" href="#id184" title="R. M. Iverson. Landslide triggering by rain infiltration. Water Resources Research, 36:1897–1910, 2000.">2000</a>]</span>; <span class="bibtex-citation" id="id31">D'Odorico <em>et al.</em> [<a class="reference internal" href="#id185" title="P. D'Odorico, S. Fagherazzi, and R. Rigon. The influence of streamflow variability on the exposure of hillslopes to runoff erosion. Journal of Geophysical Research: Earth Surface, 110:F02013, 2005.">2005</a>]</span>, <span class="bibtex-citation" id="id32">Sharma and Nakagawa [<a class="reference internal" href="#id186" title="A. Sharma and H. Nakagawa. Bioengineering for Land Reclamation and Conservation. Elsevier, 2005.">2005</a>]</span>, <span class="bibtex-citation" id="id33">Collins and Znidarcic [<a class="reference internal" href="#id179" title="B.D. Collins and D. Znidarcic. Stability analyses of rainfall induced landslides. Journal of Geotechnical and Geoenvironmental Engineering, 130(4):362–372, 2004.">2004</a>]</span>, <span class="bibtex-citation" id="id34">Huat <em>et al.</em> [<a class="reference internal" href="#id187" title="B. B. K. Huat, F. H. Ali, and T. H. Low. Water infiltration characteristics of unsaturated soil slope and its effect on suction and stability. Geotechnical and Geological Engineering, 24:1293–1306, 2006.">2006</a>]</span>).</p>
+<p>Para la aplicación práctica de estos conceptos en estudios de amenaza en Colombia, la metodología hidrológica se traduce en herramientas de umbral concretas. En los Estudios Detallados de Amenaza (escala 1:2.000) se emplean curvas de Intensidad-Duración-Frecuencia (IDF) calculadas para periodos de retorno de 2.33, 5, 10, 20, 50 y 100 años, mediante la ecuación <span class="math notranslate nohighlight">\(i = c \cdot T^m / (T_d^e + f)\)</span>, donde <span class="math notranslate nohighlight">\(i\)</span> es la intensidad, <span class="math notranslate nohighlight">\(T_d\)</span> la duración de la tormenta y <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(m\)</span> son coeficientes regionales específicos de cada estación pluviométrica. Para deslizamientos superficiales detonados por lluvias de alta intensidad y corta duración, la guía unificada SGC-UNAL aplica la formulación de Pradel y Raad (1993), que calcula la intensidad mínima requerida para saturar completamente el suelo hasta la profundidad del frente húmedo, en función de la conductividad hidráulica saturada, la porosidad efectiva y la saturación antecedente. Para umbrales de lluvia acumulada se emplea un modelo lineal del tipo <span class="math notranslate nohighlight">\(P_T = b + m \cdot P_{ant}\)</span>, donde <span class="math notranslate nohighlight">\(P_T\)</span> es el umbral diario crítico, <span class="math notranslate nohighlight">\(P_{ant}\)</span> la lluvia acumulada antecedente (típicamente de 15 días) y <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(m\)</span> el intercepto y la pendiente del ajuste. En el Valle de Aburrá, <span class="bibtex-citation" id="id35">Aristizábal <em>et al.</em> [<a class="reference internal" href="#id61" title="Edier Aristizábal, López S., Sánchez O., Vásquez M., Rincón F., Ruiz-Vásquez D., Restrepo S., and Valencia J.S. Evaluación de la amenaza por movimientos en masa detonados por lluvias para una región de los andes colombianos estimando la probabilidad espacial, temporal, y magnitud. Boletín de Geología, pages 85-105, 2019. URL: http://eusoils.jrc.ec.europa.eu/library/themes/Landslides/, doi:10.18273/revbol.v41n3-2019004.">2019</a>]</span> analizaron combinaciones de lluvia acumulada de 1, 3 y 5 días (LA) con lluvia acumulada antecedente de 10, 15, 30, 60 y 90 días (LAA), encontrando que la combinación LA1 (1 día) frente a LAA30 (30 días) separa mejor los días estables de los inestables: la mayor probabilidad condicionada de ocurrencia se registra al superar combinaciones de 350 a 400 mm de lluvia acumulada de 30 días con 30 mm de lluvia diaria, mientras que la mayor densidad histórica de deslizamientos se concentra en valores inferiores a 250 mm de lluvia antecedente de 30 días combinados con lluvias diarias entre 0 y 30 mm.</p>
+</section>
+<section id="los-sismos-como-factor-detonante">
+<h2>Los sismos como factor detonante<a class="headerlink" href="#los-sismos-como-factor-detonante" title="Link to this heading">#</a></h2>
+<p>Según <span class="bibtex-citation" id="id36">Keefer [<a class="reference internal" href="#id113" title="David K Keefer. Landslides caused by earthquakes. Geological Society of American BUlletin, 95:406-421, 1984.">1984</a>]</span> los sismos a partir de <span class="math notranslate nohighlight">\(M_L 4.0\)</span> tienen la capacidad de detonar movimientos en masa, denominados cosísmicos. En general los sismos pueden detonar movimientos en masa de diferentes tamaños, superficiales en suelos, caídas de roca y movimientos profundos en roca.</p>
+<p>Diferentes estudios han señalado la relación entre la magnitud de los sismos y el número de movimientos en masa y el área afectada por los movimientos, al igual la magnitud de los sismos y la máxima distancia donde se presentan movimientos en masa. Existen tres tipos de factores que afectan los movimientos en masa cosísmicos: (i) factores sísmicos, (ii) factores topográficos, y (iii) factores geológicos. A continuación se describe cada uno de ellos:</p>
+<section id="factores-sismicos">
+<h3>Factores sísmicos<a class="headerlink" href="#factores-sismicos" title="Link to this heading">#</a></h3>
+<p>Entre los factores sísmicos se encuentran la distancias a la fuente sísmica, el tipo de falla, el efecto del bloque superior, y la respuesta de la ladera a la dirección de las ondas sísmicas.</p>
+<p>La densidad de movimiento en masa desciende al aumentar la distancia al epicentro, hasta alcanzar distancias aproximadas de 70 km. Sin embargo algunos sismos han señalado patrones donde en los primeros 10 km cercanos al epicentro la densidad aumenta con la distancia, y solo después de este valor la densidad tiende a disminuir en forma exponencial.</p>
+<p>También es característico que las laderas que presentan el mayor número de movimientos en masa corresponden a aquellas que tienen aspecto en la misma dirección a la propagación de las ondas sísmicas, perpendicular a la falla.</p>
+<p>En cuanto al bloque techo y el bloque piso de la falla generadora del sismo, se ha observado un número mucho mayor de movimientos en masa en el bloque piso, este efecto es denominado <em>hanging wall effect</em>.</p>
+<figure class="align-default" id="sismos">
+<a class="reference internal image-reference" href="https://agupubs.onlinelibrary.wiley.com/cms/asset/00e4704b-6823-43df-ae91-d866f2dafc57/rog20192-fig-0008-m.jpg"><img alt="sismos" src="https://agupubs.onlinelibrary.wiley.com/cms/asset/00e4704b-6823-43df-ae91-d866f2dafc57/rog20192-fig-0008-m.jpg" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 43 </span><span class="caption-text">Efecto del tipo de falla en la distribución de movimientos en masa cosísmicos. Tomado de <span class="bibtex-citation" id="id37">Fan <em>et al.</em> [<a class="reference internal" href="#id114" title="Xuanmei Fan, Gianvito Scaringi, Oliver Korup, A. Joshua West, Cees J. van Westen, Hakan Tanyas, Niels Hovius, Tristram C. Hales, Randall W. Jibson, Kate E. Allstadt, Limin Zhang, Stephen G. Evans, Chong Xu, Gen Li, Xiangjun Pei, Qiang Xu, and Runqiu Huang. Earthquake-induced chains of geologic hazards: patterns, mechanisms, and impacts. Reviews of Geophysics, 57:421-503, 2019. URL: https://doi.org/10.1029/2018RG000626, doi:10.1029/2018RG000626.">2019</a>]</span>.</span><a class="headerlink" href="#sismos" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Con respecto al tipo de falla se observa un área más extensa para fallas de componente de buzamiento, mientras que áreas afectadas de menor extensión para fallas de componente de rumbo.</p>
+<figure class="align-default" id="sismos2">
+<a class="reference internal image-reference" href="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs40677-016-0041-1/MediaObjects/40677_2016_41_Fig1_HTML.gif"><img alt="sismos2" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs40677-016-0041-1/MediaObjects/40677_2016_41_Fig1_HTML.gif" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 44 </span><span class="caption-text">Distribución de movimientos en masa cosísmicos en Wenchuan 2008.</span><a class="headerlink" href="#sismos2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Entre los factores topográficos se encuentran la pendiente, el relieve interno y la posición topográfica. Los movimientos en masa cosísmicos se presentan generalmente en la parte alta de la ladera, donde la pendiente aumenta rápidamente luego de áreas de pendiente baja o escalones. Esto se explica por posibles amplificaciones que se presentan en las esquinas formadas por dichos cambios de pendiente.</p>
+<figure class="align-default" id="sismos3">
+<a class="reference internal image-reference" href="https://static.actu.fr/uploads/2018/09/a131e573b391863a0fc4f8e6995cc7c1.jpg"><img alt="sismos3" src="https://static.actu.fr/uploads/2018/09/a131e573b391863a0fc4f8e6995cc7c1.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figura 45 </span><span class="caption-text">Distribución de movimientos en masa cosísmicos en Hokkaido (Japón) en 2018. Los eventos se presentan en la parte alta donde se da el cambio de pendiente.</span><a class="headerlink" href="#sismos3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Para cuantificar el desempeño sísmico de una ladera se recurre a métodos de desplazamiento permanente, siendo el más extendido el método de Newmark, que calcula el desplazamiento acumulado (<span class="math notranslate nohighlight">\(D_n\)</span>) de la masa inestable mediante modelos de regresión empírica como el de Jibson (2007): <span class="math notranslate nohighlight">\(\log(D_n) = 0.215 + \log\left[\left(1-\frac{a_c}{PGA}\right)^{2.341} \left(\frac{a_c}{PGA}\right)^{-1.438}\right] \pm 0.510\)</span>, donde <span class="math notranslate nohighlight">\(PGA\)</span> es la aceleración máxima del terreno y <span class="math notranslate nohighlight">\(a_c\)</span> es la aceleración crítica o de fluencia de la ladera, definida como el umbral mínimo necesario para superar la resistencia al corte basal e iniciar el movimiento. En evaluaciones de amenaza a escala municipal en Colombia se recurre también al análisis pseudo-estático simplificado, en el cual el coeficiente sísmico horizontal (<span class="math notranslate nohighlight">\(k\)</span>) se asigna según el nivel de amenaza sísmica del municipio conforme al Reglamento Colombiano de Construcción Sismo Resistente (NSR-10): <span class="math notranslate nohighlight">\(k=0.1\)</span> para amenaza severa, <span class="math notranslate nohighlight">\(k=0.25\)</span> para amenaza destructiva y <span class="math notranslate nohighlight">\(k=0.5\)</span> para amenaza catastrófica. Para evaluaciones de susceptibilidad a escala regional, el método de Mora-Vahrson pondera el factor de disparo por sismicidad correlacionando el PGA estimado para un periodo de retorno de 100 años con las intensidades de la escala de Mercalli Modificada, asignando pesos crecientes de 6 a 9 para las intensidades VI a IX, respectivamente.</p>
+</section>
+</section>
+<section id="actividades">
+<h2>Actividades<a class="headerlink" href="#actividades" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Lluvia detonante en Colombia:</strong> Consulta el artículo de <span class="bibtex-citation" id="id38">Aristizabal <em>et al.</em> [<a class="reference internal" href="#id145" title="E Aristizabal, E Garcia, and C Martinez. Susceptibility assessment of shallow landslides triggered by rainfall in tropical basins and mountainous terrains. Natural Hazards, 78(1):621-634, 2015.">2015</a>]</span> sobre umbrales de lluvia para Colombia. Extrae los valores de <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> del umbral I-D reportado y grafícalo usando el código del capítulo 12. ¿Cómo se compara con el umbral global de Caine (1980)?</p></li>
+<li><p><strong>Umbral de lluvia acumulada:</strong> Investiga la diferencia entre el umbral Intensidad-Duración (I-D) y el umbral Lluvia Acumulada-Lluvia del Evento (E-D). ¿Cuál es más adecuado para cuencas con registro pluviométrico limitado?</p></li>
+<li><p><strong>Detonantes sísmicos:</strong> Consulta la base de datos USGS y encuentra un evento sísmico que haya desencadenado movimientos en masa en Colombia o Ecuador en los últimos 20 años. Describe el mecanismo de falla y la escala del desastre.</p></li>
+</ol>
+</section>
+<section id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id39">
+<div role="list" class="citation-list">
+<div class="citation" id="id177" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">1</a><span class="fn-bracket">]</span></span>
+<p>P. Aleotti. A warning system for rainfall-induced shallow failures. <em>Engineering Geology</em>, 73:247–265, 2004.</p>
+</div>
+<div class="citation" id="id154" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id6">2</a>,<a role="doc-backlink" href="#id25">3</a>,<a role="doc-backlink" href="#id27">4</a>)</span>
+<p>S. A. Anderson and N. Sitar. Analysis of rainfall-induced debris flows. <em>Journal of Geotechnical Engineering</em>, pages 544–552, 1995.</p>
+</div>
+<div class="citation" id="id145" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id38">3</a><span class="fn-bracket">]</span></span>
+<p>E Aristizabal, E Garcia, and C Martinez. Susceptibility assessment of shallow landslides triggered by rainfall in tropical basins and mountainous terrains. <em>Natural Hazards</em>, 78(1):621–634, 2015.</p>
+</div>
+<div class="citation" id="id61" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id35">4</a><span class="fn-bracket">]</span></span>
+<p>Edier Aristizábal, López S., Sánchez O., Vásquez M., Rincón F., Ruiz-Vásquez D., Restrepo S., and Valencia J.S. Evaluación de la amenaza por movimientos en masa detonados por lluvias para una región de los andes colombianos estimando la probabilidad espacial, temporal, y magnitud. <em>Boletín de Geología</em>, pages 85–105, 2019. URL: <a class="reference external" href="http://eusoils.jrc.ec.europa.eu/library/themes/Landslides/">http://eusoils.jrc.ec.europa.eu/library/themes/Landslides/</a>, <a class="reference external" href="https://doi.org/10.18273/revbol.v41n3-2019004">doi:10.18273/revbol.v41n3-2019004</a>.</p>
+</div>
+<div class="citation" id="id179" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id17">1</a>,<a role="doc-backlink" href="#id18">2</a>,<a role="doc-backlink" href="#id26">3</a>,<a role="doc-backlink" href="#id33">4</a>)</span>
+<p>B.D. Collins and D. Znidarcic. Stability analyses of rainfall induced landslides. <em>Journal of Geotechnical and Geoenvironmental Engineering</em>, 130(4):362–372, 2004.</p>
+</div>
+<div class="citation" id="id72" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">6</a><span class="fn-bracket">]</span></span>
+<p>G B Crosta and P Frattini. Distributed modelling of shallow landslides triggered by intense rainfall. <em>Natural Hazards and Earth System Sciences</em>, 3:81–93, 2003.</p>
+</div>
+<div class="citation" id="id172" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id12">2</a>,<a role="doc-backlink" href="#id16">3</a>,<a role="doc-backlink" href="#id21">4</a>)</span>
+<p>G. B. Crosta. Distributed modelling of shallow landslides triggered by intense rainfall. In <em>Proceedings of the 8th International Congress, International Association for Engineering Geology and the Environment</em>, 3757–3765. 1998.</p>
+</div>
+<div class="citation" id="id185" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">8</a><span class="fn-bracket">]</span></span>
+<p>P. D'Odorico, S. Fagherazzi, and R. Rigon. The influence of streamflow variability on the exposure of hillslopes to runoff erosion. <em>Journal of Geophysical Research: Earth Surface</em>, 110:F02013, 2005.</p>
+</div>
+<div class="citation" id="id114" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id37">9</a><span class="fn-bracket">]</span></span>
+<p>Xuanmei Fan, Gianvito Scaringi, Oliver Korup, A. Joshua West, Cees J. van Westen, Hakan Tanyas, Niels Hovius, Tristram C. Hales, Randall W. Jibson, Kate E. Allstadt, Limin Zhang, Stephen G. Evans, Chong Xu, Gen Li, Xiangjun Pei, Qiang Xu, and Runqiu Huang. Earthquake-induced chains of geologic hazards: patterns, mechanisms, and impacts. <em>Reviews of Geophysics</em>, 57:421–503, 2019. URL: <a class="reference external" href="https://doi.org/10.1029/2018RG000626">https://doi.org/10.1029/2018RG000626</a>, <a class="reference external" href="https://doi.org/10.1029/2018RG000626">doi:10.1029/2018RG000626</a>.</p>
+</div>
+<div class="citation" id="id180" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">10</a><span class="fn-bracket">]</span></span>
+<p>P. Fookes. <em>Geology for Engineers: The Geological Model, Prediction, and Evaluation of Site Conditions</em>. Geological Society of London, 1997.</p>
+</div>
+<div class="citation" id="id175" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">11</a><span class="fn-bracket">]</span></span>
+<p>T. P. Gostelow. <em>Slope Stability: Geotechnical Engineering and Geomorphology</em>. Elsevier Applied Science, 1991.</p>
+</div>
+<div class="citation" id="id183" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">12</a><span class="fn-bracket">]</span></span>
+<p>J. Graham. Methods of stability analysis. <em>Geotechnique</em>, 34:405–423, 1984.</p>
+</div>
+<div class="citation" id="id187" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id34">13</a><span class="fn-bracket">]</span></span>
+<p>B. B. K. Huat, F. H. Ali, and T. H. Low. Water infiltration characteristics of unsaturated soil slope and its effect on suction and stability. <em>Geotechnical and Geological Engineering</em>, 24:1293–1306, 2006.</p>
+</div>
+<div class="citation" id="id176" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">14</a><span class="fn-bracket">]</span></span>
+<p>G. Iiritano, M. Calvello, R. Greco, and L. Olivares. Effects of rainfall and soil properties on shallow landslide triggering. In <em>Proceedings of the International Conference on Landslides</em>, 479–484. 1998.</p>
+</div>
+<div class="citation" id="id184" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id30">15</a><span class="fn-bracket">]</span></span>
+<p>R. M. Iverson. Landslide triggering by rain infiltration. <em>Water Resources Research</em>, 36:1897–1910, 2000.</p>
+</div>
+<div class="citation" id="id113" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id36">16</a><span class="fn-bracket">]</span></span>
+<p>David K Keefer. Landslides caused by earthquakes. <em>Geological Society of American BUlletin</em>, 95:406–421, 1984.</p>
+</div>
+<div class="citation" id="id174" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id9">1</a>,<a role="doc-backlink" href="#id29">2</a>)</span>
+<p>X. Li, L. Zhang, and H. Rahardjo. Influence of rainfall on slope failure: laboratory and numerical investigation. <em>Computers and Geotechnics</em>, 32:223–236, 2005.</p>
+</div>
+<div class="citation" id="id182" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id15">1</a>,<a role="doc-backlink" href="#id23">2</a>)</span>
+<p>H. Rahardjo, E.C. Leong, and D.G. Fredlund. Response of a residual soil slope to rainfall. <em>Canadian Geotechnical Journal</em>, 32:134–142, 1995.</p>
+</div>
+<div class="citation" id="id186" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">19</a><span class="fn-bracket">]</span></span>
+<p>A. Sharma and H. Nakagawa. <em>Bioengineering for Land Reclamation and Conservation</em>. Elsevier, 2005.</p>
+</div>
+<div class="citation" id="id171" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">20</a><span class="fn-bracket">]</span></span>
+<p>M. T. J. Terlien. The determination of statistical and deterministic hydrological landslide-triggering thresholds. <em>Environmental Geology</em>, 35(2-3):124–130, 1998.</p>
+</div>
+<div class="citation" id="id181" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">21</a><span class="fn-bracket">]</span></span>
+<p>G. Voicu and M. Bardoux. Geological and geochemical controls on the genesis of the serra pelada au-pd-pt deposit, carajas mineral province, brazil. <em>Mineralium Deposita</em>, 37:461–474, 2002.</p>
+</div>
+<div class="citation" id="id170" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id7">2</a>,<a role="doc-backlink" href="#id28">3</a>)</span>
+<p>G. Wang and K. Sassa. Pore-pressure generation and movement of rainfall-induced landslides: effects of grain size and fine-particle content. <em>Engineering Geology</em>, 69:109–125, 2003.</p>
+</div>
+<div class="citation" id="id173" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">23</a><span class="fn-bracket">]</span></span>
+<p>G. F. Wieczorek, N. D. Naeser, L. S. Eaton, B. A. Morgan, and K. M. Koczot. Debris-flow hazards in the blue ridge of central virginia. <em>Environmental &amp; Engineering Geoscience</em>, 6(1):3–23, 2000.</p>
+</div>
+<div class="citation" id="id178" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id14">1</a>,<a role="doc-backlink" href="#id22">2</a>)</span>
+<p>R. C. Wilson and G. F. Wieczorek. Rainfall thresholds for the initiation of debris flows at la honda, california. <em>Environmental &amp; Engineering Geoscience</em>, 1:11–27, 1995.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06_variables.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Variables condicionantes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08_heuristico.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Métodos basados en el conocimiento</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-previos">Requisitos previos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-precipitacion-como-factor-detonante">La precipitación como factor detonante</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-sismos-como-factor-detonante">Los sismos como factor detonante</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factores-sismicos">Factores sísmicos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividades">Actividades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Edier V. Aristizábal G.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
